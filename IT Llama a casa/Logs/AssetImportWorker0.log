@@ -88,3 +88,146 @@ Received Import Request.
 Start importing Assets/Backgrounds/Background/k1_8bit_color_tileset.png using Guid(5065ce2b32876b54b94485296ab176b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3c3761e3871171f1b22ec1bc274609f') in 1.043252 seconds
   Import took 1.049360 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 1506.582044 seconds.
+  path: Assets/Sprites/Player/Hero/run.png
+  artifactKey: Guid(a93108d3961fee04d919cd659425a450) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Player/Hero/run.png using Guid(a93108d3961fee04d919cd659425a450) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c84a93b244804432f9e604830723b5b9') in 0.139358 seconds
+  Import took 0.212722 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 128.013517 seconds.
+  path: Assets/Sprites/Player/Hero/run.png
+  artifactKey: Guid(a93108d3961fee04d919cd659425a450) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Player/Hero/run.png using Guid(a93108d3961fee04d919cd659425a450) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e3b71b66d73c9383009823c471f1c09') in 0.090857 seconds
+  Import took 0.095394 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 30.751561 seconds.
+  path: Assets/Sprites/Player/Hero/run.png
+  artifactKey: Guid(a93108d3961fee04d919cd659425a450) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Player/Hero/run.png using Guid(a93108d3961fee04d919cd659425a450) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '818fdf39f53a9514866d363bad006ec7') in 0.040007 seconds
+  Import took 0.046526 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007777 seconds.
+  path: Assets/Sprites/Player/Hero/run.png
+  artifactKey: Guid(a93108d3961fee04d919cd659425a450) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Player/Hero/run.png using Guid(a93108d3961fee04d919cd659425a450) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '818fdf39f53a9514866d363bad006ec7') in 0.031498 seconds
+  Import took 0.037492 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003351 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.90 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.471 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.76 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1791 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.7 MB.
+System memory in use after: 87.7 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2256.
+Total: 3.756000 ms (FindLiveObjects: 0.285600 ms CreateObjectMapping: 0.082100 ms MarkObjects: 3.212800 ms  DeleteObjects: 0.173200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001347 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.82 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.305 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.99 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1791 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.7 MB.
+System memory in use after: 87.7 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2259.
+Total: 4.261300 ms (FindLiveObjects: 0.430100 ms CreateObjectMapping: 0.079000 ms MarkObjects: 3.578700 ms  DeleteObjects: 0.171300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 433.563041 seconds.
+  path: Assets/Backgrounds/Background/0x72_16x16RobotTileset.v1.png
+  artifactKey: Guid(da4cfe0ee427c2c4b9efc75e03b8e6d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Backgrounds/Background/0x72_16x16RobotTileset.v1.png using Guid(da4cfe0ee427c2c4b9efc75e03b8e6d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4d61c185e129292190e169ed5d6ce07') in 0.087708 seconds
+  Import took 0.093726 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 26.778949 seconds.
+  path: Assets/Backgrounds/Background/0x72_16x16RobotTileset.v1.png
+  artifactKey: Guid(da4cfe0ee427c2c4b9efc75e03b8e6d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Backgrounds/Background/0x72_16x16RobotTileset.v1.png using Guid(da4cfe0ee427c2c4b9efc75e03b8e6d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21862ce4d2a427eb8faf19ef97046e8b') in 0.022827 seconds
+  Import took 0.028038 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002865 seconds.
+  path: Assets/Backgrounds/Background/0x72_16x16RobotTileset.v1.png
+  artifactKey: Guid(da4cfe0ee427c2c4b9efc75e03b8e6d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Backgrounds/Background/0x72_16x16RobotTileset.v1.png using Guid(da4cfe0ee427c2c4b9efc75e03b8e6d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21862ce4d2a427eb8faf19ef97046e8b') in 0.026594 seconds
+  Import took 0.031503 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 32.416930 seconds.
+  path: Assets/Backgrounds/Background/0x72_16x16RobotTileset.v1.png
+  artifactKey: Guid(da4cfe0ee427c2c4b9efc75e03b8e6d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Backgrounds/Background/0x72_16x16RobotTileset.v1.png using Guid(da4cfe0ee427c2c4b9efc75e03b8e6d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe22c5d8ea318874560e7deb75c2f33b') in 1.153041 seconds
+  Import took 1.161187 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1177.751053 seconds.
+  path: Assets/Backgrounds/Background/SCi-fi assets planet one.png
+  artifactKey: Guid(cd3e013e38794ec418d58ce458837673) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Backgrounds/Background/SCi-fi assets planet one.png using Guid(cd3e013e38794ec418d58ce458837673) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59625ab9dacf1f0c127c5a3202af2421') in 0.033991 seconds
+  Import took 0.040507 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006595 seconds.
+  path: Assets/Backgrounds/Background/SCi-fi assets planet one.png
+  artifactKey: Guid(cd3e013e38794ec418d58ce458837673) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Backgrounds/Background/SCi-fi assets planet one.png using Guid(cd3e013e38794ec418d58ce458837673) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59625ab9dacf1f0c127c5a3202af2421') in 0.020240 seconds
+  Import took 0.025661 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 47.163139 seconds.
+  path: Assets/Backgrounds/Background/SCi-fi assets planet one.png
+  artifactKey: Guid(cd3e013e38794ec418d58ce458837673) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Backgrounds/Background/SCi-fi assets planet one.png using Guid(cd3e013e38794ec418d58ce458837673) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75c4c0f2eda6fbb0c16eed800307bd71') in 0.569932 seconds
+  Import took 0.575741 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 142.500975 seconds.
+  path: Assets/Backgrounds/Background/SCi-fi assets planet one.png
+  artifactKey: Guid(cd3e013e38794ec418d58ce458837673) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Backgrounds/Background/SCi-fi assets planet one.png using Guid(cd3e013e38794ec418d58ce458837673) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba8f4beeb0aa4fe21b5bbaeb63966733') in 0.541055 seconds
+  Import took 0.546551 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
