@@ -1883,3 +1883,59 @@ Received Import Request.
 Start importing Assets/Scenes/MinijuegoITC.unity using Guid(22c3a33df034c884596a3efdbd9a5679) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc5a95faa2b4f3aa15a52cbabc5d0acf') in 0.003682 seconds
   Import took 0.006564 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 195.128443 seconds.
+  path: Assets/GUI_Parts/Demo.unity
+  artifactKey: Guid(6c64fb8af5456eb4e8e2b952cdb31814) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GUI_Parts/Demo.unity using Guid(6c64fb8af5456eb4e8e2b952cdb31814) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b835039a70bcf98f670d15f1c419d792') in 0.003527 seconds
+  Import took 0.006214 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 258.940455 seconds.
+  path: Assets/Scripts/Arrastrar.cs
+  artifactKey: Guid(155b652065a8b8f4bad1a9746c53e79a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Arrastrar.cs using Guid(155b652065a8b8f4bad1a9746c53e79a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1068ae1acb483de46894ab8888221442') in 0.003040 seconds
+  Import took 0.135329 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001192 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.50 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.757 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.43 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1788 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.8 MB.
+System memory in use after: 88.9 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2371.
+Total: 1.698100 ms (FindLiveObjects: 0.184500 ms CreateObjectMapping: 0.074400 ms MarkObjects: 1.425000 ms  DeleteObjects: 0.013300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 367.298009 seconds.
+  path: Assets/Scripts/Arrastrar.cs
+  artifactKey: Guid(155b652065a8b8f4bad1a9746c53e79a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Arrastrar.cs using Guid(155b652065a8b8f4bad1a9746c53e79a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aacead5965f4bd8c326ebe17c2f43055') in 0.005608 seconds
+  Import took 0.009037 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000388 seconds.
+  path: Assets/Scripts/Arrastrar.cs
+  artifactKey: Guid(155b652065a8b8f4bad1a9746c53e79a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Arrastrar.cs using Guid(155b652065a8b8f4bad1a9746c53e79a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aacead5965f4bd8c326ebe17c2f43055') in 0.003701 seconds
+  Import took 0.006391 seconds .
+
