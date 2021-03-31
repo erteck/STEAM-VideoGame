@@ -30,7 +30,7 @@ public class MovimientoPJ : MonoBehaviour
 
         //Movimiento vertical:
         float movVertical = Input.GetAxis("Vertical");
-        if(movVertical > 0)
+        if(movVertical > 0 && PruebaPiso.estaEnPiso)  //Se evita el doble salto con la segunda condición
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, maxVelocidadY);
         }
