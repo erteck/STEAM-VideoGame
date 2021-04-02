@@ -18,7 +18,7 @@ public class MovCamara : MonoBehaviour
         //Función que se manda a llamar durante cada frame, le pasa las coordenadas del personaje a la cámara para que lo siga
         //Se obtienen los valores que se le darán a la cámara
         float x = Mathf.Clamp(personaje.transform.position.x, -253.2f, 26.14f);
-        float y = Mathf.Clamp(personaje.transform.position.y, -33.24f, 2.35f);
+        float y = Mathf.Clamp(personaje.transform.position.y, -31.5f, 2.35f);
         float z = transform.position.z;
 
         //Se le mandan los valores a la cámara
