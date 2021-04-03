@@ -14,29 +14,41 @@ public class Arrastrar : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
 {
     [SerializeField] private Canvas canvas;
     private RectTransform rectTransform;
+    private CanvasGroup canvasGroup; 
+    public GameObject gameObject;
+    public GameObject parent;
+
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
+        canvasGroup = GetComponent<CanvasGroup>();
     }
 
-    //Comienza el arrastre
+    // Al comienzo del arrastre
     public void OnBeginDrag(PointerEventData eventData)
     {
+        
+        canvasGroup.alpha = .5f; //Permite hacer opaco el objeto cuando está en movimiento
+        canvasGroup.blocksRaycasts = false; //Se desactiva la capacidad del objeto de capturar eventos al estar en movimiento
     }
-    //Durante el arrastre
+        
+    // Durante el arrastre
     public void OnDrag(PointerEventData eventData)
     {
         //Mueve el objeto seleccionado hacía la posición del mouse, corrige el tomando en cuenta la escala del canvas
         rectTransform.anchoredPosition += eventData.delta
                                           / canvas.scaleFactor;
     }
-    //Al finalizar el arrastre
+    // Al finalizar el arrastre
     public void OnEndDrag(PointerEventData eventData)
     {
+        canvasGroup.alpha = 1f;
+        canvasGroup.blocksRaycasts = true;
     }
-    //Cuando se selecciona el objeto con el mouse
+    // Cuando se selecciona el objeto con el mouse
     public void OnPointerDown(PointerEventData eventData)
     {
+        //Instantiate(gameObject, rectTransform.position,rectTransform.rotation, parent.transform);
     }
 
 }
