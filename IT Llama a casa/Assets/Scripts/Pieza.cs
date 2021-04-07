@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*
 Detecta la colisión del jugador con las piezas para su recolección
@@ -25,6 +26,7 @@ public class Pieza : MonoBehaviour
             //Actualizar el contador de piezas recolectadas
             EstadoPJ.instance.piezas += 1;
             HUD.instance.ActualizarPiezas();
+            SceneManager.LoadScene("MinijuegoIBT");
         }
     }
 }
