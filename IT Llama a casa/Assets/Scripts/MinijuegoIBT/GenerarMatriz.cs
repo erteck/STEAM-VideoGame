@@ -43,7 +43,7 @@ public class GenerarMatriz : MonoBehaviour
     private void AsignarColor()
     {
         System.Random random = new System.Random();
-        VerificarRonda();
+        AsignarProbabilidad();
         for(int i = 0; i < 4; i++)
         {
             for(int j = 0; j < 4; j++)
@@ -68,10 +68,17 @@ public class GenerarMatriz : MonoBehaviour
     public void CambiarRonda()
     {
         ronda++;
-        AsignarColor();
+        if(ronda > 3)
+        {
+            SceneManager.LoadScene("Mapa");
+        }
+        else
+        {
+            AsignarColor();
+        }
     }
 
-    public void VerificarRonda()
+    public void AsignarProbabilidad()
     {
         if(ronda == 1)
         {
@@ -90,10 +97,6 @@ public class GenerarMatriz : MonoBehaviour
             probabilidadRojo = 30;
             probabilidadAmarillo = 60;
             probabilidadVerde = 100;
-        }
-        else
-        {
-            SceneManager.LoadScene("Mapa");
         }
     }
 }
