@@ -23,7 +23,7 @@ public class MatrizJugador : MonoBehaviour
     public Button boton15;
     public Button boton16;
     public Sprite noColor;
-    private static Button[,] matriz;
+    public static Button[,] matriz;
 
     //MÉTODOS
     void Start()

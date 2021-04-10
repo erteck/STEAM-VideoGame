@@ -26,14 +26,18 @@ public class GenerarMatriz : MonoBehaviour
     public Sprite rojo;
     public Sprite amarillo;
     public Sprite verde;
-    private static Image[,] matriz;
+    public static Image[,] matriz;
     private static int ronda;
     private int probabilidadRojo;
     private int probabilidadAmarillo;
     private int probabilidadVerde;
+    public static int diagRojo;
+    public static int diagAmarillo;
+    public static int diagVerde;
 
     void Start()
     {
+        //Debe de haber una pantalla de inicio y este método debe de estar en un botón
         ronda = 1;
         matriz = new Image[,]{{bloque1, bloque2, bloque3, bloque4}, {bloque5, bloque6, bloque7, bloque8}, {bloque9, bloque10, bloque11, bloque12}, {bloque13, bloque14, bloque15, bloque16}};
         AsignarColor();
@@ -44,6 +48,9 @@ public class GenerarMatriz : MonoBehaviour
     {
         System.Random random = new System.Random();
         AsignarProbabilidad();
+        diagRojo = 0;
+        diagAmarillo = 0;
+        diagVerde = 0;
         for(int i = 0; i < 4; i++)
         {
             for(int j = 0; j < 4; j++)
@@ -52,16 +59,25 @@ public class GenerarMatriz : MonoBehaviour
                 if(num <= probabilidadRojo)
                 {
                     matriz[i, j].sprite = rojo;
+                    diagRojo++;
                 }
                 else if(probabilidadRojo < num && num <= probabilidadAmarillo)
                 {
                     matriz[i, j].sprite = amarillo;
+                    diagAmarillo++;
                 }
                 else if(probabilidadAmarillo < num && num <= probabilidadVerde)
                 {
                     matriz[i, j].sprite = verde;
+                    diagVerde++;
                 }
             }
+        }
+        if(diagRojo == diagVerde)
+        {
+            AsignarColor();
+            //Borrar el print
+            print("50/50");
         }
     }
 
@@ -70,6 +86,7 @@ public class GenerarMatriz : MonoBehaviour
         ronda++;
         if(ronda > 3)
         {
+            //Falta poner una pantalla final de juego con un botón Siguiente que cargue la escena del mapa
             SceneManager.LoadScene("Mapa");
         }
         else
