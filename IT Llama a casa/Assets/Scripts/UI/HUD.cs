@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 /*
 Monitorea todos los comportamientos del HUD
@@ -40,6 +41,7 @@ public class HUD : MonoBehaviour
         else if(vidas == 0)
         {
             Vida1.enabled = false;
+            SceneManager.LoadScene("MenuPrincipal");//Nos vamos al menú principal al morir
         }
     }
 
