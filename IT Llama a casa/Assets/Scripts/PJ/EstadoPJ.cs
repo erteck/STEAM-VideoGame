@@ -13,8 +13,9 @@ public class EstadoPJ : MonoBehaviour
     //VARIABLES
     public int vidas = 3;                    //vidas del personaje
     public int piezas = 0;                  //Piezas recolectadas por el personaje
+    public bool invulerable = false;
+    
     public static EstadoPJ instance; //Referencia a la clase EstadoPJ
-
     //MÉTODOS
     private void Awake()
     {

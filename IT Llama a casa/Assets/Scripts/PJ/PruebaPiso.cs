@@ -17,7 +17,7 @@ public class PruebaPiso : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         //Función que se ejecuta en cuanto el personaje hace contacto con otro Collider, indicando que está en el piso
-        if(other.gameObject.tag != "Pieza")   //Si el Collider no es de una pieza entonces el personaje está en el piso
+        if(other.gameObject.tag == "Mapa")   //Si el Collider no es de una pieza entonces el personaje está en el piso
         {
             estaEnPiso = true;
         }
@@ -26,6 +26,10 @@ public class PruebaPiso : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         //Función que se ejecuta en cuanto el personaje sale de otro Collider, indicando que no está en el piso
-        estaEnPiso = false;
+        if(other.gameObject.tag == "Mapa")   //Si el Collider no es de una pieza entonces el personaje está en el piso
+        {
+            estaEnPiso = false;
+        }
+        
     }
 }

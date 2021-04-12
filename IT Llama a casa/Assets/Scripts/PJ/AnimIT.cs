@@ -14,7 +14,7 @@ public class AnimIT : MonoBehaviour
     private Rigidbody2D rb2d;             //Rigidbody del personaje, físicas
     private Animator anim;                //Animator del personaje, animaciones
     private SpriteRenderer sprRenderer;   //Sprite Renderer del personaje, orientación
-
+    
     //MÉTODOS
     void Start()
     {
@@ -24,7 +24,8 @@ public class AnimIT : MonoBehaviour
         anim = GetComponent<Animator>();
         sprRenderer = GetComponent<SpriteRenderer>();   
     }
-
+    //Desaparece temporalmente al jugador cuando es atacado
+    
     void Update()
     {
         //Función que se manda a llamar cada frame, obtiene la velocidad y el estado del personaje para actualizar parámetros en el Animator
