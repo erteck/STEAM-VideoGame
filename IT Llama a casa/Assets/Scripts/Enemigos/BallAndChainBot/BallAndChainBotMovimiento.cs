@@ -30,7 +30,7 @@ public class BallAndChainBotMovimiento : MonoBehaviour
             sprRenderer.flipX = true;
         }
         else if(contador == framesIzquierda){//si ya se movió 500 frames a la izquierda, aumentamos el contador a 1001
-            contador = 1201;
+            contador = framesDerecha;
 
         }
         if(contador>framesIzquierda+1){//como el contador es ahora 1001, nos movemos 500 frames a la derecha
