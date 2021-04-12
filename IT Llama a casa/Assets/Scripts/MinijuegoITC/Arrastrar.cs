@@ -15,7 +15,7 @@ public class Arrastrar : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
     [SerializeField] private Canvas canvas;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup; 
-    public GameObject gameObject;
+    public GameObject originalObject;
     public GameObject parent;
 
     private void Awake()
@@ -48,7 +48,7 @@ public class Arrastrar : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
     // Cuando se selecciona el objeto con el mouse
     public void OnPointerDown(PointerEventData eventData)
     {
-        //Instantiate(gameObject, rectTransform.position,rectTransform.rotation, parent.transform);
+        GameObject BlockClone = Instantiate(originalObject,parent.transform);
     }
 
 }
