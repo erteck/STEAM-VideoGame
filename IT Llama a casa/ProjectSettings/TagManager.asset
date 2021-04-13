@@ -8,6 +8,8 @@ TagManager:
   - Mapa
   - Avanzar
   - Frenar
+  - Izquierda
+  - Derecha
   layers:
   - Default
   - TransparentFX

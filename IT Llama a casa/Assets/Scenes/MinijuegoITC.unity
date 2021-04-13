@@ -2898,7 +2898,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -133, y: -6.577759}
+  m_AnchoredPosition: {x: -75, y: -37}
   m_SizeDelta: {x: 21.4962, y: -97.3342}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &573195801
@@ -3810,7 +3810,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 707845824}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2076381192}
+        m_TargetAssemblyTypeName: EjecutarCodigo, Assembly-CSharp
+        m_MethodName: ejecutaCodigo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &707845824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6995,7 +7007,7 @@ GameObject:
   - component: {fileID: 1577530478}
   m_Layer: 5
   m_Name: "Girar Derecha Bot\xF3n"
-  m_TagString: Untagged
+  m_TagString: Derecha
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7140,7 +7152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bloque: {fileID: 4923638410529555680, guid: 451ea62b6b541224990659a448059826, type: 3}
   parent: {fileID: 1038488913}
-  boton: {fileID: 0}
+  boton: {fileID: 1577530472}
 --- !u!1 &1579413580
 GameObject:
   m_ObjectHideFlags: 0
@@ -7318,7 +7330,7 @@ GameObject:
   - component: {fileID: 1613004891}
   m_Layer: 5
   m_Name: "Girar Izq Bot\xF3n"
-  m_TagString: Untagged
+  m_TagString: Izquierda
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7463,7 +7475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bloque: {fileID: 3782244692478678810, guid: c8178a70a70d7584190765ab39e857ed, type: 3}
   parent: {fileID: 1038488913}
-  boton: {fileID: 0}
+  boton: {fileID: 1613004885}
 --- !u!1 &1677157443
 GameObject:
   m_ObjectHideFlags: 0
@@ -9433,7 +9445,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1954442948}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2076381191}
+        m_TargetAssemblyTypeName: EliminaBloques, Assembly-CSharp
+        m_MethodName: eliminar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1954442948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10104,6 +10128,8 @@ GameObject:
   - component: {fileID: 2076381189}
   - component: {fileID: 2076381188}
   - component: {fileID: 2076381187}
+  - component: {fileID: 2076381191}
+  - component: {fileID: 2076381192}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -10203,6 +10229,31 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2076381191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076381186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 562272207486539488e18d7b711e8b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contenedorBloques: {fileID: 1038488913}
+--- !u!114 &2076381192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076381186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee94d8916a80064fa72c27addfdd80e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2097133043
 GameObject:
   m_ObjectHideFlags: 0
@@ -10411,6 +10462,7 @@ GameObject:
   - component: {fileID: 2113095452}
   - component: {fileID: 2113095451}
   - component: {fileID: 2113095453}
+  - component: {fileID: 2113095454}
   m_Layer: 0
   m_Name: MainPlayer
   m_TagString: Untagged
@@ -10477,7 +10529,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2113095450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.33, y: 4.5, z: 0}
+  m_LocalPosition: {x: -8.46, y: 4.51, z: 0}
   m_LocalScale: {x: 3.0679, y: 3.0037, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10502,6 +10554,84 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!60 &2113095454
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113095450}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.26, y: 0.21}
+    newSize: {x: 0.26, y: 0.21}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.030447727, y: 0.045902953}
+      - {x: 0.030676553, y: 0.055386003}
+      - {x: 0.020768957, y: 0.055209316}
+      - {x: 0.02062783, y: 0.06512183}
+      - {x: 0.010059666, y: 0.06570047}
+      - {x: 0.009537429, y: 0.07574156}
+      - {x: 0.0004660366, y: 0.075987145}
+      - {x: 0.00037122564, y: 0.08505987}
+      - {x: -0.015618571, y: 0.085381016}
+      - {x: -0.015550805, y: 0.10066927}
+      - {x: -0.039452504, y: 0.10068181}
+      - {x: -0.03943261, y: 0.10526381}
+      - {x: -0.08059488, y: 0.10561259}
+      - {x: -0.08028639, y: 0.08434615}
+      - {x: -0.08637618, y: 0.084412955}
+      - {x: -0.086355045, y: 0.067319244}
+      - {x: -0.10366939, y: 0.06728891}
+      - {x: -0.103698306, y: 0.06523454}
+      - {x: -0.13018073, y: 0.06516992}
+      - {x: -0.13052237, y: 0.04480739}
+      - {x: -0.12139128, y: 0.04484501}
+      - {x: -0.1214149, y: 0.016685946}
+      - {x: -0.11053495, y: 0.01625224}
+      - {x: -0.1102499, y: -0.0045171734}
+      - {x: -0.13017482, y: -0.0045403503}
+      - {x: -0.13013378, y: -0.0153396325}
+      - {x: -0.120188884, y: -0.015208823}
+      - {x: -0.120332494, y: -0.025351198}
+      - {x: -0.110397555, y: -0.025440415}
+      - {x: -0.11037113, y: -0.055755623}
+      - {x: -0.07048263, y: -0.055397917}
+      - {x: -0.0702667, y: -0.08476844}
+      - {x: -0.0799539, y: -0.08472304}
+      - {x: -0.08014788, y: -0.09478874}
+      - {x: -0.090234205, y: -0.09483525}
+      - {x: -0.090792306, y: -0.105577044}
+      - {x: -0.018586934, y: -0.104741566}
+      - {x: -0.018850228, y: -0.09550295}
+      - {x: -0.009338663, y: -0.09517403}
+      - {x: -0.008358847, y: -0.084839724}
+      - {x: 0.0018875794, y: -0.08479987}
+      - {x: 0.0017682113, y: -0.07488753}
+      - {x: 0.010288457, y: -0.074294284}
+      - {x: 0.011664614, y: -0.055056486}
+      - {x: 0.021306116, y: -0.05436751}
+      - {x: 0.021059202, y: -0.044595644}
+      - {x: 0.04224845, y: -0.04547716}
+      - {x: 0.042204082, y: -0.055036537}
+      - {x: 0.10061537, y: -0.055032354}
+      - {x: 0.13135186, y: -0.023957374}
+      - {x: 0.13228503, y: 0.0034885881}
+      - {x: 0.09921806, y: 0.035093635}
+      - {x: 0.08056182, y: 0.045738213}
 --- !u!1 &2121803757
 GameObject:
   m_ObjectHideFlags: 0

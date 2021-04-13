@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Elimina el último bloque de código agregado
+ * Autor: Erick Bustos
+ */
 public class EliminaBloques : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject contenedorBloques;
+    public void eliminar()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        if (InsertaBloques.numBloque > 0)
+        {
+            Destroy(contenedorBloques.transform.GetChild(contenedorBloques.transform.childCount - 1).gameObject);
+            InsertaBloques.numBloque -= 1;
+        }
         
     }
 }
