@@ -27,7 +27,7 @@ public class GenerarMatriz : MonoBehaviour
     public Sprite amarillo;
     public Sprite verde;
     public static Image[,] matriz;
-    private static int ronda;
+    public static int ronda;
     private int probabilidadRojo;
     private int probabilidadAmarillo;
     private int probabilidadVerde;
@@ -76,8 +76,6 @@ public class GenerarMatriz : MonoBehaviour
         if(diagRojo == diagVerde)
         {
             AsignarColor();
-            //Borrar el print
-            print("50/50");
         }
     }
 
@@ -92,6 +90,7 @@ public class GenerarMatriz : MonoBehaviour
         else
         {
             AsignarColor();
+            Tiempo.instance.textoMemoCop.text = "Memoriza";
         }
     }
 

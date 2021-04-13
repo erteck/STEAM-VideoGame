@@ -35,7 +35,7 @@ public class VerificarMatrices : MonoBehaviour
         }
         else
         {
-            textoRes.text = "Tienes " + counter.ToString() + " casillas correctas de 16\n ¿Deseas reintantarlo?";
+            textoRes.text = "Tienes " + counter.ToString() + " casillas correctas de 16\n ¿Deseas reintentarlo?";
         }
         counter = 0;
     }

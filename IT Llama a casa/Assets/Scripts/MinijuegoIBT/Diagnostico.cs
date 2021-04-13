@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class Diagnostico : MonoBehaviour
 {
-    public GameObject matriz;
+    public GameObject matrizJugador;
+    public GameObject matrizCopiar;
     public GameObject panelTiempo;
     public GameObject botonVerificar;
     public GameObject panelDiagnostico;
@@ -19,7 +20,8 @@ public class Diagnostico : MonoBehaviour
 
     public void MostrarDiagnostico()
     {
-        matriz.SetActive(false);
+        matrizJugador.SetActive(false);
+        matrizCopiar.SetActive(true);
         panelTiempo.SetActive(false);
         botonVerificar.SetActive(false);
         panelDiagnostico.SetActive(true);
@@ -31,7 +33,6 @@ public class Diagnostico : MonoBehaviour
 
     public void OcultarDiagnostico()
     {
-        matriz.SetActive(true);
         panelTiempo.SetActive(true);
         botonVerificar.SetActive(true);
         panelDiagnostico.SetActive(false);
