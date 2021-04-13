@@ -21,17 +21,13 @@ public class BallAndChainAttack : MonoBehaviour
     }
     //Simula un "blink" al ser atacado el jugador
     private IEnumerator animAtacado(){
-        sprJugador.sortingOrder = -10;
+        sprJugador.sortingOrder = -100;
         yield return new WaitForSeconds (0.32f);
         sprJugador.sortingOrder = 0;
         yield return new WaitForSeconds (0.32f);
-        sprJugador.sortingOrder = -10;
+        sprJugador.sortingOrder = -100;
         yield return new WaitForSeconds (0.32f);
         sprJugador.sortingOrder = 0;
-        // yield return new WaitForSeconds (0.32f);
-        // sprJugador.sortingOrder = -10;
-        // yield return new WaitForSeconds (0.32f);
-        // sprJugador.sortingOrder = 0;
         
     }
     //MÉTODOS
