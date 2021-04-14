@@ -9,13 +9,17 @@ Erick Alberto Bustos Cruz, Erick Hernández Silva, Israel Sánchez Miranda
 */
 public class ParkourCaida : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //VARIABLES
+    public float x;
+    public float y;
+
+    //MÉTODOS
     private void OnTriggerEnter2D(Collider2D other)
     {
         //Función que se ejecuta si la pieza colisiona con otro Collider
         if(other.gameObject.CompareTag("Player"))
         {
-            other.transform.position = new Vector2(34.21498f,-18.82151f);
+            other.transform.position = new Vector2(x, y);
             EstadoPJ.instance.vidas--;
             HUD.instance.ActualizarVidas();
             print(EstadoPJ.instance.vidas.ToString());
