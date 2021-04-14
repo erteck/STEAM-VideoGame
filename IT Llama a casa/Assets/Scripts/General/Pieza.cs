@@ -11,6 +11,9 @@ Erick Alberto Bustos Cruz, Erick Hernández Silva, Israel Sánchez Miranda
 
 public class Pieza : MonoBehaviour
 {
+    //VARIABLES
+    public string escena;
+
     //MÉTODOS
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -26,7 +29,7 @@ public class Pieza : MonoBehaviour
             //Actualizar el contador de piezas recolectadas
             EstadoPJ.instance.piezas += 1;
             HUD.instance.ActualizarPiezas();
-            SceneManager.LoadScene("MinijuegoIBT");
+            SceneManager.LoadScene(escena);
         }
     }
 }
