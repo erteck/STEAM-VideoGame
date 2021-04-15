@@ -42,7 +42,6 @@ public class InsertaBloques : MonoBehaviour
             textoBoton = boton.GetComponentsInChildren<Text>()[2];
             
             //  Copiar Número
-            //bloqueClon.GetComponentsInChildren<Text>()[2].text = boton.GetComponentsInChildren<Text>()[2].text;
             bloqueClon.GetComponentsInChildren<Text>()[2].text = textoBoton.text;
             
             if (boton.CompareTag("Avanzar"))
