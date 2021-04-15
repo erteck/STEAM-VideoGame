@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Puntaje : MonoBehaviour
 {
     public Text puntos;
+    public Text puntosFinal;
     private float puntosTotal;
 
     public void AsignarPuntosPresicion(int casillas)
@@ -27,5 +28,6 @@ public class Puntaje : MonoBehaviour
     public void GrabarPuntos()
     {
         puntos.text = puntosTotal.ToString();
+        puntosFinal.text = puntosTotal.ToString();
     }
 }

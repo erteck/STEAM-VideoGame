@@ -42,8 +42,9 @@ public class Tiempo : MonoBehaviour
             }
             else if(segundos < 0 && estaCopiando)
             {
-                verificarMatrices.RevisarMatrices();
                 estaCopiando = false;
+                estaCorriendo = false;
+                verificarMatrices.RevisarMatrices();
             }
             else
             {
@@ -56,25 +57,39 @@ public class Tiempo : MonoBehaviour
         }
     }
 
-    public void ResetearContador()
+    public void ResetearContador(bool reintentar)
     {
         AsignarTiempo();
         estaCorriendo = true;
+        if(reintentar)
+        {
+            estaCopiando = true;
+        }
     }
 
     public void AsignarTiempo()
     {
         if(GenerarMatriz.ronda == 1)
         {
-            tiempoRestante = 60;
+            tiempoRestante = 45;
         }
         else if(GenerarMatriz.ronda == 2)
         {
-            tiempoRestante = 45;
+            tiempoRestante = 25;
         }
         else if(GenerarMatriz.ronda == 3)
         {
-            tiempoRestante = 25;
+            tiempoRestante = 15;
         }
+    }
+
+    public void ResetearEstaCopiando()
+    {
+        estaCopiando = false;
+    }
+
+    public void ResetearEstaCorriendo()
+    {
+        estaCorriendo = false;
     }
 }

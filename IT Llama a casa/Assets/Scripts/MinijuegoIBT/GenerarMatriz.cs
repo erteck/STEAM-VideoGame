@@ -26,6 +26,8 @@ public class GenerarMatriz : MonoBehaviour
     public Sprite rojo;
     public Sprite amarillo;
     public Sprite verde;
+    public GameObject panelFinal;
+    public GameObject zonaJuego;
     public static Image[,] matriz;
     public static int ronda;
     private int probabilidadRojo;
@@ -84,14 +86,19 @@ public class GenerarMatriz : MonoBehaviour
         ronda++;
         if(ronda > 3)
         {
-            //Falta poner una pantalla final de juego con un botón Siguiente que cargue la escena del mapa
-            SceneManager.LoadScene("Mapa");
+            panelFinal.SetActive(true);
+            zonaJuego.SetActive(false);
         }
         else
         {
             AsignarColor();
             Tiempo.instance.textoMemoCop.text = "Memoriza";
         }
+    }
+
+    public void CargarEscena()
+    {
+        SceneManager.LoadScene("Mapa");
     }
 
     public void AsignarProbabilidad()

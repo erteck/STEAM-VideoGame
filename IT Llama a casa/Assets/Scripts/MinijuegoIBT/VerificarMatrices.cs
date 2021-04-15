@@ -60,5 +60,6 @@ public class VerificarMatrices : MonoBehaviour
         pantallaResultado.SetActive(false);
         puntaje.AsignarPuntosPresicion(counter);
         puntaje.AsignarPuntosTiempo(tiempo.tiempoRestante);
+        counter = 0;
     }
 }
