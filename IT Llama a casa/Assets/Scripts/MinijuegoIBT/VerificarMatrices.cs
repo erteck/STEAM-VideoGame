@@ -7,7 +7,15 @@ public class VerificarMatrices : MonoBehaviour
 {
     public GameObject pantallaResultado;
     public Text textoRes;
+    private Tiempo tiempo;
+    private Puntaje puntaje;
     private int counter;
+    
+    void Start()
+    {
+        tiempo = FindObjectOfType<Tiempo>();
+        puntaje = FindObjectOfType<Puntaje>();
+    }
     
     public void RevisarMatrices()
     {
@@ -37,12 +45,20 @@ public class VerificarMatrices : MonoBehaviour
         {
             textoRes.text = "Tienes " + counter.ToString() + " casillas correctas de 16\n ¿Deseas reintentarlo?";
         }
-        counter = 0;
     }
 
-    public void DesactivarResultado()
+    public void DesactivarResultadoReintentar()
     {
         Time.timeScale = 1;
         pantallaResultado.SetActive(false);
+        counter = 0;
+    }
+
+    public void DesactivarResultadoContinuar()
+    {
+        Time.timeScale = 1;
+        pantallaResultado.SetActive(false);
+        puntaje.AsignarPuntosPresicion(counter);
+        puntaje.AsignarPuntosTiempo(tiempo.tiempoRestante);
     }
 }

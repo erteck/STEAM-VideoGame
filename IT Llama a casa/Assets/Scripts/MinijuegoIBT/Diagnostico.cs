@@ -15,8 +15,14 @@ public class Diagnostico : MonoBehaviour
     public GameObject botDiag2;
     public GameObject botCont;
     public Text textoDiagnostico;
+    private Puntaje puntaje;
     private bool diagnostico;
     private bool diagnosticoJugador;
+
+    void Start()
+    {
+        puntaje = FindObjectOfType<Puntaje>();
+    }
 
     public void MostrarDiagnostico()
     {
@@ -63,12 +69,12 @@ public class Diagnostico : MonoBehaviour
         if(diagnosticoJugador == diagnostico)
         {
             textoDiagnostico.text = "¡Tu diagnóstico es correcto!";
-            //Se debe de sumar la puntuación del diagnóstico
+            puntaje.AsignarPuntosDiagnostico(100);
         }
         else
         {
             textoDiagnostico.text = "Tu diagnóstico es incorrecto :(";
-            //Se le suma la puntuación correspondiente
+            puntaje.AsignarPuntosDiagnostico(25);
         }
         botDiag1.SetActive(false);
         botDiag2.SetActive(false);

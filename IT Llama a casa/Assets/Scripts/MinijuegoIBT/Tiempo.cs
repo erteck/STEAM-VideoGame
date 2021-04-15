@@ -7,17 +7,20 @@ public class Tiempo : MonoBehaviour
 {
     public float tiempoRestante;
     private bool estaCorriendo = true;
+    private bool estaCopiando;
     public Text textoTiempo;
     public Text textoMemoCop;
     public GameObject matrizCopiar;
     public GameObject matrizJugador;
     public static Tiempo instance;
+    private VerificarMatrices verificarMatrices;
 
     void Start()
     {
         matrizJugador.SetActive(false);
         float segundos = Mathf.FloorToInt(tiempoRestante % 60);
         textoTiempo.text = segundos.ToString();
+        verificarMatrices = FindObjectOfType<VerificarMatrices>();
         AsignarTiempo();
     }
 
@@ -37,12 +40,18 @@ public class Tiempo : MonoBehaviour
                 textoTiempo.text = segundos.ToString();
                 tiempoRestante -= Time.deltaTime;
             }
+            else if(segundos < 0 && estaCopiando)
+            {
+                verificarMatrices.RevisarMatrices();
+                estaCopiando = false;
+            }
             else
             {
                 matrizJugador.SetActive(true);
                 matrizCopiar.SetActive(false);
-                estaCorriendo = false;
+                AsignarTiempo();
                 textoMemoCop.text = "Copia";
+                estaCopiando = true;
             }
         }
     }
