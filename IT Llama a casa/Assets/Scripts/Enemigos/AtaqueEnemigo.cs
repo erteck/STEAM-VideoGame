@@ -1,7 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+El enemigo ataca al jugador si entra en su rango de acción
+Autores: David Rodríguez Fragoso, Edna Jacqueline Zavala Ortega, 
+Erick Alberto Bustos Cruz, Erick Hernández Silva, Israel Sánchez Miranda
+*/
 public class AtaqueEnemigo : MonoBehaviour
 {
     private Rigidbody2D rb2d;             //Rigidbody del personaje, físicas
