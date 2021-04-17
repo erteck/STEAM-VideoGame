@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class VerificarMatrices : MonoBehaviour
 {
     public GameObject pantallaResultado;
+    public GameObject matrizMemorizar;
+    public GameObject matrizJugador;
     public Text textoRes;
     private Tiempo tiempo;
     private Puntaje puntaje;
@@ -52,6 +54,9 @@ public class VerificarMatrices : MonoBehaviour
         Time.timeScale = 1;
         pantallaResultado.SetActive(false);
         counter = 0;
+        matrizJugador.SetActive(false);
+        matrizMemorizar.SetActive(true);
+        tiempo.textoMemoCop.text = "Memoriza";
     }
 
     public void DesactivarResultadoContinuar()

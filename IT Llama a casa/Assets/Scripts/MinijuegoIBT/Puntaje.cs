@@ -8,16 +8,37 @@ public class Puntaje : MonoBehaviour
     public Text puntos;
     public Text puntosFinal;
     private float puntosTotal;
+    private Tiempo tiempo;
+
+    void Start()
+    {
+        tiempo = FindObjectOfType<Tiempo>();
+    }
 
     public void AsignarPuntosPresicion(int casillas)
     {
-        puntosTotal += (casillas * 160)/16;
+        if(tiempo.estaReintentando)
+        {
+            //Número limitado de reintentos
+            puntosTotal += casillas * 5;
+        }
+        else
+        {
+            puntosTotal += casillas * 10;
+        }
     }
 
-    public void AsignarPuntosTiempo(float tiempo)
+    public void AsignarPuntosTiempo(float tiempoPuntos)
     {
-        tiempo = Mathf.Floor(tiempo);
-        puntosTotal += tiempo * 10;
+        tiempoPuntos = Mathf.Floor(tiempoPuntos);
+        if(tiempo.estaReintentando)
+        {
+            puntosTotal += tiempoPuntos * 5;
+        }
+        else
+        {
+            puntosTotal += tiempoPuntos * 10;
+        }
     }
 
     public void AsignarPuntosDiagnostico(int puntaje)
