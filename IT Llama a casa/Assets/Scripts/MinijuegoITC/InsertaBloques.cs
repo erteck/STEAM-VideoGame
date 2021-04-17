@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Mime;
@@ -12,11 +13,11 @@ using UnityEngine.UI;
  */
 public class InsertaBloques : MonoBehaviour
 {
-    // Bloque que se va a instanciar
+    // Bloque que se va a crear (Prefabs diferentes para cada tipo de instrucción)
     public GameObject bloque;
-    // Padre al que se va asignar el nuevo objeto
+    // Referencia al panel donde se van a agregar los bloques de código
     public GameObject parent;
-    // Número asignado a la línea de código
+    // Número que se le va a asignar a la línea de código
     public static int numBloque = 0;
     // Referencia al botón necesaria para extraer texto de los campos inputfield
     public GameObject boton;
@@ -25,6 +26,9 @@ public class InsertaBloques : MonoBehaviour
     
     // Texto ingresado en botón
     private Text textoBoton;
+    
+    // Referencia a la ventana de error en caso se input no válido
+    public GameObject ventanaError;
     
     public void AgregarBloque()
     {
@@ -41,32 +45,44 @@ public class InsertaBloques : MonoBehaviour
             // Extraer texto botón
             textoBoton = boton.GetComponentsInChildren<Text>()[2];
             
-            //  Copiar Número
-            bloqueClon.GetComponentsInChildren<Text>()[2].text = textoBoton.text;
             
-            if (boton.CompareTag("Avanzar"))
+            if (String.Equals(textoBoton.text,"") | int.Parse(textoBoton.text) < 0)
             {
-                instruccion.Add(1);
-            } 
-            else if (boton.CompareTag("Frenar"))
+                //Desplegar panel con error
+                Destroy(bloqueClon);
+                ventanaError.gameObject.SetActive(true);
+            }
+            else
             {
-                instruccion.Add(2);
+                //  Copiar Número
+                bloqueClon.GetComponentsInChildren<Text>()[2].text = textoBoton.text;
+            
+                if (boton.CompareTag("Avanzar"))
+                {
+                    instruccion.Add(1);
+                } 
+                else if (boton.CompareTag("Frenar"))
+                {
+                    instruccion.Add(2);
+                }
+            
+                instruccion.Add(int.Parse(textoBoton.text));
+                EjecutarCodigo.instrucciones.Add(instruccion);
             }
             
-            instruccion.Add(int.Parse(textoBoton.text));
-            
             // Eliminar número ingresado en botón
-            boton.GetComponentInChildren<InputField>().text = "";
+            boton.GetComponentInChildren<UnityEngine.UI.InputField>().text = "0";
         }
         else if (boton.CompareTag("Izquierda"))
         {
             instruccion.Add(3);
+            EjecutarCodigo.instrucciones.Add(instruccion);
         }
         else if (boton.CompareTag("Derecha"))
         {
             instruccion.Add(4);
+            EjecutarCodigo.instrucciones.Add(instruccion);
         }
         
-        EjecutarCodigo.instrucciones.Add(instruccion);
     }
 }
