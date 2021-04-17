@@ -23,6 +23,9 @@ public class EjecutarCodigo : MonoBehaviour
     //Variable de tiempo para instrucciones que tienen un inputfield
     public static int tiempo;
     
+    //Referencia al botón de reinicio
+    public GameObject botonReinicio;
+    
     // Función asignada a botón Play
     public void ejecutaCodigo()
     {
@@ -30,11 +33,10 @@ public class EjecutarCodigo : MonoBehaviour
         //de animaciones
         StartCoroutine(Waiter());
         // Se crea un nuevo vector
-        instrucciones =  new List<List<int>>();
-
-
+        //instrucciones =  new List<List<int>>();
+        
     }
-    
+
     //Corrutina que hace la lectura de las instrucciones y las pausas
     private IEnumerator Waiter()
     {
@@ -75,6 +77,11 @@ public class EjecutarCodigo : MonoBehaviour
             
             
             MoverPersonaje.readyNextInstruction = false;
+        }
+        // Si no se completó el nivel, despliega el botón de reinicio
+        if (!Nave.minijuegoCompletado)
+        {
+            botonReinicio.gameObject.SetActive(true);
         }
     }
     

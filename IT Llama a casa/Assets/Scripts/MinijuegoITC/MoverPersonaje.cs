@@ -75,7 +75,7 @@ public class MoverPersonaje : MonoBehaviour
     }
 
     // Rutina que cuenta el tiempo que deben ejecutarse las instrucciones avanzar y parar
-    // y al terminar frena su ejecución y permite ejecutar una nueva intrucción
+    // y al terminar, frena su ejecución y permite ejecutar una nueva intrucción
     private IEnumerator Espera(int tiempo)
     {
         yield return new WaitForSeconds(tiempo);
@@ -86,7 +86,7 @@ public class MoverPersonaje : MonoBehaviour
     }
     
     // Rutina que cuenta el tiempo que deben ejecutarse las instrucciones relacionadas con girar
-    // y al terminar frena su ejecución y permite ejecutar una nueva intrucción
+    // y al terminar, frena su ejecución y permite ejecutar una nueva intrucción
     private IEnumerator EsperaRotacion()
     {
         yield return new WaitForSeconds(2f);

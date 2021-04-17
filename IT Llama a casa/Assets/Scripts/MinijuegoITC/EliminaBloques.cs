@@ -13,8 +13,11 @@ public class EliminaBloques : MonoBehaviour
     {
         if (InsertaBloques.numBloque > 0)
         {
+            // Destruye el gameobject de la última línea de código agregada
             Destroy(contenedorBloques.transform.GetChild(contenedorBloques.transform.childCount - 1).gameObject);
             InsertaBloques.numBloque -= 1;
+            // Se elimina la instrucción del arreglo que guarda las instrucciones
+            EjecutarCodigo.instrucciones.RemoveAt(EjecutarCodigo.instrucciones.Count - 1);
         }
         
     }
