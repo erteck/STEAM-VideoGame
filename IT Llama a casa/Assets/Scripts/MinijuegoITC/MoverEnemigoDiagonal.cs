@@ -3,15 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
-    *Permite movilizar en el eje y al personaje 
+    *Permite movilizar diaognalmente al enemigo 
     *Sin necesidad de ser controlado
     *Autor: David Rodriguez, Erick Bustos
 */
 
-public class MoverEnemigo : MonoBehaviour
+public class MoverEnemigoDiagonal : MonoBehaviour
 {
     //VARIABLES
-    public float maxVelocidadY = -5;  //Movimiento Horizontal
+    public float maxVelocidadY = -5;  //Movimiento Vertical
+    public float maxVelocidadX = -5;  //Movimiento Horizontal
+
+    public float xInicial;
+
+    public float xFinal;
+    
+
+
+    
     private Rigidbody2D rigidbody;  //Para fisica
 
     //METODOS
@@ -26,20 +35,22 @@ public class MoverEnemigo : MonoBehaviour
     // Update is called once per frame (frecuentemente 60 veces/seg)
     void Update()
     {
-        if (transform.position.y <= -4.35)
+        if (transform.position.x <= xFinal)
         {
             //Desplaza al personaje en el eje -y
             maxVelocidadY = 5;
+            maxVelocidadX = 5;
 
             
-        }else if(transform.position.y >= 4.54)
+        }else if(transform.position.x >= xInicial)
         {
             //Desplaza al personaje en el eje y
             maxVelocidadY = -5;
+            maxVelocidadX = -5;
 
         }
         
-        rigidbody.velocity = new Vector2(0, maxVelocidadY);
+        rigidbody.velocity = new Vector2(maxVelocidadX, maxVelocidadY);
 
     }
 }

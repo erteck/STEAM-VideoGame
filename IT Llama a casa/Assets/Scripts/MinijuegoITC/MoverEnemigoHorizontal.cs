@@ -8,11 +8,14 @@ using UnityEngine;
     *Autor: David Rodriguez, Erick Bustos
 */
 
-public class MoverEnemigo : MonoBehaviour
+public class MoverEnemigoHorizontal : MonoBehaviour
 {
     //VARIABLES
-    public float maxVelocidadY = -5;  //Movimiento Horizontal
+    public float maxVelocidadX = 5;  //Movimiento Horizontal
     private Rigidbody2D rigidbody;  //Para fisica
+
+    //public float xInicial;
+    //public float xFinal;
 
     //METODOS
     
@@ -26,20 +29,22 @@ public class MoverEnemigo : MonoBehaviour
     // Update is called once per frame (frecuentemente 60 veces/seg)
     void Update()
     {
-        if (transform.position.y <= -4.35)
+        if (transform.position.x <= -6.54)
         {
             //Desplaza al personaje en el eje -y
-            maxVelocidadY = 5;
+            maxVelocidadX = 5;
+            GetComponent<SpriteRenderer>().flipX=false;
 
             
-        }else if(transform.position.y >= 4.54)
+        }else if(transform.position.x >= 1.59)
         {
             //Desplaza al personaje en el eje y
-            maxVelocidadY = -5;
+            maxVelocidadX = -5;
+            GetComponent<SpriteRenderer>().flipX=true;
 
         }
         
-        rigidbody.velocity = new Vector2(0, maxVelocidadY);
+        rigidbody.velocity = new Vector2(maxVelocidadX, 0);
 
     }
 }
