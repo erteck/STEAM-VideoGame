@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7923032826567299626}
   m_Layer: 0
   m_Name: asteroid
-  m_TagString: Untagged
+  m_TagString: Enemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,6 +125,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxVelocidadY: -5
   maxVelocidadX: -5
+  xInicial: 0
+  xFinal: 0
 --- !u!50 &7923032826567299626
 Rigidbody2D:
   serializedVersion: 4

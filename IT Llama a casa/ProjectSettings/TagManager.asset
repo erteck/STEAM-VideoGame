@@ -11,6 +11,9 @@ TagManager:
   - Izquierda
   - Derecha
   - Destino
+  - Autopilot
+  - ManaSprite
+  - Enemigo
   layers:
   - Default
   - TransparentFX

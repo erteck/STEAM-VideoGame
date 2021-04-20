@@ -74,8 +74,16 @@ public class EjecutarCodigo : MonoBehaviour
                 estoyGirandoDerecha = true;
                 yield return new WaitUntil(() => MoverPersonaje.readyNextInstruction);
             }
+
+            if (Nave.jugadormurio)
+            {
+                Debug.Log("IF MURIO");
+                MoverPersonaje.readyNextInstruction = false;
+                yield break;
+
+            }
             
-            
+            Debug.Log("ITERACION");
             MoverPersonaje.readyNextInstruction = false;
         }
         // Si no se completó el nivel, despliega el botón de reinicio

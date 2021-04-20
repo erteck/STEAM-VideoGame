@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 430028384354183964}
   - component: {fileID: 2123892317530913353}
   m_Layer: 0
-  m_Name: BlackHole2
-  m_TagString: Untagged
+  m_Name: BlackHole
+  m_TagString: Enemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
