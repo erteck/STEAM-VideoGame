@@ -34,11 +34,11 @@ public class movimientoShieldDroid : MonoBehaviour
         //si está dentro del rango sobreescribiremos el destino
         if(distancia<radioVision){
             destino = jugador.transform.position;
-            print("Jugador en rango de vision");
+            //print("Jugador en rango de vision");
         }
         else{
             destino = posicionInicial;
-            print("Jugador fuera de rango de vision");
+            //print("Jugador fuera de rango de vision");
         }
         //Obtenemos una velocidad corregida usando el tiempo entre frames
         float velocidadCorregida = velocidad * Time.deltaTime;

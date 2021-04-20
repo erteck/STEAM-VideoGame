@@ -29,14 +29,14 @@ public class MovimientoPJ : MonoBehaviour
         float movHorizontal = Input.GetAxis("Horizontal");    //Guarda los inputs del movimiento horizontal en una variable
         rb2d.velocity = new Vector2(movHorizontal * maxVelocidadX, rb2d.velocity.y);    //Se cambia la velocidad del personaje
         maxVelocidadYNegativa = Mathf.Clamp(rb2d.velocity.y,-10.1f,10.1f);
+
         //Movimiento vertical:
-        float movVertical = Input.GetAxis("Vertical");
-        if(movVertical > 0 && PruebaPiso.estaEnPiso)  //Se evita el doble salto con la segunda condición
+        if(Input.GetButtonDown("Jump") && PruebaPiso.estaEnPiso)
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, maxVelocidadY);
         }
         //Si la velocidad es negativa (caer) no puede superar el límite de -10.1
-        if(rb2d.velocity.y<0){
+        if(rb2d.velocity.y < 0){
             rb2d.velocity = new Vector2(rb2d.velocity.x,maxVelocidadYNegativa);
         }
     }
