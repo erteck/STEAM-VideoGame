@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class VerificarMatrices : MonoBehaviour
 {
     public GameObject pantallaResultado;
-    public GameObject matrizMemorizar;
-    public GameObject matrizJugador;
+    // public GameObject matrizMemorizar;
+    public GameObject celdaMatrizMemorizar;
+    // public GameObject matrizJugador;
+    public GameObject celdaMatrizJugador;
     public Text textoRes;
     private Tiempo tiempo;
     private Puntaje puntaje;
@@ -54,8 +56,10 @@ public class VerificarMatrices : MonoBehaviour
         Time.timeScale = 1;
         pantallaResultado.SetActive(false);
         counter = 0;
-        matrizJugador.SetActive(false);
-        matrizMemorizar.SetActive(true);
+        //matrizJugador.SetActive(false);
+        celdaMatrizJugador.SetActive(false);
+        //matrizMemorizar.SetActive(true);
+        celdaMatrizMemorizar.SetActive(true);
         tiempo.textoMemoCop.text = "Memoriza";
     }
 
@@ -63,7 +67,7 @@ public class VerificarMatrices : MonoBehaviour
     {
         Time.timeScale = 1;
         pantallaResultado.SetActive(false);
-        puntaje.AsignarPuntosPresicion(counter);
+        puntaje.AsignarPuntosPrecision(counter);
         puntaje.AsignarPuntosTiempo(tiempo.tiempoRestante);
         counter = 0;
     }

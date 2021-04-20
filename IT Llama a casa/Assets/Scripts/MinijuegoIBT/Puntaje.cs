@@ -15,7 +15,7 @@ public class Puntaje : MonoBehaviour
         tiempo = FindObjectOfType<Tiempo>();
     }
 
-    public void AsignarPuntosPresicion(int casillas)
+    public void AsignarPuntosPrecision(int casillas)
     {
         if(tiempo.estaReintentando)
         {
@@ -48,6 +48,7 @@ public class Puntaje : MonoBehaviour
 
     public void GrabarPuntos()
     {
+        print(puntosTotal);
         puntos.text = puntosTotal.ToString();
         puntosFinal.text = puntosTotal.ToString();
     }

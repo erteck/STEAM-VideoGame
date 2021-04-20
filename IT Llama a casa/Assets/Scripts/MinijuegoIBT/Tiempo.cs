@@ -21,6 +21,7 @@ public class Tiempo : MonoBehaviour
     {
         AsignarTiempo();
         matrizJugador.SetActive(false);
+        
         float segundos = Mathf.FloorToInt(tiempoRestante % 60);
         verificarMatrices = FindObjectOfType<VerificarMatrices>();
     }
