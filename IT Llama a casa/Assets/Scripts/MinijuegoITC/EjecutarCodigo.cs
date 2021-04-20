@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
+using UnityEngine.UI;
 using Vector3 = UnityEngine.Vector3;
 /*
  * Lee las instrucciones introducidas por el usuario y le indica al script MoverPersonaje
@@ -14,30 +15,45 @@ public class EjecutarCodigo : MonoBehaviour
     // Arreglo con las intrucciones
     public static List<List<int>> instrucciones = new List<List<int>>(); 
     
-    //Variables que permiten a MoverPersonaje.cs determinar qué tipo de movimiento se está llevando a cabo
+    // Variables que permiten a MoverPersonaje.cs determinar qué tipo de movimiento se está llevando a cabo
     public static Boolean estoyAvanzando = false;
     public static Boolean estoyEsperando = false;
     public static Boolean estoyGirandoIzquierda = false;
     public static Boolean estoyGirandoDerecha = false;
     
-    //Variable de tiempo para instrucciones que tienen un inputfield
+    // Variable de tiempo para instrucciones que tienen un inputfield
     public static int tiempo;
     
-    //Referencia al botón de reinicio
+    // Referencia a la nave.
+    public GameObject nave;
+    
+    // Referencia al botón de reinicio
     public GameObject botonReinicio;
+    
+    // Referencia al botón de eliminar línea de código
+    public Button botoneliminar;
+    
+    // Referencia al botón Play
+    public Button botonplay;
+    
     
     // Función asignada a botón Play
     public void ejecutaCodigo()
     {
-        // Se utiliza una corrutina para pausar la lectura del vector entre la ejecución
-        //de animaciones
-        StartCoroutine(Waiter());
-        // Se crea un nuevo vector
-        //instrucciones =  new List<List<int>>();
+        if (InsertaBloques.numBloque > 0)
+        {
+            // Se utiliza una corrutina para pausar la lectura del vector entre la ejecución
+            //de animaciones
+            StartCoroutine(Waiter());
         
+            // Desactivamos la interactividad de los botones
+            botoneliminar.interactable = false;
+            botonplay.interactable = false;
+        }
+
     }
 
-    //Corrutina que hace la lectura de las instrucciones y las pausas
+    //Corrutina que hace la lectura de las instrucciones y las pausas entre animaciones
     private IEnumerator Waiter()
     {
         foreach (var bloque in instrucciones)
@@ -78,7 +94,11 @@ public class EjecutarCodigo : MonoBehaviour
             if (Nave.jugadormurio)
             {
                 Debug.Log("IF MURIO");
+                
                 MoverPersonaje.readyNextInstruction = false;
+                // Reactivar botones
+                botoneliminar.interactable = true;
+                botonplay.interactable = true;
                 yield break;
 
             }
@@ -87,10 +107,13 @@ public class EjecutarCodigo : MonoBehaviour
             MoverPersonaje.readyNextInstruction = false;
         }
         // Si no se completó el nivel, despliega el botón de reinicio
-        if (!Nave.minijuegoCompletado)
+        if (!Nave.minijuegoCompletado & !(nave.transform.position.x == -8.48))
         {
             botonReinicio.gameObject.SetActive(true);
         }
+        // Reactivar botónes
+        botoneliminar.interactable = true;
+        botonplay.interactable = true;
     }
     
 }
