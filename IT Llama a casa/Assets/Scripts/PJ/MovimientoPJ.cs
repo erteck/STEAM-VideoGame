@@ -31,13 +31,19 @@ public class MovimientoPJ : MonoBehaviour
         maxVelocidadYNegativa = Mathf.Clamp(rb2d.velocity.y,-10.1f,10.1f);
 
         //Movimiento vertical:
-        if(Input.GetButtonDown("Jump") && PruebaPiso.estaEnPiso)
+        if(Input.GetButtonDown("Vertical") && PruebaPiso.estaEnPiso)
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, maxVelocidadY);
         }
+
         //Si la velocidad es negativa (caer) no puede superar el límite de -10.1
         if(rb2d.velocity.y < 0){
             rb2d.velocity = new Vector2(rb2d.velocity.x,maxVelocidadYNegativa);
+        }
+
+        if(Input.GetButtonDown("Vertical") && !PruebaPiso.estaEnPiso)  //Si el jugador está en el aire y presiona la flecha hacia abajo
+        {
+            rb2d.velocity = new Vector2(rb2d.velocity.x, maxVelocidadY * -1); //Su velocidad negativa aumenta
         }
     }
 }
