@@ -52,43 +52,39 @@ public class InteractuarPersonaje : MonoBehaviour
     public void SiguienteDialogo()
     {
         //Función que se asocia al botón de siguiente en la caja de diálogo, se encargará de pasar al siguiente diálogo o de cargar la escena del minijuego
-        if(gameObject.CompareTag("Biotecnologa"))
+        contadorDialogo++;
+        //Dependiendo del contador del diálogo se desplegarán los diferentes diálogos para el personaje
+        if(contadorDialogo == 2)
         {
-            contadorDialogo++;
-            //Dependiendo del contador del diálogo se desplegarán los diferentes diálogos para el personaje
-            if(contadorDialogo == 2)
-            {
-                textoDialogo.text = "Estaba haciendo una investigación de campo en este desierto cuando sentí un piquete en mi cuello, unas horas después me empecé a sentir mal y terminé cayendo en este hoyo";
-            }
-            else if(contadorDialogo == 3)
-            {
-                textoDialogo.text = "Creo que me picó un mosquito infectado con malaria, necesito que me hagas un favor, ¿Podrías analizar una muestra de mi sangre y decirme cuál es mi estado? estoy muy débil para hacerlo yo misma";
-            }
-            else if(contadorDialogo == 4)
-            {
-                textoDialogo.text = "Te prometo que si me ayudas te daré algo a cambio ¿Qué dices?";
-            }
-            else if(contadorDialogo == 6)
-            {
-                contadorDialogo = 1;
-                Time.timeScale = 1;
-                SceneManager.LoadScene("MinijuegoIBT"); //Cuando el contadro sea 5 se dirigirá al minijuego de IBT para el caso de la Biotecnología
-            }
-            else if(contadorDialogo == 7)
-            {
-                contadorDialogo = 1;
-                textoDialogo.text = "¿Huh? ¿Hay alguien ahí?\nEs un milagro, jamás creí que alguien me encontraría\nMe presento, soy Bia la biotecnóloga";
-                Time.timeScale = 1;
-                dialogo.SetActive(false);
-            }
-            else
-            {
-                contadorDialogo = 1;
-                dialogo.SetActive(false);
-                textoDialogo.text = "¿Huh? ¿Hay alguien ahí?\nEs un milagro, jamás creí que alguien me encontraría\nMe presento, soy Bia la biotecnóloga";
-                textoPanelAyudar.text = "¿Quieres ayudar a Bia?";
-                panelAyudar.SetActive(true);
-            }
+            textoDialogo.text = "Estaba haciendo una investigación de campo en este desierto cuando sentí un piquete en mi cuello, unas horas después me empecé a sentir mal y terminé cayendo en este hoyo";
+        }
+        else if(contadorDialogo == 3)
+        {
+            textoDialogo.text = "Creo que me picó un mosquito infectado con malaria, necesito que me hagas un favor, ¿Podrías analizar una muestra de mi sangre y decirme cuál es mi estado? estoy muy débil para hacerlo yo misma";
+        }
+        else if(contadorDialogo == 4)
+        {
+            textoDialogo.text = "Te prometo que si me ayudas te daré algo a cambio ¿Qué dices?";
+        }
+        else if(contadorDialogo == 6)
+        {
+            contadorDialogo = 1;
+            Time.timeScale = 1;
+            SceneManager.LoadScene("MinijuegoIBT"); //Cuando el contadro sea 5 se dirigirá al minijuego de IBT para el caso de la Biotecnología
+        }
+        else if(contadorDialogo == 7)
+        {
+            contadorDialogo = 1;
+            textoDialogo.text = "¿Huh? ¿Hay alguien ahí?\nEs un milagro, jamás creí que alguien me encontraría\nMe presento, soy Bia la biotecnóloga";
+            Time.timeScale = 1;
+            dialogo.SetActive(false);
+        }
+        else
+        {
+            contadorDialogo = 1;
+            textoDialogo.text = "¿Huh? ¿Hay alguien ahí?\nEs un milagro, jamás creí que alguien me encontraría\nMe presento, soy Bia la biotecnóloga";
+            textoPanelAyudar.text = "¿Quieres ayudar a Bia?";
+            panelAyudar.SetActive(true);
         }
     }
 
@@ -96,24 +92,22 @@ public class InteractuarPersonaje : MonoBehaviour
     {
         //Función que va asociada al botón que se tenga que presionar para ayudar al personaje
         //Se desactiva el panel de ayuda y el diálogo del personaje cambia 
-        panelAyudar.SetActive(false);
-        contadorDialogo = 5;
-        dialogo.SetActive(true);
-        if(gameObject.CompareTag("Biotecnologa"))
-        {
-            textoDialogo.text = "¡Muchas gracias!\nTe prometo que no te arrepentirás";
-        }
+       if(dialogo.activeSelf)
+       {
+           panelAyudar.SetActive(false);
+           contadorDialogo = 5;
+           textoDialogo.text = "¡Muchas gracias!\nTe prometo que no te arrepentirás";
+       }
     }
 
     public void NoAyudar()
     {
         //Función que va asociada al botón que se tenga que presionar para no ayudar al personaje
         //Se desactiva el panel de ayuda y el diálogo del personaje cambia 
-        panelAyudar.SetActive(false);
-        contadorDialogo = 6;
-        dialogo.SetActive(true);
-        if(gameObject.CompareTag("Biotecnologa"))
+        if(dialogo.activeSelf)
         {
+            panelAyudar.SetActive(false);
+            contadorDialogo = 6;
             textoDialogo.text = "Oh...\nComprendo, supongo que tendré que ingeniármelas yo misma\nQué cruel eres...";
         }
     }
