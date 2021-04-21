@@ -14,6 +14,7 @@ TagManager:
   - Autopilot
   - ManaSprite
   - Enemigo
+  - Biotecnologa
   layers:
   - Default
   - TransparentFX
