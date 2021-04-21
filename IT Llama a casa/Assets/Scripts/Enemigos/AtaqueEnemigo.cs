@@ -46,7 +46,7 @@ public class AtaqueEnemigo : MonoBehaviour
         //Cambia la animación si el jugador está en rango
             anim.SetBool("JugadorEnRango",JugadorEnRango.estaEnRango);
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         //Función que se ejecuta en cuanto el personaje hace contacto con otro Collider, indicando que está en el piso
         if(other.gameObject.tag == "Player")   //Si el Collider no es de una pieza entonces el personaje está en el piso
