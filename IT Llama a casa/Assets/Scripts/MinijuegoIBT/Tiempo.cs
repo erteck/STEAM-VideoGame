@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Tiempo : MonoBehaviour
 {
     public float tiempoRestante;
-    private int tiempoTotal = 30; // DUDA
+    private int tiempoTotal; // DUDA
     private bool estaCorriendo = true;
     private bool estaCopiando;
     public bool estaReintentando;

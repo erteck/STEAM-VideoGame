@@ -30,7 +30,7 @@ public class GenerarMatriz : MonoBehaviour
     public GameObject zonaJuego;
     public Text textoRonda;
     public static Image[,] matriz;
-    public static int ronda;
+    public static int ronda = 1;
     private int probabilidadRojo;
     private int probabilidadAmarillo;
     private int probabilidadVerde;
@@ -41,7 +41,7 @@ public class GenerarMatriz : MonoBehaviour
     void Start()
     {
         //Debe de haber una pantalla de inicio y este método debe de estar en un botón
-        ronda = 1;
+        //ronda = 1;
         textoRonda.text = ronda.ToString();
         matriz = new Image[,]{{bloque1, bloque2, bloque3, bloque4}, {bloque5, bloque6, bloque7, bloque8}, {bloque9, bloque10, bloque11, bloque12}, {bloque13, bloque14, bloque15, bloque16}};
         AsignarColor();

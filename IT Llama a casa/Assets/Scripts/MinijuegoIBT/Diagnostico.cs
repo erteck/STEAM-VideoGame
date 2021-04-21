@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+* Gestiona los aspectos relacionados con el diagnóstico del
+* microarreglo tales como la asignación interna, la selección
+* del jugador
+*/
+
 public class Diagnostico : MonoBehaviour
 {
-    //public GameObject matrizJugador;
     public GameObject celdaMatrizJugador;
-    //public GameObject matrizCopiar;
     public GameObject celdaMatrizCopiar;
     public GameObject panelTiempo;
     public GameObject botonVerificar;
@@ -28,9 +32,7 @@ public class Diagnostico : MonoBehaviour
 
     public void MostrarDiagnostico()
     {
-        //matrizJugador.SetActive(false);
         celdaMatrizJugador.SetActive(false);
-        //matrizCopiar.SetActive(true);
         celdaMatrizCopiar.SetActive(true);
         panelTiempo.SetActive(false);
         botonVerificar.SetActive(false);
