@@ -4,10 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+/*
+Código que le otorga todas sus funciones a la matriz a copiar y sirve como esqueleto del juego
+Autores: Jacqueline Zavala e Israel Sánchez
+*/
+
 public class GenerarMatriz : MonoBehaviour
 {
     //VARIABLES
-    public Image bloque1;
+    public Image bloque1;              //Imágenes que representan cada celda del microarreglo            
     public Image bloque2;
     public Image bloque3;
     public Image bloque4;
@@ -23,55 +28,57 @@ public class GenerarMatriz : MonoBehaviour
     public Image bloque14;
     public Image bloque15;
     public Image bloque16;
-    public Sprite rojo;
+    public Sprite rojo;                //Sprites que modificarán la imagen de cada celda de la matriz
     public Sprite amarillo;
     public Sprite verde;
-    public GameObject panelFinal;
-    public GameObject zonaJuego;
-    public Text textoRonda;
-    public static Image[,] matriz;
-    public static int ronda = 1;
-    private int probabilidadRojo;
-    private int probabilidadAmarillo;
-    private int probabilidadVerde;
-    public static int diagRojo;
-    public static int diagAmarillo;
-    public static int diagVerde;
+    public GameObject panelFinal;      //Game Object que hace referencia al panel del final del juego
+    public GameObject zonaJuego;       //Game Object que hace referencia a toda la zona del juego
+    public Text textoRonda;            //Texto que indica en que ronda se encuentra el juego
+    public static Image[,] matriz;     //Matriz de imágenes que representa la matriz a copiar
+    public static int ronda = 1;       //Ronda actual del juego
+    private int probabilidadRojo;      //Variable que indica la probabilidad de que aparezca una celda de color rojo
+    private int probabilidadAmarillo;  //Variable que indica la probabilidad de que aparezca una celda de color amarillo
+    private int probabilidadVerde;     //Variable que indica la probabilidad de que aparezca una celda de color verde
+    public static int diagRojo;        //Variable que indica la cantidad de celdas rojas que hay, se asocia con el diagnóstico real
+    public static int diagVerde;       //Variable que indica la cantidad de celdas verdes que hay, se asocia con el diagnóstico real
 
+    //MÉTODOS
     void Start()
     {
+        //Función que se ejecuta antes del primer frame
         //Debe de haber una pantalla de inicio y este método debe de estar en un botón
-        //ronda = 1;
-        textoRonda.text = ronda.ToString();
+        textoRonda.text = ronda.ToString();  //Se le indica al jugador de la ronda en la que está
+        //Se crea una nueva matriz de imágenes con las imágenes del microarreglo
         matriz = new Image[,]{{bloque1, bloque2, bloque3, bloque4}, {bloque5, bloque6, bloque7, bloque8}, {bloque9, bloque10, bloque11, bloque12}, {bloque13, bloque14, bloque15, bloque16}};
-        AsignarColor();
+        AsignarColor();  //Se manda a llamar a la función asignar color
     }
 
-    // Update is called once per frame
     private void AsignarColor()
     {
-        System.Random random = new System.Random();
-        AsignarProbabilidad();
-        diagRojo = 0;
-        diagAmarillo = 0;
+        //Función que le asigna un color a cada imagen del microarreglo
+        System.Random random = new System.Random();  //Se crea una instancia de la liberría Random
+        AsignarProbabilidad();  //Se manda a llamar a asignar probabilidad 
+        diagRojo = 0;  //Se inicializan los valores de ambos diagnósticos
         diagVerde = 0;
-        for(int i = 0; i < 4; i++)
-        {
-            for(int j = 0; j < 4; j++)
+        for(int i = 0; i < 4; i++)  //Se inicia el ciclo para recorrer las filas de la matriz
+        {   
+            for(int j = 0; j < 4; j++)  //Se inicia el ciclo para recorrer las columnas de la matriz
             {
-                int num = random.Next(101);
-                if(num <= probabilidadRojo)
+                int num = random.Next(101);  //Se esocge un número random entre 0 y 100
+                if(num <= probabilidadRojo)  //Si el número cae entre las probabilidades del color rojo
                 {
+                    //La source image de la imagen en esa celda cambia a rojo y se le suma un uno al diagnóstico rojo
                     matriz[i, j].sprite = rojo;
                     diagRojo++;
                 }
-                else if(probabilidadRojo < num && num <= probabilidadAmarillo)
+                else if(probabilidadRojo < num && num <= probabilidadAmarillo)  //Si el número cae entre las posibilidades del color amarillo
                 {
+                    //La source image de la imagen en esa celda cambia a amarillo
                     matriz[i, j].sprite = amarillo;
-                    diagAmarillo++;
                 }
-                else if(probabilidadAmarillo < num && num <= probabilidadVerde)
+                else if(probabilidadAmarillo < num && num <= probabilidadVerde)  //Finalmente, si el número cae entre las posibilidades del color verde
                 {
+                    //La source image de la imagen en esa celda cambia a verde y se le suma un uno al diagnóstico verde
                     matriz[i, j].sprite = verde;
                     diagVerde++;
                 }
@@ -79,50 +86,60 @@ public class GenerarMatriz : MonoBehaviour
         }
         if(diagRojo == diagVerde)
         {
+            //Si hay un mismo número de celdas verdes que rojas se vuelve a llamar al método
             AsignarColor();
         }
     }
 
     public void CambiarRonda()
     {
-        ronda++;
-        textoRonda.text = ronda.ToString();
+        //Función que se encarga de cambiar la ronda en la que el juego se encuentra, va asociada a un botón
+        ronda++;  //Se le suma un uno a la ronda
+        textoRonda.text = ronda.ToString();  //Se cambia el texto de la ronda
         if(ronda > 3)
         {
+            //Si ya es la ronda final se tendrá que mostrar el panel final del juego
+            ronda = 1;  //Se reseta la ronda
             panelFinal.SetActive(true);
             zonaJuego.SetActive(false);
         }
         else
         {
+            //De lo contrario se vuelve a asignar un color a cada celda de la matriz a copiar
             AsignarColor();
-            Tiempo.instance.textoMemoCop.text = "Memoriza";
+            Tiempo.instance.textoMemoCop.text = "Memoriza";  //Se "resetea" el texto del tiempo
         }
     }
 
     public void CargarEscena()
     {
+        //Función que carga la escena del mapa, se asocia a un botón, se debe de ejecutar cuando el minijuego acaba
         SceneManager.LoadScene("Mapa");
     }
 
     public void AsignarProbabilidad()
     {
+        //Función que asigna una probabilidad a cada color dependiendo de la ronda
         if(ronda == 1)
         {
-            probabilidadRojo = 45;
-            probabilidadAmarillo = -1;
-            probabilidadVerde = 100;
+            //Si es la primer ronda las probabilidades serán las siguientes:
+            probabilidadRojo = 45;      //El color rojo tendrá 45% de probabilidades de salir
+            probabilidadAmarillo = -1;  //El amarillo tendrá 0% de probabilidades de salir
+            probabilidadVerde = 100;    //El verde tendrá 55% de probabilidades de salir
         }
         else if(ronda == 2)
         {
-            probabilidadRojo = 20;
-            probabilidadAmarillo = 40;
-            probabilidadVerde = 100;
+            //Si es la segunda ronda:
+            probabilidadRojo = 20;      //El rojo tendrá 20% de probabilidades
+            probabilidadAmarillo = 40;  //El amarillo 20% de probabilidades
+            probabilidadVerde = 100;    //El verde 60% de probabilidades
         }
         else if(ronda == 3)
         {
-            probabilidadRojo = 30;
-            probabilidadAmarillo = 60;
-            probabilidadVerde = 100;
+            //Si es la tercera ronda
+            probabilidadRojo = 30;      //El rojo tendrá 30% de probabilidades
+            probabilidadAmarillo = 60;  //El amarillo tendrá 30% de probabilidades
+            probabilidadVerde = 100;    //El verde tendrá 40% de probabilidades
         }
     }
 }
