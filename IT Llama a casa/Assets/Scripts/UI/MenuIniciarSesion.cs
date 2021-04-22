@@ -33,10 +33,16 @@ public class MenuIniciarSesion : MonoBehaviour
         forma.AddField("datosJSON", JsonUtility.ToJson(datos));
         UnityWebRequest request = UnityWebRequest.Post("http://localhost:8080/jugador/iniciarSesion",forma);
         yield return request.SendWebRequest(); //Regresa, ejecuta y espera....
-        if (request.downloadHandler.text == "success"){// 200
+        if (request.downloadHandler.text != "failed"){// 200
+            var datos = request.downloadHandler.text;
+            Dictionary<string, string> datosJugador = 
+                JsonConvert.DeserializeObject<Dictionary<string, string>>(datos);
+            DatosUsuario.username = datosJugador["username"];
+            DatosUsuario.correo = datosJugador["correo"];
+            DatosUsuario.idPartida = Int32.Parse(datosJugador["idPartida"]);
             textoError.text = "Bienvenid@ " + textoUsername.text;
-            yield return new WaitForSeconds(10);
-            SceneManager.LoadScene("Mapa");
+            yield return new WaitForSeconds(5);
+            SceneManager.LoadScene("MenuPrincipal");
             textoUsername.text = "";
             textoPassword.text = "";
         }

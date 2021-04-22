@@ -13,7 +13,7 @@ public class EditarPerfil : MonoBehaviour
 {
     public InputField nuevaPassword;
     public InputField confirmaNuevaPassword;
-    public Text nuevoCorreo;
+    public InputField nuevoCorreo;
     public Text textoResultado;
 
     //Encapsular datos JSON

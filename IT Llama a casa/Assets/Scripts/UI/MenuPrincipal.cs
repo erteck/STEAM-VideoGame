@@ -28,4 +28,9 @@ public class MenuPrincipal : MonoBehaviour
     {
         SceneManager.LoadScene("MenuIniciarSesion");
     }
+
+    public void EditarPerfil()
+    {
+        SceneManager.LoadScene("EditarPerfil");
+    }
 }
