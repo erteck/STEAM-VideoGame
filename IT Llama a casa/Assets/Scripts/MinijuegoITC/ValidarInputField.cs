@@ -5,7 +5,6 @@ using UnityEngine.UI;
 /*
  * Script para prevenir que el usuario deje un inputfield vacío
  * Se rellena automáticamente con cero
- * Autor: Erick Bustos
  */
 public class ValidarInputField : MonoBehaviour
 {

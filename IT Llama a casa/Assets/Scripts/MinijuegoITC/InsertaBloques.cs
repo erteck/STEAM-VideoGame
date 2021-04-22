@@ -8,7 +8,7 @@ using UnityEngine.UI;
 /*
  * Permite al usuario agregar bloques de código haciendo uso de los botones
  * en la parte inferior.
- * 
+ *
  * Autor: Erick Bustos
  */
 public class InsertaBloques : MonoBehaviour
@@ -67,7 +67,7 @@ public class InsertaBloques : MonoBehaviour
                 }
             
                 instruccion.Add(int.Parse(textoBoton.text));
-                MoverPersonaje2.instrucciones.Add(instruccion); //CAMBIO
+                EjecutarCodigo.instrucciones.Add(instruccion);
             }
             
             // Eliminar número ingresado en botón
@@ -76,12 +76,12 @@ public class InsertaBloques : MonoBehaviour
         else if (boton.CompareTag("Izquierda"))
         {
             instruccion.Add(3);
-            MoverPersonaje2.instrucciones.Add(instruccion); //CAMBIO
+            EjecutarCodigo.instrucciones.Add(instruccion);
         }
         else if (boton.CompareTag("Derecha"))
         {
             instruccion.Add(4);
-            MoverPersonaje2.instrucciones.Add(instruccion); //CAMBIO
+            EjecutarCodigo.instrucciones.Add(instruccion);
         }
         
     }

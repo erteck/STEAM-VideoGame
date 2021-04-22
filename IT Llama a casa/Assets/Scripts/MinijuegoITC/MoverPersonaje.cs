@@ -27,9 +27,9 @@ public class MoverPersonaje : MonoBehaviour
     void Update()
     {
         // Avanzar
-        if (EjecutarCodigo.estoyAvanzando & !Nave.lecturaInstrucciones)
+        if (EjecutarCodigo.estoyAvanzando)
         {
-            //Debug.Log("EntreIFAvanzar");
+            Debug.Log("EntreIFAvanzar");
             transform.Translate(Vector3.right * Time.deltaTime);
             if (whentoCount)
             {
@@ -39,9 +39,9 @@ public class MoverPersonaje : MonoBehaviour
             
         }
         // Esperar
-        else if (EjecutarCodigo.estoyEsperando & !Nave.lecturaInstrucciones)
+        else if (EjecutarCodigo.estoyEsperando)
         {
-            //Debug.Log("EntreIFEsperar");
+            Debug.Log("EntreIFEsperar");
             if (whentoCount)
             {
                 StartCoroutine(Espera(EjecutarCodigo.tiempo));
@@ -49,9 +49,9 @@ public class MoverPersonaje : MonoBehaviour
             }
         }
         // Girar Derecha
-        else if (EjecutarCodigo.estoyGirandoDerecha & !Nave.lecturaInstrucciones)
+        else if (EjecutarCodigo.estoyGirandoDerecha)
         {
-            //Debug.Log("EntreGirarDerecha");
+            Debug.Log("EntreGirarDerecha");
             transform.Rotate(0,0,Time.deltaTime * -45);
             if (whentoCount)
             {
@@ -61,9 +61,9 @@ public class MoverPersonaje : MonoBehaviour
             
         }
         // Girar Izquierda
-        else if (EjecutarCodigo.estoyGirandoIzquierda & !Nave.lecturaInstrucciones)
+        else if (EjecutarCodigo.estoyGirandoIzquierda)
         {
-            //Debug.Log("EntreGirarIzq");
+            Debug.Log("EntreGirarIzq");
             transform.Rotate(0,0,Time.deltaTime * 45);
             if (whentoCount)
             {
