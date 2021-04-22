@@ -17,7 +17,7 @@ public class EliminaBloques : MonoBehaviour
             Destroy(contenedorBloques.transform.GetChild(contenedorBloques.transform.childCount - 1).gameObject);
             InsertaBloques.numBloque -= 1;
             // Se elimina la instrucción del arreglo que guarda las instrucciones
-            EjecutarCodigo.instrucciones.RemoveAt(EjecutarCodigo.instrucciones.Count - 1);
+            MoverPersonaje2.instrucciones.RemoveAt(MoverPersonaje2.instrucciones.Count - 1); //CAMBIO
         }
         
     }
