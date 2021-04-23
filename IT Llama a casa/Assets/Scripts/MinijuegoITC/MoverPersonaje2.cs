@@ -2,17 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/*
+ * Permite ejecutar las instrucciones del usuario al presionar el botón play.
+ * Se lee el vector isntrucciones y se ejecutan los movimientos dentro de la función
+ * update. Se utilizan corrutinas para determinar cuando debe dejarse de ejecutar una
+ * animación y continuar con la siguiente.
+ * Autor: Erick Bustos
+ */
 public class MoverPersonaje2 : MonoBehaviour
 {
     // Referencia al transform de la nave
     private Transform transform;
     private Rigidbody2D rigidbody2D;
 
-    //VARIABLES NUEVAS
+    // Índice que me permite iterar sobre el vector de instrucciones
     public static int contadordelvector = 0;
+    
+    // Identificador de la instrucción actual (1 = avanzar, 2 = esperar, 3 = girar izq, 4 = girar der)
     public static int instruccionactual;
+    
+    // Booleano que inicializa la corrutina contador cuando se comienza a ejecutar una nueva instrucción
     public static bool comenzaracontar = true;
+    
+    // Booleano de detiene por completo la ejecución de movimiento si el usuario pasa el nivel o muere
     public static bool ejecuta = false;
 
     // Referencia al botón Play
@@ -25,21 +37,27 @@ public class MoverPersonaje2 : MonoBehaviour
     public GameObject reiniciar;
     
     // Arreglo con las intrucciones
-    public static List<List<int>> instrucciones = new List<List<int>>(); //CAMBIAR EN INSERTA BLOQUES
+    public static List<List<int>> instrucciones = new List<List<int>>(); 
+    
+    
+
     void Start()
     {
         transform = GetComponent<Transform>();
         rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
+    // Función Asociada a Botón Play
     public void EjecutaCodigo()
     {
         if (InsertaBloques.numBloque > 0)
         {
+            print("Angulo Inicial: " + transform.rotation.z);
 
             // Desactivamos la interactividad de los botones
             botoneliminar.interactable = false;
             botonplay.interactable = false;
+            
             contadordelvector = 0;
             comenzaracontar = true;
      
@@ -50,28 +68,32 @@ public class MoverPersonaje2 : MonoBehaviour
         }
     }
     
+    
     void Update()
     {
-        //Debug.Log(contadordelvector.ToString());
-        //Debug.Log(ejecuta.ToString());
+        
+        //Si acabamos de leer todas las instrucciones dejar de ejecutar
         if (contadordelvector == instrucciones.Count & contadordelvector != 0)
         {
             ejecuta = false;
-            Debug.Log("AQUI EJECUTA = FALSE");
+            //Debug.Log("AQUI EJECUTA = FALSE");
             
+            // Si el personaje se quedó atorado y no perdió ni ganó permitir regresarlo a la posición inicial
             if ((rigidbody2D.velocity.x == 0 | rigidbody2D.velocity.x == 0) & (!(transform.position.x <= -8.5) | !(transform.position.y >= 4.5)))
             {
                 // Mover contador del vector de instrucciones a 0
                 contadordelvector = 0;
                 reiniciar.SetActive(true);
-                Debug.Log("Activa Reiniciar");
+                //Debug.Log("Activa Reiniciar");
                 
             }
             
         }
         
+        
         if (ejecuta)
         {
+            // Obtener tipo de intrucción
             instruccionactual = instrucciones[contadordelvector][0];
             
             // Avanzar
@@ -129,6 +151,7 @@ public class MoverPersonaje2 : MonoBehaviour
     {
         Debug.Log("AQUI EJECUTAMOS ESPERA");
         Debug.Log("Y EJECUTA ES" + ejecuta.ToString());
+        
         yield return new WaitForSeconds(tiempo);
         if (ejecuta)
         {
@@ -143,7 +166,7 @@ public class MoverPersonaje2 : MonoBehaviour
     public IEnumerator EsperaRotacion()
     {
         Debug.Log("AQUI EJECUTAMOS ESPERA ROTACION");
-              Debug.Log("Y EJECUTA ES " + ejecuta.ToString());
+        Debug.Log("Y EJECUTA ES " + ejecuta.ToString());
               
         yield return new WaitForSeconds(2);
         Debug.Log("Y la ROTACION ES" + transform.rotation.z);
