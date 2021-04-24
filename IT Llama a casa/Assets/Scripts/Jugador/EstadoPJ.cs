@@ -21,4 +21,14 @@ public class EstadoPJ : MonoBehaviour
     {
         instance = this;    //Asignar la instancia al objeto ejecutado por el código
     }
+
+    void Update()
+    {
+        //Función que se ejecuta cada frame, en este contexto evita que las vidas del jugador se excedan del límite de 3
+        if(vidas > 3)
+        {
+            //Si las vidas superan el límite se "resetean" al valor máximo que es 3
+            vidas = 3;
+        }
+    }
 }

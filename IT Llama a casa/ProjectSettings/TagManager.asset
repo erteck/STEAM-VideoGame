@@ -15,6 +15,7 @@ TagManager:
   - ManaSprite
   - Enemigo
   - Biotecnologa
+  - Health
   layers:
   - Default
   - TransparentFX

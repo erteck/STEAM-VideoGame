@@ -30,13 +30,23 @@ public class HUD : MonoBehaviour
     {
         //Actualiza los corazones del HUD basándose en las vidas que tiene el personaje
         int vidas = EstadoPJ.instance.vidas;
-        if(vidas == 2)
+        if(vidas == 3)
+        {
+            Vida3.enabled = true;
+            Vida2.enabled = true;
+            Vida1.enabled = true;
+        }
+        else if(vidas == 2)
         {
             Vida3.enabled = false;
+            Vida2.enabled = true;
+            Vida1.enabled = true;
         }
         else if(vidas == 1)
         {
+            Vida3.enabled = false;
             Vida2.enabled = false;
+            Vida1.enabled = true;
         }
         else if(vidas == 0)
         {
