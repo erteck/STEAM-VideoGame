@@ -9,6 +9,8 @@ using UnityEngine.UI;
  * Al chocar la nave con un enemigo ejecuta la animación de una explosión y regresa al jugador a la posición inicial.
  * Al colisionar con el planeta de destino, se desactivan los enemigos del nivel actual, se despliegan los
  * enemigos del nuevo nivel y se regresa al jugador a la posición inicial.
+ *
+ * Autor: Erick Bustos
  */
 public class Nave2 : MonoBehaviour
 {
@@ -120,7 +122,7 @@ public class Nave2 : MonoBehaviour
         transform.rotation = Quaternion.identity;
         //Dibujar la nave de nuevo
         GetComponent<SpriteRenderer>().enabled = true;
-        yield return new WaitForSeconds(4.5f);
+        yield return new WaitForSeconds(2);
         
         // Reactivar Botones
         botoneliminar.interactable = true;

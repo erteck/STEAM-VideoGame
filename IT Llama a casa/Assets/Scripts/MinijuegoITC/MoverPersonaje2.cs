@@ -140,6 +140,10 @@ public class MoverPersonaje2 : MonoBehaviour
                 
             }
         }
+        else
+        {
+            StopAllCoroutines();
+        }
 
         
         
