@@ -31,12 +31,12 @@ public class Puntaje : MonoBehaviour
         {
             //Si el jugador está reintentando se le penalizará y recibirá la mitad de los puntos reales
             //Número limitado de reintentos
-            puntosTotal += casillas * 5;
+            puntosTotal += casillas * 50;
         }
         else
         {
             //De lo contrario se calcula la puntuacón real y se suma al total
-            puntosTotal += casillas * 10;
+            puntosTotal += casillas * 100;
         }
     }
 
@@ -48,12 +48,12 @@ public class Puntaje : MonoBehaviour
         if(tiempo.estaReintentando)
         {
             //Si el jugador está reintentando se le penalizará su puntuación
-            puntosTotal += tiempoPuntos * 5;
+            puntosTotal += tiempoPuntos * 50;
         }
         else
         {
             //De lo contrario se calcula la puntuación real y se le suma al total
-            puntosTotal += tiempoPuntos * 10;
+            puntosTotal += tiempoPuntos * 100;
         }
     }
 

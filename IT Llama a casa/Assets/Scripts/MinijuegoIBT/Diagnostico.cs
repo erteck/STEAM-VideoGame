@@ -87,13 +87,13 @@ public class Diagnostico : MonoBehaviour
         {
             //Si el diagnóstico fue correcto se le notifica al jugador y se le asigna la puntuación correspondiente
             textoDiagnostico.text = "¡Tu diagnóstico es correcto!";
-            puntaje.AsignarPuntosDiagnostico(100);
+            puntaje.AsignarPuntosDiagnostico(1000);
         }
         else
         {
             //De lo contrario se le notifica al jugador y se le asigna una puntuación penalizada
             textoDiagnostico.text = "Tu diagnóstico es incorrecto :(";
-            puntaje.AsignarPuntosDiagnostico(25);
+            puntaje.AsignarPuntosDiagnostico(250);
         }
         //Se ocultan los botones de diagnóstico y se muestra el botón de continuar, permitiéndole al jugador ir a la siguiente ronda
         botDiag1.SetActive(false);

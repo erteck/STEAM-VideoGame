@@ -129,7 +129,7 @@ public class GenerarMatriz : MonoBehaviour
         {
             //Si es la primer ronda las probabilidades serán las siguientes:
             probabilidadRojo = 45;      //El color rojo tendrá 45% de probabilidades de salir
-            probabilidadAmarillo = -1;  //El amarillo tendrá 0% de probabilidades de salir
+            probabilidadAmarillo = 60;  //El amarillo tendrá 15% de probabilidades de salir
             probabilidadVerde = 100;    //El verde tendrá 55% de probabilidades de salir
         }
         else if(ronda == 2)

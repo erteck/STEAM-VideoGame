@@ -12,7 +12,7 @@ public class Tiempo : MonoBehaviour
 {
     //VARIABLES
     public float tiempoRestante;                   //Variable que indica el tiempo restante para memorizar o copiar
-    private int tiempoTotal = 30;                  //Variable que indica el tiempo total de la ronda
+    private int tiempoTotal = 25;                  //Variable que indica el tiempo total de la ronda
     private bool estaCorriendo = true;             //Variable que indica si el tiempo está corriendo
     private bool estaCopiando;                     //Variable que indica si el jugador está copiando
     public bool estaReintentando;                  //Variable que indica si el jugador está reintentando o no
@@ -95,20 +95,20 @@ public class Tiempo : MonoBehaviour
         if(GenerarMatriz.ronda == 1)
         {
             //Si es la primer ronda el jugador tendrá 30 segundos
-            tiempoRestante = 30;
-            tiempoTotal = 30;
+            tiempoRestante = 25;
+            tiempoTotal = 25;
         }
         else if(GenerarMatriz.ronda == 2)
         {
             //Si es la segunda ronda el jugador tendrá 25 segundos
-            tiempoRestante = 25;
-            tiempoTotal = 25;
+            tiempoRestante = 20;
+            tiempoTotal = 20;
         }
         else if(GenerarMatriz.ronda == 3)
         {
             //Si es la tercera ronda el jugador tendrá 15 puntos
-            tiempoRestante = 15;
-            tiempoTotal = 15;
+            tiempoRestante = 18;
+            tiempoTotal = 18;
         }
     }
 

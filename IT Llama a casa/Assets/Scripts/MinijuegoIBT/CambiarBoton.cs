@@ -11,7 +11,7 @@ Autores: Jacqueline Zavala e Israel Sánchez
 public class CambiarBoton : MonoBehaviour
 {
     //VARIABLES
-    public Sprite noColor;               //Imágenes que reemplazaran el source image de los botones
+    public static Sprite noColor;               //Imágenes que reemplazaran el source image de los botones
     public Sprite rojo;
     public Sprite amarillo;
     public Sprite verde; 

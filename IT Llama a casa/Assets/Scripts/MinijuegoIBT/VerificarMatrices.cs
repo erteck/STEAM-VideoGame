@@ -17,10 +17,14 @@ public class VerificarMatrices : MonoBehaviour
     public GameObject botonContinuar;         //Game Object que hace referencia al botón de continuar para pasar a la fase de diagnóstico
     public GameObject botonContinuarPerfecto; //Game Object que hace referencia al botón de continuar si el jugador tiene una puntuación perfecta (en casillas)
     public GameObject botonReintentar;       //Game Object que hace referencia al botón de reintentar
+    public GameObject botonVerificar;
+    //public GameObject panelAlerta;          // Panel que le notifica al jugador algún mensaje relevante en el gameplay
     public Text textoRes;                    //Texto de resultados del jugador
     private Tiempo tiempo;                   //Instancia de tipo Tiempo
     private Puntaje puntaje;                 //Instancia de tipo Puntaje
     private int counter;                     //Contador que verifica cuantas casillas tuvo bien el jugador
+    private int sinColor;                    // Contador que verifica si existen casillas no coloreadas en la matriz
+
     
 
     //MÉTODOS
@@ -30,6 +34,11 @@ public class VerificarMatrices : MonoBehaviour
         //Se enlazan las instancias con sus respectivos objetos
         tiempo = FindObjectOfType<Tiempo>();
         puntaje = FindObjectOfType<Puntaje>();
+    }
+
+    void Update()
+    {
+        estaColoreado();
     }
     
     public void RevisarMatrices()
@@ -103,5 +112,28 @@ public class VerificarMatrices : MonoBehaviour
         puntaje.AsignarPuntosPrecision(counter);     
         puntaje.AsignarPuntosTiempo(tiempo.tiempoRestante);
         counter = 0;  //Se resetea el contador
+    }
+
+    public void estaColoreado()
+    {
+        //Función que se encarga de revisar si al menos una casilla de la matriz del jugador está 
+        for(int i = 0; i < 4; i++)
+        {
+            for(int j = 0; j< 4; j++)
+            {
+                //Se recorren las matrices
+                if(GenerarMatriz.matriz[i, j].sprite == CambiarBoton.noColor)
+                {
+                    //Si la casilla actual de la matriz a copiar es la misma que la casilla actual de la matriz del jugador
+                    sinColor++;  //Se suma uno al contador de casillas correctas
+                    botonVerificar.SetActive(false);
+
+                }
+            }
+        }
+        if (sinColor == 0)
+        {
+            botonVerificar.SetActive(true);
+        }
     }
 }
