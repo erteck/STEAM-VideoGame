@@ -2669,6 +2669,7 @@ MonoBehaviour:
   botonContinuarPerfecto: {fileID: 424296364}
   botonReintentar: {fileID: 1085109865}
   botonVerificar: {fileID: 759143095}
+  noColor: {fileID: 21300000, guid: 1b41555ff7d8abd408b5f12ccc6c136f, type: 3}
   textoRes: {fileID: 1142146206}
 --- !u!114 &572358349
 MonoBehaviour:
@@ -2747,6 +2748,7 @@ MonoBehaviour:
   textoMemoCop: {fileID: 1194240885}
   matrizCopiar: {fileID: 474348608}
   matrizJugador: {fileID: 1162945259}
+  botonVerificar: {fileID: 759143095}
   barraTiempo: {fileID: 814331640}
 --- !u!1001 &573534525
 PrefabInstance:
