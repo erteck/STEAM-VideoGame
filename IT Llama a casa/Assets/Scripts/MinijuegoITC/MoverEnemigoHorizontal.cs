@@ -5,7 +5,7 @@ public class MoverEnemigoHorizontal : MonoBehaviour
 {
     //VARIABLES
     public float maxVelocidadX = 5;  //Movimiento Horizontal
-    private Rigidbody2D rigidbody;  //Para fisica
+    private Rigidbody2D rigidBody;  //Para fisica
     private SpriteRenderer spriterenderer;
 
     //public float xInicial;
@@ -17,7 +17,7 @@ public class MoverEnemigoHorizontal : MonoBehaviour
     void Start()
     {
         //Inicializar variables
-        rigidbody = GetComponent<Rigidbody2D>();  //Enlazar RB --> script
+        rigidBody = GetComponent<Rigidbody2D>();  //Enlazar RB --> script
         spriterenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -39,7 +39,7 @@ public class MoverEnemigoHorizontal : MonoBehaviour
 
         }
         
-        rigidbody.velocity = new Vector2(maxVelocidadX, 0);
+        rigidBody.velocity = new Vector2(maxVelocidadX, 0);
 
     }
 }
