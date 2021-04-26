@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /*
-Permite que el ShieldDroid detecte una pared
-Autores: David Rodríguez Fragoso, Edna Jacqueline Zavala Ortega, 
-Erick Alberto Bustos Cruz, Erick Hernández Silva, Israel Sánchez Miranda
+Permite que el ShieldDroid detecte una pared y salte
+Autor: Erick Hernández Silva
 */
 public class detectaPared : MonoBehaviour
 {

@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 /*
 Permite que el enemigo detecte al jugador en rango
-Autores: David Rodríguez Fragoso, Edna Jacqueline Zavala Ortega, 
-Erick Alberto Bustos Cruz, Erick Hernández Silva, Israel Sánchez Miranda
+Autor: Erick Hernández Silva
 */
 public class JugadorEnRango : MonoBehaviour
 {
@@ -15,7 +14,6 @@ public class JugadorEnRango : MonoBehaviour
         if(other.gameObject.tag == "Player")   //Si el Collider no es de una pieza entonces el personaje está en el piso
         {
             estaEnRango = true;
-            print("En rango");
         }
     }
 
@@ -25,7 +23,6 @@ public class JugadorEnRango : MonoBehaviour
         if(other.gameObject.tag == "Player")   //Si el Collider no es de una pieza entonces el personaje está en el piso
         {
             estaEnRango = false;
-            print("Salio del rango");
         }
         
     }

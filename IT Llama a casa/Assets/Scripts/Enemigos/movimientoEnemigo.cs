@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 /*
 Permite que un enemigo se mueva en el eje x,y o ambos.
-Autores: David Rodríguez Fragoso, Edna Jacqueline Zavala Ortega, 
-Erick Alberto Bustos Cruz, Erick Hernández Silva, Israel Sánchez Miranda
+Autor: Erick Hernández Silva
 */
 public class movimientoEnemigo : MonoBehaviour
 {

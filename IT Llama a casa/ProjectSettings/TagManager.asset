@@ -16,6 +16,8 @@ TagManager:
   - Enemigo
   - Biotecnologa
   - Health
+  - Destructor
+  - Transportador
   layers:
   - Default
   - TransparentFX

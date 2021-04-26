@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 /*
 Permite que el ShieldDroid detecte que golpeo al jugador y le resta una vida
-Autores: David Rodríguez Fragoso, Edna Jacqueline Zavala Ortega, 
-Erick Alberto Bustos Cruz, Erick Hernández Silva, Israel Sánchez Miranda
+Autor: Erick Hernández Silva
 */
 public class ataqueShieldDroid : MonoBehaviour
 {
@@ -13,6 +12,7 @@ public class ataqueShieldDroid : MonoBehaviour
     private SpriteRenderer sprRenderer;   //Sprite Renderer del personaje, orientación
     public float tiempoInvulnerable;
     public SpriteRenderer sprJugador;
+    private Vector3 posicionInicial;
     private IEnumerator Invulnerabilidad(){
         EstadoPJ.instance.invulerable = true;
         yield return new WaitForSeconds (tiempoInvulnerable);
@@ -32,7 +32,8 @@ public class ataqueShieldDroid : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      anim = GetComponent<Animator>();  
+        posicionInicial = new Vector3(gameObject.transform.position.x,gameObject.transform.position.y+1.5f,gameObject.transform.position.z);
+        anim = GetComponent<Animator>();  
     }
 
     // Update is called once per frame
@@ -51,6 +52,10 @@ public class ataqueShieldDroid : MonoBehaviour
                 StartCoroutine(Invulnerabilidad());
                 StartCoroutine(animAtacado());
             }
+        }
+        else if(other.gameObject.tag == "Transportador"){
+            
+           gameObject.transform.position = posicionInicial;
         }
     }
 }

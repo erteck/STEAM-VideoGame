@@ -4,8 +4,7 @@ using UnityEngine;
 /*
 Detecta la colisión del jugador con la "lava"" del parkour. 
 Regresa al jugador al inicio del parkour
-Autores: David Rodríguez Fragoso, Edna Jacqueline Zavala Ortega, 
-Erick Alberto Bustos Cruz, Erick Hernández Silva, Israel Sánchez Miranda
+Autor: Erick Hernández Silva
 */
 public class ParkourCaida : MonoBehaviour
 {

@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+Permite que el ShieldDroid detecte al jugador
+Autor: Erick Hernández Silva
+*/
 public class detectaJugador : MonoBehaviour
 {
     public static bool jugadorDetectado = false;

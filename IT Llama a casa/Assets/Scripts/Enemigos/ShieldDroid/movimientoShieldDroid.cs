@@ -4,8 +4,7 @@ using UnityEngine;
 /*
 Permite que el ShieldDroid detecte si el jugador está en el rango de visión y 
 persigue al jugador si lo está. Sino, regresa a su lugar de origen.
-Autores: David Rodríguez Fragoso, Edna Jacqueline Zavala Ortega, 
-Erick Alberto Bustos Cruz, Erick Hernández Silva, Israel Sánchez Miranda
+Autor: Erick Hernández Silva
 */
 public class movimientoShieldDroid : MonoBehaviour
 {

@@ -15,15 +15,19 @@ public class SaludObjeto : MonoBehaviour
         //Función que se ejecuta si la pieza colisiona con otro Collider
         if(other.gameObject.CompareTag("Player"))
         {
-            //Si el game object que recolecta la moneda es el jugador entonces:
-            GetComponent<SpriteRenderer>().enabled = false;   //Se deja de renderizar la pieza
+            //Solamente si tenemos menos de 3 vidas se podrá usar el objeto curativo
+            if(EstadoPJ.instance.vidas < 3){
+                //Si el game object que recolecta la moneda es el jugador entonces:
+                GetComponent<SpriteRenderer>().enabled = false;   //Se deja de renderizar la pieza
 
-            //Se destruye el objeto
-            Destroy(gameObject, 0.4f);
+                //Se destruye el objeto
+                Destroy(gameObject, 0.4f);
 
-            //Se restaura y actualiza la vida del jugador
-            EstadoPJ.instance.vidas += 1;
-            HUD.instance.ActualizarVidas();
+                //Se restaura y actualiza la vida del jugador
+                EstadoPJ.instance.vidas += 1;
+                HUD.instance.ActualizarVidas();
+            }
+            
         }
     }
 }
