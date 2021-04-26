@@ -18,7 +18,8 @@ public class Tiempo : MonoBehaviour
     public bool estaReintentando;                  //Variable que indica si el jugador está reintentando o no
     public Text textoMemoCop;                      //Texto que indica si el jugador debe de memorizar o copiar la matriz
     public GameObject matrizCopiar;                //Game Objects de las martrices del jugador y del juego
-    public GameObject matrizJugador;              
+    public GameObject matrizJugador; 
+    public GameObject botonVerificar;              //Botón que verifica las matrices             
     public Image barraTiempo;                      //Imagen de la barra de tiempo
     public static Tiempo instance;                //Instancia de tipo Tiempo
     private VerificarMatrices verificarMatrices;  //Instancia de tipo VerificarMatrices
@@ -65,6 +66,7 @@ public class Tiempo : MonoBehaviour
                 //Si ya se acabó el tiempo (en este caso de memorizar)
                 //se muestra la matriz del jugador para que pueda copiar
                 matrizJugador.SetActive(true);
+                botonVerificar.SetActive(false);
                 matrizCopiar.SetActive(false);  //Se oculta la matriz a memorizar
                 AsignarTiempo();  //Se vuelve a asignar el tiempo
                 textoMemoCop.text = "Copia";  //Se le indica al jugador que tiene que copiar
