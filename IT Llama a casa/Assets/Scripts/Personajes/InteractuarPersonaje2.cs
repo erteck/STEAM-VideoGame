@@ -43,15 +43,24 @@ public class InteractuarPersonaje2 : MonoBehaviour
         if(textoInteractuar.activeSelf && Input.GetButtonDown("Fire3"))
         {
             //Cuando se presiona la tecla de interactuar el juego se detiene y comienza el diálogo del personaje
-
             Time.timeScale = 0;
+            //Si ya se recolectó la pieza, se cambia el texto estándar
+            if(CargarJugador.piezaITC){
+                textoDialogo.text = "¡Muchas gracias por tu ayuda! Te deseo un buen viaje a casa.";
+            }
             dialogo.SetActive(true);
         }
     }
 
     public void SiguienteDialogo()
     {
-        //Función que se asocia al botón de siguiente en la caja de diálogo, se encargará de pasar al siguiente diálogo o de cargar la escena del minijuego
+        if(CargarJugador.piezaITC){
+            textoDialogo.text = "¡Muchas gracias por tu ayuda! Te deseo un buen viaje a casa.";
+            dialogo.SetActive(false);
+            Time.timeScale = 1;
+        }
+        else{
+            //Función que se asocia al botón de siguiente en la caja de diálogo, se encargará de pasar al siguiente diálogo o de cargar la escena del minijuego
         contadorDialogo++;
         //Dependiendo del contador del diálogo se desplegarán los diferentes diálogos para el personaje
         if(contadorDialogo == 2)
@@ -86,6 +95,8 @@ public class InteractuarPersonaje2 : MonoBehaviour
             textoPanelAyudar.text = "¿Quieres ayudar a Grop?";
             panelAyudar.SetActive(true);
         }
+        }
+        
     }
 
     public void Ayudar()

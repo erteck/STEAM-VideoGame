@@ -51,12 +51,26 @@ public class HUD : MonoBehaviour
         else if(vidas == 0)
         {
             Vida1.enabled = false;
+            PlayerPrefs.SetFloat("ultimaPosicionX",-8.67f);
+            PlayerPrefs.SetFloat("ultimaPosicionY",1.13f);
+            PlayerPrefs.SetInt("vidas",3);
+            PlayerPrefs.SetInt("piezaIBT",0);
+            PlayerPrefs.SetInt("piezaITC",0);
+            PlayerPrefs.Save();
+            PuntoGuardado.instance.terminarPartida();
             SceneManager.LoadScene("MenuPrincipal");//Nos vamos al menú principal al morir
+
         }
     }
 
     public void ActualizarPiezas()
     {
+        if(CargarJugador.piezaIBT == true){
+            EstadoPJ.instance.piezas += 1;
+        }
+        if(CargarJugador.piezaITC == true){
+            EstadoPJ.instance.piezas +=1 ;
+        }
         //Función que actualiza el texto que indica cuantas piezas lleva recolectadas el personaje
         Numpiezas.text = EstadoPJ.instance.piezas.ToString();
     }
