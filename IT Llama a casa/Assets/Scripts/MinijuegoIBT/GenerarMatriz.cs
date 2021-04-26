@@ -99,7 +99,7 @@ public class GenerarMatriz : MonoBehaviour
         {
             //Si ya es la ronda final se tendrá que mostrar el panel final del juego
             ronda = 1;  //Se reseta la ronda
-            StartCoroutine(subirJugada("2021/04/25 15:30:00","2021/04/25 15:30:12",600));
+            StartCoroutine(subirJugada("2021/04/25 15:30:00","2021/04/25 15:35:00",600));
             panelFinal.SetActive(true);
             zonaJuego.SetActive(false);
         }
@@ -161,7 +161,7 @@ public class GenerarMatriz : MonoBehaviour
     private IEnumerator subirJugada(string fechaInicio, string fechaFinal, int puntaje){
         datosJugada.minijuego = "IBT";
         datosJugada.fechaInicio = fechaInicio;
-        datosJugada.fechaInicio = fechaFinal;
+        datosJugada.fechaFinal = fechaFinal;
         datosJugada.puntaje = puntaje;
         datosJugada.PartidaIdPartida = DatosUsuario.idPartida;
         //Encapsular los datos que suben a la red
