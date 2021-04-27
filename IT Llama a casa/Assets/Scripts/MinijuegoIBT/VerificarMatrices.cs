@@ -35,11 +35,6 @@ public class VerificarMatrices : MonoBehaviour
         tiempo = FindObjectOfType<Tiempo>();
         puntaje = FindObjectOfType<Puntaje>();
     }
-
-    void Update()
-    {
-        estaColoreado();
-    }
     
     public void RevisarMatrices()
     {
@@ -114,7 +109,7 @@ public class VerificarMatrices : MonoBehaviour
         counter = 0;  //Se resetea el contador
     }
 
-    public void estaColoreado()
+    public void EstaColoreado()
     {
         //Función que se encarga de revisar si al menos una casilla de la matriz del jugador no está coloreada 
         sinColor = 0;

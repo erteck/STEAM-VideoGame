@@ -133,6 +133,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CambiarBoton, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5388612293550407416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,5 +161,3 @@ MonoBehaviour:
   rojo: {fileID: 21300000, guid: a3540829d6c43ad4e809db0abd5446b8, type: 3}
   amarillo: {fileID: 21300000, guid: d5024014cc87676419f9234a023aa1a7, type: 3}
   verde: {fileID: 21300000, guid: 5c342fa3e00be064fb7bf6f257304cd1, type: 3}
-  color: 0
-  estaColoreado: 0
