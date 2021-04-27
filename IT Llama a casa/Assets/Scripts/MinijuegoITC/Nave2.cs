@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+using UnityEngine.Networking;
 /*
  * Permite determinar si el jugador choca con un enemigo o pasa al siguiente nivel.
  * Al chocar la nave con un enemigo ejecuta la animación de una explosión y regresa al jugador a la posición inicial.
@@ -120,6 +120,9 @@ public class Nave2 : MonoBehaviour
                 puntaje += puntosnivel;
                 CargarJugador.puntuacionGlobal += puntaje;
                 CargarJugador.piezaITC = true;
+                PlayerPrefs.SetInt("piezaIBT",1);
+                PlayerPrefs.Save();
+                StartCoroutine(subirJugada(dateTimeInicioJugada,dateTimeFinJugada,puntaje));
                 textoMinijuegoCompletado.text = puntaje.ToString();
                 minijuegoCompletado.SetActive(true);
                 
@@ -185,7 +188,37 @@ public class Nave2 : MonoBehaviour
         
         // Reactivar Botones
         botoneliminar.interactable = true;
-        botonplay.interactable = true;
-        
+        botonplay.interactable = true;   
+    }
+
+    public struct Jugada{
+        public string minijuego;
+        public string fechaInicio;
+        public string fechaFinal;
+        public int puntaje;
+        public int PartidaIdPartida;
+
+    }
+    private Jugada datosJugada;
+    //Sube la jugada a la BD
+    private IEnumerator subirJugada(string fechaInicio, string fechaFinal, int puntaje){
+        datosJugada.minijuego = "ITC";
+        datosJugada.fechaInicio = fechaInicio;
+        datosJugada.fechaFinal = fechaFinal;
+        datosJugada.puntaje = puntaje;
+        datosJugada.PartidaIdPartida = DatosUsuario.idPartida;
+        //Encapsular los datos que suben a la red
+        WWWForm forma = new WWWForm();
+        forma.AddField("datosJSON", JsonUtility.ToJson(datosJugada));
+        UnityWebRequest request = UnityWebRequest.Post("http://localhost:8080/jugadas/agregarJugada",forma);
+        yield return request.SendWebRequest(); //Regresa, ejecuta y espera....
+        if (request.downloadHandler.text == "success"){// 200
+            yield return new WaitForSeconds(1);
+        }
+        else{
+            print(request.downloadHandler.text);
+            yield return new WaitForSeconds(3);
+            StartCoroutine(subirJugada(fechaInicio,fechaFinal,puntaje));
+        }
     }
 }
