@@ -125,14 +125,15 @@ public class VerificarMatrices : MonoBehaviour
                 //Se recorren las matrices
                 if(MatrizJugador.matriz[i, j].image.sprite == noColor)
                 {
-                    //Si la casilla actual de la matriz a copiar es la misma que la casilla actual de la matriz del jugador
-                    sinColor++;  //Se suma uno al contador de casillas correctas
+                    //Si la casilla actual de la matriz no tiene color
+                    sinColor++;  //Se suma uno al contador de casillas no coloreadas
 
                 }
             }
         }
         if (sinColor == 0)
         {
+            //Si no hay ninguna casilla sin colorear, se mostrará el botón de verificar
             botonVerificar.SetActive(true);
         }
     }

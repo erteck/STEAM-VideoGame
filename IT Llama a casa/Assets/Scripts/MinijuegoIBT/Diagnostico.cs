@@ -39,7 +39,6 @@ public class Diagnostico : MonoBehaviour
         celdaMatrizJugador.SetActive(false);
         celdaMatrizCopiar.SetActive(true);
         panelTiempo.SetActive(false);
-        botonVerificar.SetActive(false);
         panelDiagnostico.SetActive(true);
         botDiag1.SetActive(true);
         botDiag2.SetActive(true);
@@ -52,7 +51,6 @@ public class Diagnostico : MonoBehaviour
         //Función que oculta los elementos referentes al diagnóstico en pantalla
         //Se ocultan los Game Objects referentes al diagnóstico y se "resetea" el texto del diagnóstico
         panelTiempo.SetActive(true);
-        botonVerificar.SetActive(true);
         panelDiagnostico.SetActive(false);
         panelRecuerda.SetActive(false);
         textoDiagnostico.text = "¿Cuál es el diagnóstico?";
