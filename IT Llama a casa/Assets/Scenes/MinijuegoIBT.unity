@@ -1248,7 +1248,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &252182060
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1494,6 +1494,22 @@ PrefabInstance:
     - target: {fileID: 5388612293550407396, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 572358348}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EstaColoreado
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: VerificarMatrices, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
@@ -3351,6 +3367,22 @@ PrefabInstance:
     - target: {fileID: 5388612293550407396, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 572358348}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EstaColoreado
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: VerificarMatrices, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
@@ -5371,6 +5403,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 572358348}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EstaColoreado
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: VerificarMatrices, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
 --- !u!1 &959471688
@@ -5549,6 +5597,22 @@ PrefabInstance:
     - target: {fileID: 5388612293550407396, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 572358348}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EstaColoreado
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: VerificarMatrices, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
@@ -6531,6 +6595,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 572358348}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EstaColoreado
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: VerificarMatrices, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
 --- !u!1 &1126180101
@@ -6781,6 +6861,22 @@ PrefabInstance:
     - target: {fileID: 5388612293550407396, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 572358348}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EstaColoreado
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: VerificarMatrices, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
@@ -7644,6 +7740,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 572358348}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EstaColoreado
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: VerificarMatrices, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
 --- !u!1 &1251247141
@@ -8062,6 +8174,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 572358348}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EstaColoreado
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: VerificarMatrices, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
 --- !u!224 &1389239709 stripped
@@ -8175,6 +8303,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 572358348}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EstaColoreado
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: VerificarMatrices, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
 --- !u!1001 &1403750217
@@ -8271,6 +8415,22 @@ PrefabInstance:
     - target: {fileID: 5388612293550407396, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 572358348}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EstaColoreado
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: VerificarMatrices, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
@@ -8558,6 +8718,22 @@ PrefabInstance:
     - target: {fileID: 5388612293550407396, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 572358348}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EstaColoreado
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: VerificarMatrices, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
@@ -9729,6 +9905,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 572358348}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EstaColoreado
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: VerificarMatrices, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
 --- !u!224 &1880620077 stripped
@@ -9841,6 +10033,22 @@ PrefabInstance:
     - target: {fileID: 5388612293550407396, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 572358348}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EstaColoreado
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: VerificarMatrices, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
@@ -10469,6 +10677,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 572358348}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EstaColoreado
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: VerificarMatrices, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
 --- !u!224 &2077601932 stripped
@@ -10785,6 +11009,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 572358348}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EstaColoreado
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: VerificarMatrices, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
 --- !u!1001 &5388612293817270985
@@ -10881,6 +11121,22 @@ PrefabInstance:
     - target: {fileID: 5388612293550407396, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 572358348}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EstaColoreado
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: VerificarMatrices, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388612293550407399, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4418fbd356b5c4845bf1f51abb8c9fb1, type: 3}
