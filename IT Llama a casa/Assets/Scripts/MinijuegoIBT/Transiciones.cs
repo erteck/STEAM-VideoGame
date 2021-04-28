@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
 using UnityEngine.UI;
-//using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement;
 
 /*
 * Permite manejar las transiciones de los paneles iniciales del juego.
@@ -16,7 +16,6 @@ public class Transiciones : MonoBehaviour
     public GameObject panelContexto1;
     public GameObject panelContexto2;
     public GameObject panelContexto3;
-    public GameObject panelContexto4;
     
     private int panelActual;
 
@@ -27,7 +26,7 @@ public class Transiciones : MonoBehaviour
     void Start()
     {
         // Le asigna los paneles a la variable
-        paneles = new GameObject[]{panelContexto1, panelContexto2, panelContexto3, panelContexto4};
+        paneles = new GameObject[]{panelContexto1, panelContexto2, panelContexto3};
         panelActual = 0;
         Time.timeScale = 0;
         
@@ -36,7 +35,7 @@ public class Transiciones : MonoBehaviour
     public void Siguiente()
     {
         paneles[panelActual].SetActive(false);
-        if(panelActual+1 == 4)
+        if(panelActual+1 == 3)
         {
             paneles[panelActual-1].SetActive(false);
             Time.timeScale = 1;
@@ -48,7 +47,16 @@ public class Transiciones : MonoBehaviour
     }
 
     public void Volver(){
-
+        if(panelActual == 0)
+        {
+            SceneManager.LoadScene("Mapa");    
+        }
+        else
+        {
+            paneles[panelActual].SetActive(false);
+            panelActual -= 1;
+            paneles[panelActual].SetActive(false);
+        }
     }
 
     // Update is called once per frame
