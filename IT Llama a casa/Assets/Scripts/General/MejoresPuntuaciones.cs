@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,7 +18,14 @@ public class MejoresPuntuaciones : MonoBehaviour
         UnityWebRequest request = UnityWebRequest.Get("http://localhost:8080/partida/mejoresPuntuaciones");
         yield return request.SendWebRequest(); //Regresa, ejecuta y espera....
         if (request.downloadHandler.text != "error"){// 200
+            String registros = request.downloadHandler.text;
+            for (int x = 0; x < registros.Length; x++)
+            {
+                print(registros[x]);
+            }
             puntuaciones.text = request.downloadHandler.text;
+                    //resultado[0].forEach(element => {
+            //console.log(element.JugadorUsername,element.puntuacionAcumulada);
         }
         else{
             print(request.downloadHandler.text);

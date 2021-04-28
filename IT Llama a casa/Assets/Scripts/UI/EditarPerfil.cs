@@ -8,6 +8,7 @@ using UnityEngine.Networking;
 
 /*
 * Permite editar la contraseña y el correo del jugador
+* Autores: Jacqueline Zavala y Erick Hernández
 */
 public class EditarPerfil : MonoBehaviour
 {
@@ -63,14 +64,10 @@ public class EditarPerfil : MonoBehaviour
             yield return new WaitForSeconds(10);
             textoResultado.text = "";
         }
-    }
-    public void Regresar()
-    {
-        SceneManager.LoadScene("MenuPrincipal");
-    }
-    
+    }    
     public void ActualizarPerfil()
     {
+        // Método que permite comenzar la corrutina que envia los datos de Editar Perfil.
         StartCoroutine(enviarDatosEditarPerfil());
     }
 }

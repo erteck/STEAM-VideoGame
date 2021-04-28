@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 228443884}
   - component: {fileID: 228443883}
   - component: {fileID: 228443882}
+  - component: {fileID: 228443879}
   m_Layer: 5
   m_Name: MejoresPuntuaciones
   m_TagString: Untagged
@@ -287,6 +288,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &228443879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228443878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 532146c2daf055e48830769828078fe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &228443882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -938,8 +951,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuPrincipal, Assembly-CSharp
+      - m_Target: {fileID: 228443879}
+        m_TargetAssemblyTypeName: RegresarMenu, Assembly-CSharp
         m_MethodName: Regresar
         m_Mode: 1
         m_Arguments:

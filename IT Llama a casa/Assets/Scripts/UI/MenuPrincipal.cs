@@ -8,7 +8,7 @@ using UnityEngine.Networking; //Para red. UnityWebRequest
 using Newtonsoft.Json; //jSON CONVERT
 /*
 Permite darle funcionalidades a los componentes del menú
-Autores: David Rodríguez Fragoso, Edna Jacqueline Zavala Ortega, 
+Autores: Edna Jacqueline Zavala Ortega, David Rodríguez Fragoso,
 Erick Alberto Bustos Cruz, Erick Hernández Silva, Israel Sánchez Miranda
 */
 
