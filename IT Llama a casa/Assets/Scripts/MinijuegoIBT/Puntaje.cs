@@ -13,7 +13,7 @@ public class Puntaje : MonoBehaviour
     //VARIABLES
     public Text puntos;          //Texto de la interfaz que le muestra al jugador cuantos puntos tiene
     public Text puntosFinal;    //Texto de la interfaz que le muestra al jugador su puntaje final
-    private float puntosTotal;  //Variable que almacena los puntos del jugador
+    public static float puntosTotal;  //Variable que almacena los puntos del jugador
     private Tiempo tiempo;     //Instancia de la clase Tiempo
 
     //MÉTODOS
@@ -68,6 +68,7 @@ public class Puntaje : MonoBehaviour
     public void GrabarPuntos()
     {
         //Función que "guarda" los puntos en los textos de la interfaz y se los muestra al jugador
+        // También se redondea el puntaje final para registrar la partida en la base de datos
         puntos.text = puntosTotal.ToString();
         puntosFinal.text = puntosTotal.ToString();
     }

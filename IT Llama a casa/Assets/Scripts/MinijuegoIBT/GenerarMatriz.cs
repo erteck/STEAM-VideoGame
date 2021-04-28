@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -41,6 +42,8 @@ public class GenerarMatriz : MonoBehaviour
     private int probabilidadVerde;     //Variable que indica la probabilidad de que aparezca una celda de color verde
     public static int diagRojo;        //Variable que indica la cantidad de celdas rojas que hay, se asocia con el diagnóstico real
     public static int diagVerde;       //Variable que indica la cantidad de celdas verdes que hay, se asocia con el diagnóstico real
+    private string fechaInicial;
+
     //MÉTODOS
     void Start()
     {
@@ -50,6 +53,11 @@ public class GenerarMatriz : MonoBehaviour
         //Se crea una nueva matriz de imágenes con las imágenes del microarreglo
         matriz = new Image[,]{{bloque1, bloque2, bloque3, bloque4}, {bloque5, bloque6, bloque7, bloque8}, {bloque9, bloque10, bloque11, bloque12}, {bloque13, bloque14, bloque15, bloque16}};
         AsignarColor();  //Se manda a llamar a la función asignar color
+    }
+
+    void Awake()
+    {
+        fechaInicial = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
     }
 
     private void AsignarColor()
@@ -97,9 +105,12 @@ public class GenerarMatriz : MonoBehaviour
         textoRonda.text = ronda.ToString();  //Se cambia el texto de la ronda
         if(ronda > 3)
         {
+            // variable local que obtiene la fecha en la que se finalizó el minijuego
+            string fechaFinal = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
             //Si ya es la ronda final se tendrá que mostrar el panel final del juego
             ronda = 1;  //Se reseta la ronda
-            StartCoroutine(subirJugada("2021/04/25 15:30:00","2021/04/25 15:35:00",600));
+            StartCoroutine(SubirJugada(fechaInicial, fechaFinal, (int)Puntaje.puntosTotal));
+            CargarJugador.puntuacionGlobal += (int)Puntaje.puntosTotal;
             panelFinal.SetActive(true);
             zonaJuego.SetActive(false);
         }
@@ -113,12 +124,13 @@ public class GenerarMatriz : MonoBehaviour
 
     public void CargarEscena()
     {
+        //Función que carga la escena del mapa, se asocia a un botón, se debe de ejecutar cuando el minijuego acaba
         PlayerPrefs.SetInt("piezaIBT",1);
         PlayerPrefs.Save();
         CargarJugador.piezaIBT = true;
         //Sube la jugada a la BD
         SceneManager.LoadScene("Mapa");
-        //Función que carga la escena del mapa, se asocia a un botón, se debe de ejecutar cuando el minijuego acaba
+ 
         
     }
 
@@ -158,7 +170,7 @@ public class GenerarMatriz : MonoBehaviour
     }
     private Jugada datosJugada;
     //Sube la jugada a la BD
-    private IEnumerator subirJugada(string fechaInicio, string fechaFinal, int puntaje){
+    private IEnumerator SubirJugada(string fechaInicio, string fechaFinal, int puntaje){
         datosJugada.minijuego = "IBT";
         datosJugada.fechaInicio = fechaInicio;
         datosJugada.fechaFinal = fechaFinal;
@@ -175,7 +187,7 @@ public class GenerarMatriz : MonoBehaviour
         else{
             print(request.downloadHandler.text);
             yield return new WaitForSeconds(3);
-            StartCoroutine(subirJugada(fechaInicio,fechaFinal,puntaje));
+            StartCoroutine(SubirJugada(fechaInicio,fechaFinal,puntaje));
         }
     }
 }
