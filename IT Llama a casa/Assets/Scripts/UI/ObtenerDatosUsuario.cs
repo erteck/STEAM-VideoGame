@@ -6,6 +6,7 @@ using UnityEngine.UI;
 /*
 * Obtiene la información del correo del jugador y lo 
 * despliega en el campo de la escena Editar Perfil
+*Autores: Erick Hernández Silva, Jacqueline Zavala.
 */
 public class ObtenerDatosUsuario : MonoBehaviour
 {

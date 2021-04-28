@@ -5,6 +5,11 @@ using Newtonsoft.Json; //jSON CONVERT
 using UnityEngine.UI;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
+/*
+Permite que se suban los datos de la partida cuando el jugador pasa un punto de control
+*(un collider punto de control)
+Autor: Erick Hernández Silva
+*/
 public class PuntoGuardado : MonoBehaviour
 {
     public static PuntoGuardado instance;
