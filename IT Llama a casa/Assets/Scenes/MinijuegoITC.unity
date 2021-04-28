@@ -670,7 +670,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 630.37, y: 368}
+  m_AnchoredPosition: {x: 630.37, y: 392}
   m_SizeDelta: {x: 208.841, y: 30.0001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &42131643
@@ -3456,6 +3456,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: asteroid
       objectReference: {fileID: 0}
+    - target: {fileID: 8217291915127433986, guid: 4e44bfa9e08cc764e9bfce41e9ff2ca9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8386612042522600703, guid: 4e44bfa9e08cc764e9bfce41e9ff2ca9, type: 3}
       propertyPath: xFinal
       value: -8.524354
@@ -5741,8 +5745,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0048828125, y: -5.526123}
-  m_SizeDelta: {x: 0.0083, y: -11.052}
+  m_AnchoredPosition: {x: 0.0048828125, y: -48.256775}
+  m_SizeDelta: {x: 0.0083, y: -96.5132}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &553103919
 MonoBehaviour:
@@ -5941,7 +5945,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -116, y: -37}
+  m_AnchoredPosition: {x: -116, y: -4}
   m_SizeDelta: {x: 21.4962, y: -97.3342}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &573195801
@@ -5987,8 +5991,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1990498306}
   m_HandleRect: {fileID: 1990498305}
   m_Direction: 2
-  m_Value: 1.0103555
-  m_Size: 0.15030277
+  m_Value: 0.993587
+  m_Size: 0.1289778
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10732,8 +10736,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 5, y: -2153.4958}
-  m_SizeDelta: {x: 364.5554, y: 4232.5083}
+  m_AnchoredPosition: {x: 5, y: -2111}
+  m_SizeDelta: {x: 364.5554, y: 4269.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1038488916
 MonoBehaviour:
@@ -11082,6 +11086,10 @@ PrefabInstance:
     - target: {fileID: 8217291915127433986, guid: 4e44bfa9e08cc764e9bfce41e9ff2ca9, type: 3}
       propertyPath: m_Name
       value: asteroid
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217291915127433986, guid: 4e44bfa9e08cc764e9bfce41e9ff2ca9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8386612042522600703, guid: 4e44bfa9e08cc764e9bfce41e9ff2ca9, type: 3}
       propertyPath: xFinal
