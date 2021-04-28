@@ -120,9 +120,9 @@ public class Nave2 : MonoBehaviour
                 puntaje += puntosnivel;
                 CargarJugador.puntuacionGlobal += puntaje;
                 CargarJugador.piezaITC = true;
-                PlayerPrefs.SetInt("piezaIBT",1);
+                PlayerPrefs.SetInt("piezaITC",1);
                 PlayerPrefs.Save();
-                StartCoroutine(subirJugada(dateTimeInicioJugada,dateTimeFinJugada,puntaje));
+                StartCoroutine(SubirJugada(dateTimeInicioJugada,dateTimeFinJugada,puntaje));
                 textoMinijuegoCompletado.text = puntaje.ToString();
                 minijuegoCompletado.SetActive(true);
                 
@@ -201,7 +201,7 @@ public class Nave2 : MonoBehaviour
     }
     private Jugada datosJugada;
     //Sube la jugada a la BD
-    private IEnumerator subirJugada(string fechaInicio, string fechaFinal, int puntaje){
+    private IEnumerator SubirJugada(string fechaInicio, string fechaFinal, int puntaje){
         datosJugada.minijuego = "ITC";
         datosJugada.fechaInicio = fechaInicio;
         datosJugada.fechaFinal = fechaFinal;
@@ -218,7 +218,7 @@ public class Nave2 : MonoBehaviour
         else{
             print(request.downloadHandler.text);
             yield return new WaitForSeconds(3);
-            StartCoroutine(subirJugada(fechaInicio,fechaFinal,puntaje));
+            StartCoroutine(SubirJugada(fechaInicio,fechaFinal,puntaje));
         }
     }
 }
