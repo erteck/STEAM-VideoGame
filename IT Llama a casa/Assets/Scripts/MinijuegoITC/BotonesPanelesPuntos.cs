@@ -13,15 +13,15 @@ public class BotonesPanelesPuntos : MonoBehaviour
     public GameObject panelNivelCompletado;
     // Referencia al panel de Minijuego completado
     public GameObject panelMinijuegoCompletado;
-    
+
     public void SiguienteNivel()
     {
         panelNivelCompletado.SetActive(false);
     }
 
-    public void RegresaMapa()
+    public void EscenaFinal()
     {
+        FinalizarJuego.instance.RevisarPiezas();
         // Agregar que el jugador reaparezca en la misma posición
-        SceneManager.LoadScene("Mapa");
     }
 }

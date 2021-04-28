@@ -9799,7 +9799,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2076381192}
         m_TargetAssemblyTypeName: BotonesPanelesPuntos, Assembly-CSharp
-        m_MethodName: RegresaMapa
+        m_MethodName: EscenaFinal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

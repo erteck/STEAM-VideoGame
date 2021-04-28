@@ -57,7 +57,7 @@ public class HUD : MonoBehaviour
             PlayerPrefs.SetInt("piezaIBT",0);
             PlayerPrefs.SetInt("piezaITC",0);
             PlayerPrefs.Save();
-            PuntoGuardado.instance.terminarPartida();
+            PuntoGuardado.instance.PartidaPerdida();
             SceneManager.LoadScene("MenuPrincipal");//Nos vamos al menú principal al morir
 
         }

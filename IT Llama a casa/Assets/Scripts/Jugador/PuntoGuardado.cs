@@ -24,7 +24,7 @@ public class PuntoGuardado : MonoBehaviour
                 PlayerPrefs.SetInt("piezaIBT",1);
             }
             PlayerPrefs.Save();
-            guardarPartidaCompleta();
+            guardarPuntoControl();
         }
     }
     public struct Partida{
@@ -33,48 +33,82 @@ public class PuntoGuardado : MonoBehaviour
         public int puntuacionAcumulada;
         public int vidas;
         public int inventario;
+        public string estatus;
 
     }
     private Partida datosPartida;
     //Guarda los datos de la partida en general
-    private IEnumerator guardarPartida(){
+    private IEnumerator guardarPartida(string estatus, bool partidaFinalizada){
         print(DatosUsuario.idPartida.ToString());
         print(EstadoPJ.instance.piezas.ToString());
         datosPartida.username = DatosUsuario.username;
         datosPartida.idPartida = DatosUsuario.idPartida;
-        datosPartida.puntuacionAcumulada = 0;
+        datosPartida.puntuacionAcumulada = CargarJugador.puntuacionGlobal;
         datosPartida.vidas = EstadoPJ.instance.vidas;
         datosPartida.inventario = EstadoPJ.instance.piezas;
+        datosPartida.estatus = estatus;
         //Encapsular los datos que suben a la red
         WWWForm forma = new WWWForm();
         forma.AddField("datosJSON", JsonUtility.ToJson(datosPartida));
-        UnityWebRequest request = UnityWebRequest.Post("http://localhost:8080/partida/guardarPartida",forma);
-        yield return request.SendWebRequest(); //Regresa, ejecuta y espera....
-        if (request.downloadHandler.text == "success"){// 200
-            print("UPDATE exitoso");
+        if (!partidaFinalizada)
+        {
+            UnityWebRequest request = UnityWebRequest.Post("http://localhost:8080/partida/guardarPartida",forma);
+            yield return request.SendWebRequest(); //Regresa, ejecuta y espera....
+            if (request.downloadHandler.text == "success"){// 200
+                print("UPDATE exitoso");
+            }
+            else{
+                print(request.downloadHandler.text);
+                yield return new WaitForSeconds(3);
+                guardarPuntoControl();
+            }
         }
-        else{
-            print(request.downloadHandler.text);
-            yield return new WaitForSeconds(3);
-            guardarPartidaCompleta();
+        else
+        {
+            UnityWebRequest request = UnityWebRequest.Post("http://localhost:8080/partida/finalizarPartida",forma);
+            yield return request.SendWebRequest(); //Regresa, ejecuta y espera....
+            if (request.downloadHandler.text == "success"){// 200
+                print("UPDATE exitoso");
+                datosPartida.idPartida = 0;
+            }
+            else{
+                print(request.downloadHandler.text);
+                yield return new WaitForSeconds(3);
+                guardarPuntoControl();
+            }
         }
+
     }
-    public void guardarPartidaCompleta(){
-        StartCoroutine(guardarPartida());
+    public void guardarPuntoControl()
+    {
+        StartCoroutine(guardarPartida("En progreso", false));
     }
+
+    public void PartidaCompletada()
+    {
+        StartCoroutine(guardarPartida("Finalizada", true));
+    }
+
+    public void PartidaPerdida()
+    {
+        StartCoroutine(guardarPartida("Perdido", true));
+    }
+
 //Finaliza la partida y actualiza los datos finales
-    private IEnumerator finalizarPartida(){
+/*
+    private IEnumerator FinalizarPartida(){
         print(DatosUsuario.idPartida.ToString());
         print(EstadoPJ.instance.piezas.ToString());
         datosPartida.idPartida = DatosUsuario.idPartida;
-        datosPartida.puntuacionAcumulada = 0;
+        datosPartida.puntuacionAcumulada = CargarJugador.puntuacionGlobal;
         datosPartida.vidas = EstadoPJ.instance.vidas;
         datosPartida.inventario = EstadoPJ.instance.piezas;
         datosPartida.username = DatosUsuario.username;
+        datosPartida.estatus = "Perdido";
         //Encapsular los datos que suben a la red
         WWWForm forma = new WWWForm();
         forma.AddField("datosJSON", JsonUtility.ToJson(datosPartida));
-        UnityWebRequest request = UnityWebRequest.Post("http://localhost:8080/partida/finalizarPartida",forma);
+        UnityWebRequest request = UnityWebRequest.Post("http://localhost:8080/partida/FinalizarPartida",forma);
         yield return request.SendWebRequest(); //Regresa, ejecuta y espera....
         if (request.downloadHandler.text == "success"){// 200
             print("UPDATE exitoso");
@@ -83,14 +117,14 @@ public class PuntoGuardado : MonoBehaviour
         else{
             print(request.downloadHandler.text);
             yield return new WaitForSeconds(3);
-            guardarPartidaCompleta();
+            terminarPartida();
         }
     }
-    //metodo llamado para finalizar la partida
+    //Método llamado para finalizar la partida
     public void terminarPartida(){
         DatosUsuario.idPartida = 0;
-        StartCoroutine(finalizarPartida());
-    }
+        StartCoroutine(FinalizarPartida());
+    }*/
 
     public struct Jugada{
         public string minijuego;

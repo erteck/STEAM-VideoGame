@@ -43,6 +43,7 @@ public class GenerarMatriz : MonoBehaviour
     public static int diagRojo;        //Variable que indica la cantidad de celdas rojas que hay, se asocia con el diagnóstico real
     public static int diagVerde;       //Variable que indica la cantidad de celdas verdes que hay, se asocia con el diagnóstico real
     private string fechaInicial;
+    
 
     //MÉTODOS
     void Start()
