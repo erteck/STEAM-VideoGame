@@ -17,6 +17,7 @@ public class HUD : MonoBehaviour
     public Image Vida2;
     public Image Vida3;
     public Text Numpiezas;      //Texto que indica el número de piezas recolectadas
+    public GameObject panelHelp; //Panel de ayuda con las instrucciones del juego
     public static HUD instance;  //Referencia a la clase HUD
 
     //MÉTODOS
@@ -73,5 +74,13 @@ public class HUD : MonoBehaviour
         }
         //Función que actualiza el texto que indica cuantas piezas lleva recolectadas el personaje
         Numpiezas.text = EstadoPJ.instance.piezas.ToString();
+    }
+
+    public void Help(bool activo)
+    {
+        //Función que despliega u oculta el panel de ayuda dependiendo de si está activo o no, va asignado a algún botón
+        //Parámetros: activo, variable booleana que indica si el panel está activo o no
+        panelHelp.SetActive(activo);
+        Time.timeScale = activo ? 0 : 1;
     }
 }
