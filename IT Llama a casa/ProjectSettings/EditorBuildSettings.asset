@@ -29,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Creditos.unity
     guid: 8489e8fc831e49947a14ac6ebca51da2
+  - enabled: 1
+    path: Assets/Scenes/EscenaFinal.unity
+    guid: 0f300dbbddafddd47a5050591c64e353
+  - enabled: 1
+    path: Assets/Scenes/MejoresPuntuaciones.unity
+    guid: 5e10a4c306d46ef44830bbb39a184555
   m_configObjects: {}

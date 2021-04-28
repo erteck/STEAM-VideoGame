@@ -21,7 +21,7 @@ public class BotonesPanelesPuntos : MonoBehaviour
 
     public void EscenaFinal()
     {
-        FinalizarJuego.instance.RevisarPiezas();
         // Agregar que el jugador reaparezca en la misma posición
+        SceneManager.LoadScene("Mapa");
     }
 }

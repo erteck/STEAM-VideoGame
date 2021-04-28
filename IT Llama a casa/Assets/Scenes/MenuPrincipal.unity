@@ -206,9 +206,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1999529018}
-        m_TargetAssemblyTypeName: MenuIniciarSesion, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 1999529023}
+        m_TargetAssemblyTypeName: MenuPrincipal, Assembly-CSharp
+        m_MethodName: MejoresPuntuaciones
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

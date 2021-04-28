@@ -61,6 +61,12 @@ public class MenuPrincipal : MonoBehaviour
     {
         SceneManager.LoadScene("EditarPerfil");
     }
+    
+    public void MejoresPuntuaciones()
+    {
+        SceneManager.LoadScene("MejoresPuntuaciones");
+    }
+    
 
     public void Creditos()
     {

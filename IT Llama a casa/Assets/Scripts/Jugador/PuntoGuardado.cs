@@ -4,6 +4,7 @@ using UnityEngine;
 using Newtonsoft.Json; //jSON CONVERT
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 public class PuntoGuardado : MonoBehaviour
 {
     public static PuntoGuardado instance;
@@ -15,16 +16,31 @@ public class PuntoGuardado : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //Guarda la posición del jugador al pasar por el collider
-        if(other.gameObject.tag == "Player"){
-            PlayerPrefs.SetFloat("ultimaPosicionX",guardadoX);
-            PlayerPrefs.SetFloat("ultimaPosicionY",guardadoY);
-            PlayerPrefs.SetInt("vidas",EstadoPJ.instance.vidas);
-            if(CargarJugador.piezaIBT){
-                PlayerPrefs.SetInt("piezaIBT",1);
-            }
+        if(CargarJugador.piezaIBT && CargarJugador.piezaITC)
+        {
+            PlayerPrefs.SetFloat("ultimaPosicionX",-8.67f);
+            PlayerPrefs.SetFloat("ultimaPosicionY",1.13f);
+            PlayerPrefs.SetInt("vidas",3);
+            PlayerPrefs.SetInt("piezaIBT",0);
+            PlayerPrefs.SetInt("piezaITC",0);
             PlayerPrefs.Save();
-            guardarPuntoControl();
+            PuntoGuardado.instance.PartidaCompletada();
+            SceneManager.LoadScene("EscenaFinal");
+        }
+        else
+        {
+            //Guarda la posición del jugador al pasar por el collider
+            if(other.gameObject.tag == "Player")
+            {
+                PlayerPrefs.SetFloat("ultimaPosicionX",guardadoX);
+                PlayerPrefs.SetFloat("ultimaPosicionY",guardadoY);
+                PlayerPrefs.SetInt("vidas",EstadoPJ.instance.vidas);
+                if(CargarJugador.piezaIBT){
+                    PlayerPrefs.SetInt("piezaIBT",1);
+                }
+                PlayerPrefs.Save();
+                guardarPuntoControl();
+            }
         }
     }
     public struct Partida{
@@ -40,7 +56,6 @@ public class PuntoGuardado : MonoBehaviour
     //Guarda los datos de la partida en general
     private IEnumerator guardarPartida(string estatus, bool partidaFinalizada){
         print(DatosUsuario.idPartida.ToString());
-        print(EstadoPJ.instance.piezas.ToString());
         datosPartida.username = DatosUsuario.username;
         datosPartida.idPartida = DatosUsuario.idPartida;
         datosPartida.puntuacionAcumulada = CargarJugador.puntuacionGlobal;
@@ -50,12 +65,13 @@ public class PuntoGuardado : MonoBehaviour
         //Encapsular los datos que suben a la red
         WWWForm forma = new WWWForm();
         forma.AddField("datosJSON", JsonUtility.ToJson(datosPartida));
+        print(partidaFinalizada);
         if (!partidaFinalizada)
         {
             UnityWebRequest request = UnityWebRequest.Post("http://localhost:8080/partida/guardarPartida",forma);
             yield return request.SendWebRequest(); //Regresa, ejecuta y espera....
             if (request.downloadHandler.text == "success"){// 200
-                print("UPDATE exitoso");
+                print("PUNTO DE CONTROL ALCANZADO");
             }
             else{
                 print(request.downloadHandler.text);
@@ -65,17 +81,39 @@ public class PuntoGuardado : MonoBehaviour
         }
         else
         {
+            print("Entré al ELSE");
             UnityWebRequest request = UnityWebRequest.Post("http://localhost:8080/partida/finalizarPartida",forma);
+            DatosUsuario.idPartida = 0;
+            // PlayerPrefs.SetFloat("ultimaPosicionX",-8.67f);
+            // PlayerPrefs.SetFloat("ultimaPosicionY",1.13f);
+            // PlayerPrefs.SetInt("vidas",3);
+            // PlayerPrefs.SetInt("piezaIBT",0);
+            // PlayerPrefs.SetInt("piezaITC",0);
+            // PlayerPrefs.Save();
             yield return request.SendWebRequest(); //Regresa, ejecuta y espera....
             if (request.downloadHandler.text == "success"){// 200
-                print("UPDATE exitoso");
-                datosPartida.idPartida = 0;
+                print("HAS PERDIDO");
+                DatosUsuario.idPartida = 0;
+                // PlayerPrefs.SetFloat("ultimaPosicionX",-8.67f);
+                // PlayerPrefs.SetFloat("ultimaPosicionY",1.13f);
+                // PlayerPrefs.SetInt("vidas",3);
+                // PlayerPrefs.SetInt("piezaIBT",0);
+                // PlayerPrefs.SetInt("piezaITC",0);
+                // PlayerPrefs.Save();
             }
             else{
                 print(request.downloadHandler.text);
-                yield return new WaitForSeconds(3);
-                guardarPuntoControl();
+                if(estatus == "Perdido")
+                {
+                    StartCoroutine(guardarPartida("Perdido", true));
+                }
+                else
+                {
+                    StartCoroutine(guardarPartida("Finalizada", true));
+                }
+                
             }
+            
         }
 
     }

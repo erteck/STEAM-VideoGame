@@ -15,7 +15,6 @@ public class MenuInicial : MonoBehaviour
     {
         Application.OpenURL("http://localhost:8080/jugador/formularioRegistro#");
     }
-
     public void Salir()
     {
         Application.Quit();
