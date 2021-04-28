@@ -12,7 +12,7 @@ public class MoverEnemigo : MonoBehaviour
 {
     //VARIABLES
     public float maxVelocidadY = -5;  //Movimiento Horizontal
-    private Rigidbody2D rigidbody;  //Para fisica
+    private Rigidbody2D rb2D;  //Para fisica
 
     //METODOS
     
@@ -20,7 +20,7 @@ public class MoverEnemigo : MonoBehaviour
     void Start()
     {
         //Inicializar variables
-        rigidbody = GetComponent<Rigidbody2D>();  //Enlazar RB --> script
+        rb2D = GetComponent<Rigidbody2D>();  //Enlazar RB --> script
     }
 
     // Update is called once per frame (frecuentemente 60 veces/seg)
@@ -39,7 +39,7 @@ public class MoverEnemigo : MonoBehaviour
 
         }
         
-        rigidbody.velocity = new Vector2(0, maxVelocidadY);
+        rb2D.velocity = new Vector2(0, maxVelocidadY);
 
     }
 }

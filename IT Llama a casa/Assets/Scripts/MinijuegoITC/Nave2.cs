@@ -56,6 +56,9 @@ public class Nave2 : MonoBehaviour
     // Referencia al campo de texto del panel minijuegoCompletado
     public Text textoMinijuegoCompletado;
     
+    // Panel donde se agregan las líneas de código
+    public GameObject scrollPanel;
+    
     //  DateTime inicio de la jugada
     public string dateTimeInicioJugada;
     // DateTime fin de la jugada
@@ -72,10 +75,14 @@ public class Nave2 : MonoBehaviour
             // Cambiar de enemigos, actuaizar puntos y desplegar paneles de cambio de nivel
             if (nivelActual == 2)
             {
+                // Calcular puntos nivel
                 puntosnivel = 2000 * 6 / MoverPersonaje2.instrucciones.Count;
+                // Sumar puntos al total
                 puntaje += puntosnivel;
+                // Actualizar puntos en el display del juego
                 puntosTexto.text = puntaje.ToString();
-                textoPanelPuntos.text = puntaje.ToString();
+                // Actualizar puntos en la pantalla de nivel completado
+                textoPanelPuntos.text = puntosnivel.ToString();
                 nivelCompletado.SetActive(true);
                 enemigosNivel1.SetActive(false);
                 enemigosNivel2.SetActive(true);
@@ -86,7 +93,7 @@ public class Nave2 : MonoBehaviour
                 puntosnivel = 2000 * 3 /MoverPersonaje2.instrucciones.Count;
                 puntaje += puntosnivel;
                 puntosTexto.text = puntaje.ToString();
-                textoPanelPuntos.text = puntaje.ToString();
+                textoPanelPuntos.text = puntosnivel.ToString();
                 nivelCompletado.SetActive(true);
                 enemigosNivel2.SetActive(false);
                 enemigosNivel3.SetActive(true);
@@ -96,7 +103,7 @@ public class Nave2 : MonoBehaviour
                 puntosnivel = 2000 * 3 /MoverPersonaje2.instrucciones.Count;
                 puntaje += puntosnivel;
                 puntosTexto.text = puntaje.ToString();
-                textoPanelPuntos.text = puntaje.ToString();
+                textoPanelPuntos.text = puntosnivel.ToString();
                 nivelCompletado.SetActive(true);
                 enemigosNivel3.SetActive(false);
                 enemigosNivel4.SetActive(true);
@@ -106,23 +113,29 @@ public class Nave2 : MonoBehaviour
                 puntosnivel = 2000 * 4 /MoverPersonaje2.instrucciones.Count;
                 puntaje += puntosnivel;
                 puntosTexto.text = puntaje.ToString();
-                textoPanelPuntos.text = puntaje.ToString();
+                textoPanelPuntos.text = puntosnivel.ToString();
                 nivelCompletado.SetActive(true);
                 enemigosNivel4.SetActive(false);
                 enemigosNivel5.SetActive(true);
             }
             else if (nivelActual == 6)
             {
+                // Encuentra la hora en la que terminó el minijuego para registrarlo en la BD
                 dateTimeFinJugada = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
                 print(dateTimeInicioJugada);
                 print(dateTimeFinJugada);
+                
+                // Actualiza la puntuación total
                 puntosnivel = 2000 * 9 /MoverPersonaje2.instrucciones.Count;
                 puntaje += puntosnivel;
+                // Guarda la información en preferencias y en CargarJugador
                 CargarJugador.puntuacionGlobal += puntaje;
                 CargarJugador.piezaITC = true;
                 PlayerPrefs.SetInt("piezaITC",1);
                 PlayerPrefs.Save();
+                //Sube lo datos a la BD
                 StartCoroutine(SubirJugada(dateTimeInicioJugada,dateTimeFinJugada,puntaje));
+                // Actualiza la puntuación del Panel minijuegocompletado y lo despliega
                 textoMinijuegoCompletado.text = puntaje.ToString();
                 minijuegoCompletado.SetActive(true);
                 
@@ -142,6 +155,14 @@ public class Nave2 : MonoBehaviour
             botoneliminar.interactable = true;
             botonplay.interactable = true;
             reiniciar.SetActive(false);
+            
+            // Limpiar bloques
+            InsertaBloques.numBloque = 0;
+            MoverPersonaje2.instrucciones = new List<List<int>>();
+            foreach (Transform child in scrollPanel.transform)
+            {
+                Destroy(child.gameObject);
+            }
             
         }
         else
@@ -191,6 +212,7 @@ public class Nave2 : MonoBehaviour
         botonplay.interactable = true;   
     }
 
+    // Estructura para subir datos a la BD
     public struct Jugada{
         public string minijuego;
         public string fechaInicio;
@@ -202,11 +224,13 @@ public class Nave2 : MonoBehaviour
     private Jugada datosJugada;
     //Sube la jugada a la BD
     private IEnumerator SubirJugada(string fechaInicio, string fechaFinal, int puntaje){
+        // Asignar los datos a subir
         datosJugada.minijuego = "ITC";
         datosJugada.fechaInicio = fechaInicio;
         datosJugada.fechaFinal = fechaFinal;
         datosJugada.puntaje = puntaje;
         datosJugada.PartidaIdPartida = DatosUsuario.idPartida;
+        
         //Encapsular los datos que suben a la red
         WWWForm forma = new WWWForm();
         forma.AddField("datosJSON", JsonUtility.ToJson(datosJugada));

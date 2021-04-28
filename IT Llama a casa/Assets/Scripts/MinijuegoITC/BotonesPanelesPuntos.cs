@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 /*
  * Da funcionalidad a los botónes de los paneles nivel completado y minijuego completado,
  * oculta el respectivo panel al presionar el botón
+ * Autor: Erick Bustos
  */
 public class BotonesPanelesPuntos : MonoBehaviour
 {

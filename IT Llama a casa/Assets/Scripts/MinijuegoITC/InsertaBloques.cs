@@ -46,10 +46,11 @@ public class InsertaBloques : MonoBehaviour
             textoBoton = boton.GetComponentsInChildren<Text>()[2];
             
             
-            if (String.Equals(textoBoton.text,"") | int.Parse(textoBoton.text) < 0)
+            if (String.Equals(textoBoton.text,"") | int.Parse(textoBoton.text) <= 0)
             {
                 //Desplegar panel con error
                 Destroy(bloqueClon);
+                numBloque -= 1;
                 ventanaError.gameObject.SetActive(true);
             }
             else

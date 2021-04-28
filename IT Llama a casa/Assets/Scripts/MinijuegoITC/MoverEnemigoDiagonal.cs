@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
-    *Permite movilizar diaognalmente al enemigo 
+    *Permite movilizar diagonalmente al enemigo 
     *Sin necesidad de ser controlado
     *Autor: David Rodriguez, Erick Bustos
 */
@@ -21,7 +21,7 @@ public class MoverEnemigoDiagonal : MonoBehaviour
 
 
     
-    private Rigidbody2D rigidbody;  //Para fisica
+    private Rigidbody2D rb2D;  //Para fisica
 
     //METODOS
     
@@ -29,7 +29,7 @@ public class MoverEnemigoDiagonal : MonoBehaviour
     void Start()
     {
         //Inicializar variables
-        rigidbody = GetComponent<Rigidbody2D>();  //Enlazar RB --> script
+        rb2D = GetComponent<Rigidbody2D>();  //Enlazar RB --> script
     }
 
     // Update is called once per frame (frecuentemente 60 veces/seg)
@@ -50,7 +50,7 @@ public class MoverEnemigoDiagonal : MonoBehaviour
 
         }
         
-        rigidbody.velocity = new Vector2(maxVelocidadX, maxVelocidadY);
+        rb2D.velocity = new Vector2(maxVelocidadX, maxVelocidadY);
 
     }
 }

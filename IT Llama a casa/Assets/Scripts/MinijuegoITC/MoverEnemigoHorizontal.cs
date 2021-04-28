@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine; 
+/*
+    *Permite movilizar horizontalmente al enemigo 
+    *Sin necesidad de ser controlado
+    *Autor: David Rodriguez, Erick Bustos
+*/
 public class MoverEnemigoHorizontal : MonoBehaviour
 {
     //VARIABLES
     public float maxVelocidadX = 5;  //Movimiento Horizontal
     private Rigidbody2D rigidBody;  //Para fisica
     private SpriteRenderer spriterenderer;
-
-    //public float xInicial;
-    //public float xFinal;
+    
 
     //METODOS
     
@@ -20,8 +23,7 @@ public class MoverEnemigoHorizontal : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();  //Enlazar RB --> script
         spriterenderer = GetComponent<SpriteRenderer>();
     }
-
-    // Update is called once per frame (frecuentemente 60 veces/seg)
+    
     void Update()
     {
         if (transform.position.x <= -6.54)

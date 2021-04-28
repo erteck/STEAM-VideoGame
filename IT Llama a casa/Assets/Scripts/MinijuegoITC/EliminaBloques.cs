@@ -9,7 +9,7 @@ using UnityEngine;
 public class EliminaBloques : MonoBehaviour
 {
     public GameObject contenedorBloques;
-    public void eliminar()
+    public void Eliminar()
     {
         if (InsertaBloques.numBloque > 0)
         {

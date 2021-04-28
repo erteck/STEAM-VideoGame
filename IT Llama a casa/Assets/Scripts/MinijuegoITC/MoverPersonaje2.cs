@@ -12,8 +12,8 @@ using UnityEngine.UI;
 public class MoverPersonaje2 : MonoBehaviour
 {
     // Referencia al transform de la nave
-    private Transform transform;
-    private Rigidbody2D rigidbody2D;
+    private Transform transformNave;
+    private Rigidbody2D rb2D;
 
     // Índice que me permite iterar sobre el vector de instrucciones
     public static int contadordelvector = 0;
@@ -43,8 +43,8 @@ public class MoverPersonaje2 : MonoBehaviour
 
     void Start()
     {
-        transform = GetComponent<Transform>();
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        transformNave = GetComponent<Transform>();
+        rb2D = GetComponent<Rigidbody2D>();
     }
 
     // Función Asociada a Botón Play
@@ -76,15 +76,21 @@ public class MoverPersonaje2 : MonoBehaviour
         if (contadordelvector == instrucciones.Count & contadordelvector != 0)
         {
             ejecuta = false;
-            //Debug.Log("AQUI EJECUTA = FALSE");
+            
+            // Si el personaje solo rotó y no avanzó reiniciar
+            if (transform.rotation.z != 0)
+            {
+                contadordelvector = 0;
+                reiniciar.SetActive(true);
+            }
             
             // Si el personaje se quedó atorado y no perdió ni ganó permitir regresarlo a la posición inicial
-            if ((rigidbody2D.velocity.x == 0 | rigidbody2D.velocity.x == 0) & (!(transform.position.x <= -8.5) | !(transform.position.y >= 4.5)))
+            if ((rb2D.velocity.x == 0 | rb2D.velocity.x == 0) & (!(transform.position.x <= -8.5) | !(transform.position.y >= 4.5)))
             {
                 // Mover contador del vector de instrucciones a 0
                 contadordelvector = 0;
                 reiniciar.SetActive(true);
-                //Debug.Log("Activa Reiniciar");
+                
                 
             }
             
