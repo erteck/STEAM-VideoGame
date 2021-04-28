@@ -14,6 +14,10 @@ Erick Alberto Bustos Cruz, Erick Hernández Silva, Israel Sánchez Miranda
 
 public class MenuPrincipal : MonoBehaviour
 {
+    //VARIABLES
+    public Image imagenFondo; //Imagen para hacer el efecto de fade-out
+
+    //MÉTODOS
     private IEnumerator crearNuevaPartida(){
         UnityWebRequest request = UnityWebRequest.Get("http://localhost:8080/partida/agregarPartida?username=" + DatosUsuario.username + "&correo="+DatosUsuario.correo);
         yield return request.SendWebRequest(); //Regresa, ejecuta y espera....
@@ -56,5 +60,26 @@ public class MenuPrincipal : MonoBehaviour
     public void EditarPerfil()
     {
         SceneManager.LoadScene("EditarPerfil");
+    }
+
+    public void Creditos()
+    {
+        //Función que se asocia al botón de créditos, permite hacer el efecto de fade out y cambiar de escena
+        //Se crea el efecto de Fade out, dura dos segundos
+        imagenFondo.canvasRenderer.SetAlpha(0);
+        imagenFondo.gameObject.SetActive(true);
+        imagenFondo.CrossFadeAlpha(0, 0.5f, true);
+        
+        //Se empieza una corrutina para cambiar de escena
+        StartCoroutine(CambiarEscena("Creditos"));
+    }
+
+    public IEnumerator CambiarEscena(string escena)
+    {
+        //Función que crea todos los cambios de escena mediante una corrutina para crear el efecto de fade out
+        yield return new WaitForSeconds(0.5f);
+
+        //Después de esperar por 2 segundos carga la escena correspondiente
+        SceneManager.LoadScene(escena);
     }
 }
