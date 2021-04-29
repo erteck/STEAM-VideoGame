@@ -318,7 +318,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: fb23cd456fad0bf4596ceb8de447eb59, type: 3}
+  m_audioClip: {fileID: 8300000, guid: fc9eb8f2c422d484ca7e05d61c883098, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -445,7 +445,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0be0e1d46b98d734ab566d4bf9296b38, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4d013e50ecfc9634ea8bc7e6e397bbc0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -794,7 +794,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4337aae7b7a21a748b7f4c3b4d32dd33, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 64437caf41dce57459ae7379c0a4b2fc, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1033,7 +1033,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 08f1bc2db9ce63645a2ba2f8d2769148, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 59414692b90b45140a046718f6c80152, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.1
   m_Pitch: 1
@@ -1526,15 +1526,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1995624134}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d4f7f163a196134cafde15b0c48f369, type: 3}
+  m_Script: {fileID: 11500000, guid: bc693c3a3f2c71c41b3c05c036d2acbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogo:
-  - "Bit\xE1cora del capit\xE1n.\nHan pasado d\xEDas desde que se perdi\xF3 la comunicaci\xF3n
-    con el centro de mando. La energ\xEDa y el ox\xEDgeno est\xE1n por agotarse,
-    si no sucede un milagro pronto, creo que esto ser\xE1 el fin . . ."
-  text: 
-  counter: 0
   texto: {fileID: 106975397}
   panelAlarma: {fileID: 17059097}
   tecleo: {fileID: 866808837}
