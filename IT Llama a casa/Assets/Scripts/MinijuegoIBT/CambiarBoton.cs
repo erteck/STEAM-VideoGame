@@ -23,6 +23,8 @@ public class CambiarBoton : MonoBehaviour
     public void CambiarColor(Button button)
     {
         //Función que cambia el color del botón basándose en el color escocigido de la "paleta"
+        //Efecto de click.
+        Transiciones.sonidoClic.Play();
         //Parámetros: button - es el botón al que la función está asociada
         if(esRojo && !esAmarillo && !esVerde)     //Dependiendo del color que se haya escogido de la "paleta" el source image del botón cambiará
         {
