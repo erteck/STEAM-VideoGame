@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+Script que le permite a los botones del tilemap desactivar los rayos del último nivel
+Autor: Israel Sánchez Miranda
+*/
+
 public class BotonesInteractuar : MonoBehaviour
 {
     //VARIABLES

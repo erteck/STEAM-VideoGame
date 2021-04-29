@@ -8,11 +8,8 @@ Autor: Erick Hernández Silva y Jacqueline Zavala
 */
 public class DatosUsuario : MonoBehaviour
 {
-
-    // Se crea la estructura de DatosUsuario
-    public static string username;
+    // Se crean las variables estáticas que se usarán para guardar los datos del usuario
+    public static string username;  //Username y correo se usan para queries
     public static string correo;
-    public static int idPartida;
-
-
+    public static int idPartida;  //IDPartida se usa para comunicarse con el servidor web
 }

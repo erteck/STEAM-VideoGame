@@ -9,7 +9,7 @@ Autor: Erick Hernández Silva
 public class ParkourCaida : MonoBehaviour
 {
     //VARIABLES
-    public float x;
+    public float x;  //Posición del checkpoint del jugador
     public float y;
 
     //MÉTODOS
@@ -18,6 +18,7 @@ public class ParkourCaida : MonoBehaviour
         //Función que se ejecuta si la "lava" colisiona con otro Collider
         if(other.gameObject.CompareTag("Player"))
         {
+            //Si el jugador entra en contacto con el collider se manda al jugador al checkpoint y se le resta una vida
             other.transform.position = new Vector2(x, y);
             EstadoPJ.instance.vidas--;
             HUD.instance.ActualizarVidas();

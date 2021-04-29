@@ -110,6 +110,4 @@ public class Transiciones : MonoBehaviour
         }
         Time.timeScale = 1;
     }
-
-
 }

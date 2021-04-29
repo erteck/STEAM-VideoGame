@@ -14,6 +14,7 @@ public class TilemapDañoRayo : MonoBehaviour
         //Función que se ejecuta si el tilemap entra en contacto con otro collider
         if(other.gameObject.CompareTag("Player"))
         {
+            //Si el jugador entra en contacto con el collider del rayo se le quitará una vida
             EstadoPJ.instance.vidas--;
             HUD.instance.ActualizarVidas();
         }
