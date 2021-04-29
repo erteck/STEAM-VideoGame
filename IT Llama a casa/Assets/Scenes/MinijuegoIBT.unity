@@ -2320,7 +2320,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2d78a4c60235a194cb2d156ea897841c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2586,7 +2586,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &252182060
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4931,6 +4931,7 @@ GameObject:
   - component: {fileID: 481854045}
   - component: {fileID: 481854047}
   - component: {fileID: 481854046}
+  - component: {fileID: 481854048}
   m_Layer: 5
   m_Name: Considera
   m_TagString: Untagged
@@ -4955,7 +4956,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0087890625, y: -244.35}
+  m_AnchoredPosition: {x: 0.0087890625, y: -405}
   m_SizeDelta: {x: -1025.2, y: -652.8282}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &481854046
@@ -4996,6 +4997,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 481854044}
   m_CullTransparentMesh: 1
+--- !u!95 &481854048
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481854044}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e3bac6d1bfa796c4ab023cb0250f0c77, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &484669585
 GameObject:
   m_ObjectHideFlags: 0
@@ -10175,7 +10195,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "ESPERA, MICRO...\xBFQU\xC9?\n\nLos microarreglos son herramientas del
+  m_Text: "ESPERA, MICRO... \xBFQU\xC9?\n\nLos microarreglos son herramientas del
     \xE1rea de la biotecnolog\xEDa que sirven para analizar el ADN de los seres vivos,
     como una persona. \n\nPueden usarse para diagnosticar la presencia de alguna
     enfermedad.\r"
@@ -17291,6 +17311,7 @@ GameObject:
   - component: {fileID: 1777486107}
   - component: {fileID: 1777486109}
   - component: {fileID: 1777486108}
+  - component: {fileID: 1777486110}
   m_Layer: 5
   m_Name: Iconos
   m_TagString: Untagged
@@ -17314,7 +17335,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -537, y: -148.18}
+  m_AnchoredPosition: {x: -537, y: -171}
   m_SizeDelta: {x: 529.2767, y: 339.4251}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1777486108
@@ -17355,6 +17376,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1777486106}
   m_CullTransparentMesh: 1
+--- !u!95 &1777486110
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777486106}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f8a08ba12dcf21742b854b62a25f8e37, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1780090518
 GameObject:
   m_ObjectHideFlags: 0
