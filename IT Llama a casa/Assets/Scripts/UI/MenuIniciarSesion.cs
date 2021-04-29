@@ -9,7 +9,7 @@ using Newtonsoft.Json; //jSON CONVERT
 public class MenuIniciarSesion : MonoBehaviour
 {
     //Campos con la información nombre y contraseña
-    public Text textoUsername;
+    public InputField textoUsername;
     public Text textoPassword;
     public InputField inputPassword;
     public Text textoError;
