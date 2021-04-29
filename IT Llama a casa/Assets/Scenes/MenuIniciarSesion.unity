@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 199e24d1809526a4da04623585fd420d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textoUsername: {fileID: 611219030}
+  textoUsername: {fileID: 1992426903}
   textoPassword: {fileID: 1928469720}
   inputPassword: {fileID: 943386518}
   textoError: {fileID: 798064530}

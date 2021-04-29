@@ -95,7 +95,7 @@ public class Inicio : MonoBehaviour
         else
         {
             //Se carga la siguiente escena
-            SceneManager.LoadScene("Mapa");
+            SceneManager.LoadScene("MenuInicial");
         }
     }
 }
