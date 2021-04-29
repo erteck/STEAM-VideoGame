@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /*
-Script que contiene la matriz de botones del jugador y sus funciones
-Autores: Jacqueline Zavala e Israel Sánchez
+* Script que contiene la matriz de botones del jugador y sus funciones
+* Autores: Jacqueline Zavala e Israel Sánchez
 */
 
 public class MatrizJugador : MonoBehaviour

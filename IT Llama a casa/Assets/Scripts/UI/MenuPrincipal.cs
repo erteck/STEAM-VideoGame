@@ -8,8 +8,7 @@ using UnityEngine.Networking; //Para red. UnityWebRequest
 using Newtonsoft.Json; //jSON CONVERT
 /*
 Permite darle funcionalidades a los componentes del menú
-Autores: Edna Jacqueline Zavala Ortega, David Rodríguez Fragoso,
-Erick Alberto Bustos Cruz, Erick Hernández Silva, Israel Sánchez Miranda
+Autores: Edna Jacqueline Zavala Ortega y Erick Hernández Silva
 */
 
 public class MenuPrincipal : MonoBehaviour
@@ -19,6 +18,7 @@ public class MenuPrincipal : MonoBehaviour
 
     //MÉTODOS
     private IEnumerator crearNuevaPartida(){
+        // Función que permite crear una nueva partida.
         UnityWebRequest request = UnityWebRequest.Get("http://18.116.89.34:8080/partida/agregarPartida?username=" + DatosUsuario.username + "&correo="+DatosUsuario.correo);
         yield return request.SendWebRequest(); //Regresa, ejecuta y espera....
         if (request.downloadHandler.text != "failed"){// 200
@@ -37,6 +37,7 @@ public class MenuPrincipal : MonoBehaviour
     //MÉTODOS
     public void Jugar()
     {
+        // Método que le da funcionalidad al botón de jugar y utiliza crearPartidaNueva
         //Si no hay una partida en curso, entonces inicia una nueva
         if(DatosUsuario.idPartida == 0){
             StartCoroutine(crearNuevaPartida());
@@ -54,16 +55,19 @@ public class MenuPrincipal : MonoBehaviour
 
     public void Regresar()
     {
+        // Método que da funcionalidad para regresar al inicio de Sesión desde el menú principal.
         SceneManager.LoadScene("MenuIniciarSesion");
     }
 
     public void EditarPerfil()
     {
+        // Método que le da funcionalidad al menú para ir a la escena de Editar Perfil.
         SceneManager.LoadScene("EditarPerfil");
     }
     
     public void MejoresPuntuaciones()
     {
+        // Método que le da funcionalidad al menú para ir a la escena del tablero de Mejores Puntuaciones.
         SceneManager.LoadScene("MejoresPuntuaciones");
     }
     

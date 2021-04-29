@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /*
-Script que se encarga de los elementos relacionados a la puntuación del minijuego y sus funciones
-Autores: Jacqueline Zavala e Israel Sánchez
+* Script que se encarga de los elementos relacionados a la puntuación del minijuego y sus funciones
+* Autores: Jacqueline Zavala e Israel Sánchez
 */
 
 public class Puntaje : MonoBehaviour

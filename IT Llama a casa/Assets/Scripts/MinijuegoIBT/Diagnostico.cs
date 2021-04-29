@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /*
-Gestiona los aspectos relacionados con el diagnóstico del microarreglo tales como la asignación interna o la selección del jugador
-Autores: Jacqueline Zavala e Israel Sánchez
+* Gestiona los aspectos relacionados con el diagnóstico del microarreglo tales como 
+* la asignación interna o la selección del jugador
+* Autores: Jacqueline Zavala e Israel Sánchez
 */
 
 public class Diagnostico : MonoBehaviour

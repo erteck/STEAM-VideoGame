@@ -5,8 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 /*
-Script que se encarga de la interacción del jugador con los personajes no jugables (diálogos, hablar con ellox, etc.)
-Autor: Israel Sánchez Miranda
+* Script que se encarga de la interacción del jugador con los personajes no jugables (diálogos, hablar con ellox, etc.)
+* Autor: Israel Sánchez Miranda
 */
 
 public class InteractuarPersonaje2 : MonoBehaviour

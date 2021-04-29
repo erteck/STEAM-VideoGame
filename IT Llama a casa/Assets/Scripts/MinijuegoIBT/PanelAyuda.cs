@@ -7,6 +7,7 @@ using UnityEngine;
 * la mecánica del juego
 * Autor: Jacqueline Zavala.
 */
+
 public class PanelAyuda : MonoBehaviour
 {
     // VARIABLES

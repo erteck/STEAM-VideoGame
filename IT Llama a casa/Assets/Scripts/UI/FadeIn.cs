@@ -11,9 +11,10 @@ Autores: David Rodríguez e Israel Sánchez
 public class FadeIn : MonoBehaviour
 {
     //VARIABLES
-    public Image imagenFondo; //La imágen de fondo
+    public Image imagenFondo; //La imagen de fondo
     void Start()
     {
+        // Función que reproduce el efecto de Fade-In
         imagenFondo.CrossFadeAlpha(0, 1, true);
     }
 }

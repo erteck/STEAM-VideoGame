@@ -6,8 +6,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 /*
-Código que le otorga todas sus funciones a la matriz a copiar y sirve como esqueleto del juego
-Autores: Jacqueline Zavala e Israel Sánchez
+* Código que le otorga todas sus funciones a la matriz a copiar y sirve como esqueleto del juego
+* Autores: Jacqueline Zavala e Israel Sánchez
 */
 
 public class GenerarMatriz : MonoBehaviour

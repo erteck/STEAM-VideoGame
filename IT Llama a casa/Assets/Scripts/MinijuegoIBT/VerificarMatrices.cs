@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /*
-Script que contiene las funciones de verificar las matrices y mostrarle los resultados de esta verificación al jugador
-Autores: Jacqueline Zavala e Israel Sánchez
+* Script que contiene las funciones de verificar las matrices y mostrarle los resultados de esta verificación al jugador
+* Autores: Jacqueline Zavala e Israel Sánchez
 */
 
 public class VerificarMatrices : MonoBehaviour
@@ -38,8 +38,9 @@ public class VerificarMatrices : MonoBehaviour
     
     public void RevisarMatrices()
     {
-        Transiciones.instance.sonidoClick.Play();
+
         //Función que se encarga de revisar cuantas casillas de la matriz del jugador son iguales a las de la matriz a copiar
+        Transiciones.instance.sonidoClick.Play();
         for(int i = 0; i < 4; i++)
         {
             for(int j = 0; j < 4; j++)

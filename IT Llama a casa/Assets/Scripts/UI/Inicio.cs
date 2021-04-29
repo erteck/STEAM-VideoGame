@@ -5,7 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 /*
-Script que le da sus funcionalidades a la escena del inicio
+*Script que le da sus funcionalidades a la escena del inicio
+* Autor: Israel Sánchez
 */
 
 public class Inicio : MonoBehaviour

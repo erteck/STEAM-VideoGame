@@ -15,16 +15,16 @@ using UnityEngine.SceneManagement;
 public class Transiciones : MonoBehaviour
 {
     // VARIABLES
-    public GameObject panelContexto1;
+    public GameObject panelContexto1; // Referencia a los paneles iniciales.
     public GameObject panelContexto2;
     public GameObject panelContexto3;
     public GameObject panelContexto4;
-    public GameObject panelAyuda;
-    public GameObject panelAyudaCopiar;
-    public AudioSource sonidoClick;
-    private int panelActual;
-    private GameObject[] paneles;
-    public static Transiciones instance;
+    public GameObject panelAyuda;       // Referencia al panel de ayuda.
+    public GameObject panelAyudaCopiar; // Referencia al panel de ayuda para saber cómo copiarlo.
+    public AudioSource sonidoClick;     // Referencia al sonido de click
+    private int panelActual;            // Variable para navegar en el arreglo de paneles.
+    private GameObject[] paneles;       // Arreglo de paneles.
+    public static Transiciones instance; // Variable de tipo Transiciones.
 
     void Start()
     {
@@ -37,11 +37,13 @@ public class Transiciones : MonoBehaviour
     
     void Awake()
     {
+        // Crear una instancia de la clase.
         instance = this;
     }
 
     public void Siguiente()
     {
+        // Función que permite navegar "hacia adelante" entre los paneles iniciales.
         // Se pone el efecto de click.
         sonidoClick.Play();
         if(panelActual + 1 == 4)
@@ -62,6 +64,8 @@ public class Transiciones : MonoBehaviour
 
     public void Volver()
     {
+        // Función que permite navegar "de regreso" entre los paneles del contexto
+        // así como regresar al mapa principal.
         // Efecto de click
         sonidoClick.Play();
         if(panelActual == 0)
@@ -78,16 +82,9 @@ public class Transiciones : MonoBehaviour
 
     }
 
-   /* public void Ayuda()
-    {
-        // Efecto de click
-        sonidoClick.Play();
-        panelAyuda.SetActive(true);
-        Time.timeScale = 0;
-    }*/
-
     public void AyudaGeneral()
     {
+        // Función que despliega el panel de ayuda general
         sonidoClick.Play();
         panelAyuda.SetActive(true);
         Time.timeScale = 0;
@@ -100,17 +97,6 @@ public class Transiciones : MonoBehaviour
         Time.timeScale = 0;
     }
 
-    /*
-
-    public void AyudaCopiar()
-    {
-        // Efecto de click
-        sonidoClick.Play();
-        panelAyudaCopiar.SetActive(true);
-        Time.timeScale = 0;
-        
-    }
-*/
     public void ContinuarJuego()
     {
         sonidoClick.Play();

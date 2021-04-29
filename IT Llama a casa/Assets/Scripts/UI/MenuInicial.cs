@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+*Script que le da sus funcionalidades a la escena del inicio
+* Autor: Erick Hernández
+*/
+
 public class MenuInicial : MonoBehaviour
 {
     // Start is called before the first frame update

@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /*
-Código que permite que los botones de la matriz del jugador cambien de color
-Autores: Jacqueline Zavala e Israel Sánchez
+* Código que permite que los botones de la matriz del jugador cambien de color
+* Autores: Jacqueline Zavala e Israel Sánchez
 */
 
 public class CambiarBoton : MonoBehaviour

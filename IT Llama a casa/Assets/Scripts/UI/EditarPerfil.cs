@@ -26,6 +26,8 @@ public class EditarPerfil : MonoBehaviour
     private datosJugador datos;
     private IEnumerator enviarDatosEditarPerfil()
     {
+        // Función que permite enviar los datos producto de la edición del perfil
+        // Los datos editables son la contraseña y el correo electrónico
         if (nuevaPassword.text != "")
         {
             if (nuevaPassword.text == confirmaNuevaPassword.text)
