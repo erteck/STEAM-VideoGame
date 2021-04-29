@@ -36,7 +36,7 @@ public class Nave2 : MonoBehaviour
     public GameObject reiniciar;
     
     // Puntos acumulados
-    public static int puntaje;
+    public static int puntaje = 0;
     
     // Puntos del último nivel
     public static int puntosnivel;
@@ -61,13 +61,25 @@ public class Nave2 : MonoBehaviour
     
     //  DateTime inicio de la jugada
     public string dateTimeInicioJugada;
+    
     // DateTime fin de la jugada
     public string dateTimeFinJugada;
+    
+    // Audio Source Explosión
+    public AudioSource explosion;
+    
+    // Audio Source Éxito
+    public AudioSource exito;
+    
+    // Ver si está en colisión
+    public static bool enColision = true;
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         // Cuando el jugador completa el nivel
         if (other.gameObject.CompareTag("Destino"))
         {
+            exito.Play();
             Debug.Log("DESTINO");
             // Actualizar nivel
             nivelActual += 1;
@@ -83,7 +95,9 @@ public class Nave2 : MonoBehaviour
                 puntosTexto.text = puntaje.ToString();
                 // Actualizar puntos en la pantalla de nivel completado
                 textoPanelPuntos.text = puntosnivel.ToString();
+                // Desplegar panel de nivel completado
                 nivelCompletado.SetActive(true);
+                // Cambiar los enemigos por los del siguiente nivel
                 enemigosNivel1.SetActive(false);
                 enemigosNivel2.SetActive(true);
                 
@@ -110,7 +124,7 @@ public class Nave2 : MonoBehaviour
             }
             else if (nivelActual == 5)
             {
-                puntosnivel = 2000 * 4 /MoverPersonaje2.instrucciones.Count;
+                puntosnivel = 2000 * 6 /MoverPersonaje2.instrucciones.Count;
                 puntaje += puntosnivel;
                 puntosTexto.text = puntaje.ToString();
                 textoPanelPuntos.text = puntosnivel.ToString();
@@ -174,11 +188,19 @@ public class Nave2 : MonoBehaviour
             // Mover contador del vector de instrucciones a 0
             MoverPersonaje2.contadordelvector = 0;
             
-            //Dejar de dibujar la nave
+            // Dejar de dibujar la nave
             GetComponent<SpriteRenderer>().enabled = false;
             
-            //Activar la explosión
+            // Activar la explosión
             gameObject.transform.GetChild(0).gameObject.SetActive(true);
+
+            if (enColision)
+            {
+                // Activar sonido explosión
+                explosion.Play();
+                enColision = false;
+            }
+            
             
             // Llamar corrutina
             StartCoroutine(ContarExplosion());
@@ -191,6 +213,7 @@ public class Nave2 : MonoBehaviour
     {
         dateTimeInicioJugada = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
     }
+    
 
     private IEnumerator ContarExplosion()
     {
@@ -204,6 +227,7 @@ public class Nave2 : MonoBehaviour
         //transform.rotation =  Quaternion.Euler(0, 0, 0);
         transform.rotation = Quaternion.identity;
         //Dibujar la nave de nuevo
+        enColision = true;
         GetComponent<SpriteRenderer>().enabled = true;
         yield return new WaitForSeconds(2);
         

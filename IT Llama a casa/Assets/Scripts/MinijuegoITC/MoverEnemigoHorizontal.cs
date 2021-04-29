@@ -13,14 +13,11 @@ public class MoverEnemigoHorizontal : MonoBehaviour
     private Rigidbody2D rigidBody;  //Para fisica
     private SpriteRenderer spriterenderer;
     
-
-    //METODOS
     
-    // Start is called before the first frame update
     void Start()
     {
         //Inicializar variables
-        rigidBody = GetComponent<Rigidbody2D>();  //Enlazar RB --> script
+        rigidBody = GetComponent<Rigidbody2D>();  
         spriterenderer = GetComponent<SpriteRenderer>();
     }
     
@@ -28,14 +25,14 @@ public class MoverEnemigoHorizontal : MonoBehaviour
     {
         if (transform.position.x <= -6.54)
         {
-            //Desplaza al personaje en el eje -y
+            //Desplaza al personaje en el eje x
             maxVelocidadX = 5;
             spriterenderer.flipX=false;
 
             
         }else if(transform.position.x >= 1.59)
         {
-            //Desplaza al personaje en el eje y
+            //Desplaza al personaje en el eje -x
             maxVelocidadX = -5;
             spriterenderer.flipX=true;
 

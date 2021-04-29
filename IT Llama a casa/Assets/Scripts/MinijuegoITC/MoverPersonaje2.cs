@@ -105,10 +105,12 @@ public class MoverPersonaje2 : MonoBehaviour
             // Avanzar
             if (instruccionactual == 1)
             {
-                transform.Translate(Vector3.right * Time.deltaTime);
+                float ntime = Time.deltaTime * 2;
+                transform.Translate(Vector3.right * ntime);
                 if (comenzaracontar)
                 {
-                    StartCoroutine(Espera(instrucciones[contadordelvector][1]));
+                    
+                    StartCoroutine(EsperaAvanzar(instrucciones[contadordelvector][1]));
                     comenzaracontar = false;
                 }
                 
@@ -155,14 +157,30 @@ public class MoverPersonaje2 : MonoBehaviour
         
     }
 
-    // Rutina que cuenta el tiempo que deben ejecutarse las instrucciones avanzar y parar
+    // Rutina que cuenta el tiempo que deben ejecutarse La instrucción avanzar
+    // y al terminar, frena su ejecución y permite ejecutar una nueva intrucción
+    public IEnumerator EsperaAvanzar(int tiempo)
+    {
+        Debug.Log("AQUI EJECUTAMOS ESPERA");
+        Debug.Log("Y EJECUTA ES" + ejecuta.ToString());
+        
+        yield return new WaitForSeconds(tiempo/2f);
+        if (ejecuta)
+        {
+            contadordelvector += 1;
+        }
+        comenzaracontar = true;
+        
+    }
+    
+    // Rutina que cuenta el tiempo que deben ejecutarse la instrucción parar
     // y al terminar, frena su ejecución y permite ejecutar una nueva intrucción
     public IEnumerator Espera(int tiempo)
     {
         Debug.Log("AQUI EJECUTAMOS ESPERA");
         Debug.Log("Y EJECUTA ES" + ejecuta.ToString());
         
-        yield return new WaitForSeconds(tiempo);
+        yield return new WaitForSeconds(tiempo/2f);
         if (ejecuta)
         {
             contadordelvector += 1;
