@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
 using UnityEngine.UI;
-//using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement;
 
 /*
 * Permite manejar las transiciones de los paneles iniciales del juego.
@@ -48,12 +48,16 @@ public class Transiciones : MonoBehaviour
     }
 
     public void Volver(){
+        if(panelActual == 0)
+        {
+            SceneManager.LoadScene("Mapa");    
+        }
+        else
+        {
+            paneles[panelActual].SetActive(false);
+            panelActual -= 1;
+            paneles[panelActual].SetActive(true);
+        }
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
