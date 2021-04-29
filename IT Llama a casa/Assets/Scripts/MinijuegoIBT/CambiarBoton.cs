@@ -17,14 +17,15 @@ public class CambiarBoton : MonoBehaviour
     public Sprite verde; 
     private static bool esRojo;          //Variables booleanas que permiten saber el color escogido de la "paleta"
     private static bool esAmarillo;
-    private static bool esVerde; 
+    private static bool esVerde;
+
 
     //MÉTODOS
     public void CambiarColor(Button button)
     {
         //Función que cambia el color del botón basándose en el color escocigido de la "paleta"
         //Efecto de click.
-        Transiciones.sonidoClic.Play();
+        Transiciones.instance.sonidoClick.Play();
         //Parámetros: button - es el botón al que la función está asociada
         if(esRojo && !esAmarillo && !esVerde)     //Dependiendo del color que se haya escogido de la "paleta" el source image del botón cambiará
         {

@@ -21,9 +21,10 @@ public class Transiciones : MonoBehaviour
     public GameObject panelContexto4;
     public GameObject panelAyuda;
     public GameObject panelAyudaCopiar;
-    public static AudioSource sonidoClic;
+    public AudioSource sonidoClick;
     private int panelActual;
     private GameObject[] paneles;
+    public static Transiciones instance;
 
     void Start()
     {
@@ -33,22 +34,27 @@ public class Transiciones : MonoBehaviour
         // Cambia el timescale a 0 dado que se iniciarán los paneles y el tiempo no debe comenzar a correr.
         Time.timeScale = 0;   
     }
+    
+    void Awake()
+    {
+        instance = this;
+    }
 
     public void Siguiente()
     {
         // Se pone el efecto de click.
-        sonidoClic.Play();
-        // Desactivamos el panel actual.
-        paneles[panelActual].SetActive(false);
-        if(panelActual+1 == 4)
+        sonidoClick.Play();
+        if(panelActual + 1 == 4)
         {
             // Si es el último panel, desactivarlo y cambiar el valor del timescale a 1
             // para que el tiempo comience a correr porque el juego va a comenzar
             paneles[panelActual].SetActive(false);
             Time.timeScale = 1;
-            panelActual = 0;
             return;
         }
+
+        // Desactivamos el panel actual.
+        paneles[panelActual].SetActive(false);
         // Si no es el último, simplemente le sumamos uno y activamos el siguiente.
         panelActual += 1;
         paneles[panelActual].SetActive(true);
@@ -57,7 +63,7 @@ public class Transiciones : MonoBehaviour
     public void Volver()
     {
         // Efecto de click
-        sonidoClic.Play();
+        sonidoClick.Play();
         if(panelActual == 0)
         {
             SceneManager.LoadScene("Mapa");    
@@ -74,31 +80,31 @@ public class Transiciones : MonoBehaviour
    /* public void Ayuda()
     {
         // Efecto de click
-        sonidoClic.Play();
+        sonidoClick.Play();
         panelAyuda.SetActive(true);
         Time.timeScale = 0;
     }*/
 
-    public void Ayuda()
+    public void AyudaGeneral()
     {
-        sonidoClic.Play();
-        if (!panelAyuda.activeSelf)
-        {
-            panelAyuda.SetActive(false);
-        }
-        else
-        {
-            panelAyudaCopiar.SetActive(false);
-        }
-
-        Time.timeScale = 1;
+        sonidoClick.Play();
+        panelAyuda.SetActive(true);
+        Time.timeScale = 0;
     }
+
+    public void AyudaCopiar()
+    {
+        sonidoClick.Play();
+        panelAyudaCopiar.SetActive(true);
+        Time.timeScale = 0;
+    }
+
     /*
 
     public void AyudaCopiar()
     {
         // Efecto de click
-        sonidoClic.Play();
+        sonidoClick.Play();
         panelAyudaCopiar.SetActive(true);
         Time.timeScale = 0;
         
@@ -106,7 +112,7 @@ public class Transiciones : MonoBehaviour
 */
     public void ContinuarJuego()
     {
-        sonidoClic.Play();
+        sonidoClick.Play();
         if (panelAyuda.activeSelf)
         {
             panelAyuda.SetActive(false);
@@ -115,7 +121,8 @@ public class Transiciones : MonoBehaviour
         {
             panelAyudaCopiar.SetActive(false);
         }
-
         Time.timeScale = 1;
     }
+
+
 }
