@@ -11,6 +11,7 @@ public class CierraVentana : MonoBehaviour
     //Referencia a la ventana
     public GameObject ventana;
     
+    // Oculta la ventana al dar click en el botón con la X
     public void Cerrar()
     {
         ventana.gameObject.SetActive(false);

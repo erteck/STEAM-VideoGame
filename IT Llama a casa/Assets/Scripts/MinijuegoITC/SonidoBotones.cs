@@ -7,8 +7,10 @@ using UnityEngine;
  */
 public class SonidoBotones : MonoBehaviour
 { 
+    // Referencia al Audiosource
     public AudioSource boton;
-
+    
+    // Reproducir el sonido del botón
     public void SonidoBoton()
     {
         boton.Play();
