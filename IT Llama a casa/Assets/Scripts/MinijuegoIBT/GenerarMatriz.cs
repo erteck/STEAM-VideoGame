@@ -133,6 +133,7 @@ public class GenerarMatriz : MonoBehaviour
         CargarJugador.piezaIBT = true;
         //Sube la jugada a la BD
         SceneManager.LoadScene("Mapa");
+        Time.timeScale = 1;
  
         
     }
