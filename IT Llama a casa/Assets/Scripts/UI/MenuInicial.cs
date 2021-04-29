@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 /*
 *Script que le da sus funcionalidades a la escena del inicio
-* Autor: Erick Hernández
+* Autor: Erick Bustos
 */
 
 public class MenuInicial : MonoBehaviour
