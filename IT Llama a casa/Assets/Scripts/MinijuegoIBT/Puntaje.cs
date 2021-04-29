@@ -69,6 +69,7 @@ public class Puntaje : MonoBehaviour
     {
         //Función que "guarda" los puntos en los textos de la interfaz y se los muestra al jugador
         // También se redondea el puntaje final para registrar la partida en la base de datos
+        Transiciones.instance.sonidoClick.Play();
         puntos.text = puntosTotal.ToString();
         puntosFinal.text = puntosTotal.ToString();
     }

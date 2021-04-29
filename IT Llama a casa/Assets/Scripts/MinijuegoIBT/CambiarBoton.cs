@@ -48,6 +48,7 @@ public class CambiarBoton : MonoBehaviour
 
     public void queColor(string color)
     {
+        Transiciones.instance.sonidoClick.Play();
         //Función otorgada a los tres botones de la paleta que, basándose en el string de entrada les perimte asignar colores a los demás botones
         //Parámetros: color - es un string que se envía desde Unity, tiene que ver con el color al que está asociado el botón
         if(color == "rojo") //Si el string color recibido es rojo

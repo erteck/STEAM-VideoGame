@@ -66,7 +66,8 @@ public class Transiciones : MonoBehaviour
         sonidoClick.Play();
         if(panelActual == 0)
         {
-            SceneManager.LoadScene("Mapa");    
+            SceneManager.LoadScene("Mapa");
+            Time.timeScale = 1;    
         }
         else
         {

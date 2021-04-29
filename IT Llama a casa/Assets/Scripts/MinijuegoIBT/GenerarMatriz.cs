@@ -43,6 +43,7 @@ public class GenerarMatriz : MonoBehaviour
     public static int diagRojo;        //Variable que indica la cantidad de celdas rojas que hay, se asocia con el diagnóstico real
     public static int diagVerde;       //Variable que indica la cantidad de celdas verdes que hay, se asocia con el diagnóstico real
     private string fechaInicial;
+    public AudioSource audioRonda;
     
 
     //MÉTODOS
@@ -104,6 +105,7 @@ public class GenerarMatriz : MonoBehaviour
         //Función que se encarga de cambiar la ronda en la que el juego se encuentra, va asociada a un botón
         ronda++;  //Se le suma un uno a la ronda
         textoRonda.text = ronda.ToString();  //Se cambia el texto de la ronda
+        audioRonda.Play();
         if(ronda > 3)
         {
             // variable local que obtiene la fecha en la que se finalizó el minijuego
@@ -142,8 +144,8 @@ public class GenerarMatriz : MonoBehaviour
         {
             //Si es la primer ronda las probabilidades serán las siguientes:
             probabilidadRojo = 45;      //El color rojo tendrá 45% de probabilidades de salir
-            probabilidadAmarillo = 60;  //El amarillo tendrá 15% de probabilidades de salir
-            probabilidadVerde = 100;    //El verde tendrá 55% de probabilidades de salir
+            probabilidadAmarillo = 65;  //El amarillo tendrá 20% de probabilidades de salir
+            probabilidadVerde = 100;    //El verde tendrá 35% de probabilidades de salir
         }
         else if(ronda == 2)
         {

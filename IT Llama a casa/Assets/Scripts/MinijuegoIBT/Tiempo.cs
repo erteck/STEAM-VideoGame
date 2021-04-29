@@ -79,6 +79,7 @@ public class Tiempo : MonoBehaviour
     {
         //Función que se encarga de resetear el contador, va asignada a botones
         //Parámetros: reintentar - indica si el botón presionado es el de reintentar o no
+        Transiciones.instance.sonidoClick.Play();
         AsignarTiempo();  //Se vuelve a asignar el tiempo dependiendo de la ronda
         estaCorriendo = true;  //Se inidica que esta corriendo
         if(reintentar)  //Si el jugador está reintentando entonces se cambiará la variable estaReintentando
@@ -97,8 +98,8 @@ public class Tiempo : MonoBehaviour
         if(GenerarMatriz.ronda == 1)
         {
             //Si es la primer ronda el jugador tendrá 30 segundos
-            tiempoRestante = 25;
-            tiempoTotal = 25;
+            tiempoRestante = 22;
+            tiempoTotal = 22;
         }
         else if(GenerarMatriz.ronda == 2)
         {

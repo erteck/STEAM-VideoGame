@@ -38,6 +38,7 @@ public class VerificarMatrices : MonoBehaviour
     
     public void RevisarMatrices()
     {
+        Transiciones.instance.sonidoClick.Play();
         //Función que se encarga de revisar cuantas casillas de la matriz del jugador son iguales a las de la matriz a copiar
         for(int i = 0; i < 4; i++)
         {

@@ -74,6 +74,7 @@ public class Diagnostico : MonoBehaviour
         //Función que se ejecuta cuando el jugador selecciona un botón de diagnóstico, le asigna un valor al diagnóstico del jugador
         //Parámetros: diag - variable booleana, hace referencia al diagnóstico del jugador, dependiendo del botón que presione se le asignará
         //true o false al diagnostico del jugador, siendo true un diagnóstico de etapa temprana y flase uno de etapa avanzada
+        Transiciones.instance.sonidoClick.Play();
         diagnosticoJugador = diag;
         VerificarDiagnostico();  //Una vez asignado el diagnóstico se ejecuta la función de verificar diagnóstico
     }
