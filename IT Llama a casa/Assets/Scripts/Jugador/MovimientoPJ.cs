@@ -34,6 +34,11 @@ public class MovimientoPJ : MonoBehaviour
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, maxVelocidadY);
         }
+        if(Input.GetButtonDown(KeyCode.K.ToString()))
+        {
+            EstadoPJ.instance.vidas = 0;
+            HUD.instance.ActualizarVidas();
+        }
 
         //Si la velocidad es negativa (caer) no puede superar el límite de -10.1
         if(rb2d.velocity.y < 0){

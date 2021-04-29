@@ -13,7 +13,7 @@ public class MenuInicial : MonoBehaviour
 
     public void Registro()
     {
-        Application.OpenURL("http://localhost:8080/jugador/formularioRegistro#");
+        Application.OpenURL("http://18.116.89.34:8080/jugador/formularioRegistro#");
     }
     public void Salir()
     {

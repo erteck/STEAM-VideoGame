@@ -73,7 +73,7 @@ public class PuntoGuardado : MonoBehaviour
         print(partidaFinalizada);
         if (!partidaFinalizada)
         {
-            UnityWebRequest request = UnityWebRequest.Post("http://localhost:8080/partida/guardarPartida",forma);
+            UnityWebRequest request = UnityWebRequest.Post("http://18.116.89.34:8080/partida/guardarPartida",forma);
             yield return request.SendWebRequest(); //Regresa, ejecuta y espera....
             if (request.downloadHandler.text == "success"){// 200
                 print("PUNTO DE CONTROL ALCANZADO");
@@ -87,7 +87,7 @@ public class PuntoGuardado : MonoBehaviour
         else
         {
             print("Entré al ELSE");
-            UnityWebRequest request = UnityWebRequest.Post("http://localhost:8080/partida/finalizarPartida",forma);
+            UnityWebRequest request = UnityWebRequest.Post("http://18.116.89.34:8080/partida/finalizarPartida",forma);
             DatosUsuario.idPartida = 0;
             // PlayerPrefs.SetFloat("ultimaPosicionX",-8.67f);
             // PlayerPrefs.SetFloat("ultimaPosicionY",1.13f);
@@ -151,7 +151,7 @@ public class PuntoGuardado : MonoBehaviour
         //Encapsular los datos que suben a la red
         WWWForm forma = new WWWForm();
         forma.AddField("datosJSON", JsonUtility.ToJson(datosPartida));
-        UnityWebRequest request = UnityWebRequest.Post("http://localhost:8080/partida/FinalizarPartida",forma);
+        UnityWebRequest request = UnityWebRequest.Post("http://18.116.89.34:8080/partida/FinalizarPartida",forma);
         yield return request.SendWebRequest(); //Regresa, ejecuta y espera....
         if (request.downloadHandler.text == "success"){// 200
             print("UPDATE exitoso");
@@ -186,7 +186,7 @@ public class PuntoGuardado : MonoBehaviour
         //Encapsular los datos que suben a la red
         WWWForm forma = new WWWForm();
         forma.AddField("datosJSON", JsonUtility.ToJson(datosJugada));
-        UnityWebRequest request = UnityWebRequest.Post("http://localhost:8080/jugador/editarPerfil",forma);
+        UnityWebRequest request = UnityWebRequest.Post("http://18.116.89.34:8080/jugador/editarPerfil",forma);
         yield return request.SendWebRequest(); //Regresa, ejecuta y espera....
         if (request.downloadHandler.text == "success"){// 200
             yield return new WaitForSeconds(10);

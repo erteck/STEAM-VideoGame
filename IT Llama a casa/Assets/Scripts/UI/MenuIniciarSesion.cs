@@ -31,7 +31,7 @@ public class MenuIniciarSesion : MonoBehaviour
         //Encapsular los datos que suben a la red
         WWWForm forma = new WWWForm();
         forma.AddField("datosJSON", JsonUtility.ToJson(datos));
-        UnityWebRequest request = UnityWebRequest.Post("http://localhost:8080/jugador/iniciarSesion",forma);
+        UnityWebRequest request = UnityWebRequest.Post("http://18.116.89.34:8080/jugador/iniciarSesion",forma);
         yield return request.SendWebRequest(); //Regresa, ejecuta y espera....
         if (request.downloadHandler.text != "failed"){// 200
             var datos = request.downloadHandler.text;

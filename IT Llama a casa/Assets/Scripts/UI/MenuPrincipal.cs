@@ -19,7 +19,7 @@ public class MenuPrincipal : MonoBehaviour
 
     //MÉTODOS
     private IEnumerator crearNuevaPartida(){
-        UnityWebRequest request = UnityWebRequest.Get("http://localhost:8080/partida/agregarPartida?username=" + DatosUsuario.username + "&correo="+DatosUsuario.correo);
+        UnityWebRequest request = UnityWebRequest.Get("http://18.116.89.34:8080/partida/agregarPartida?username=" + DatosUsuario.username + "&correo="+DatosUsuario.correo);
         yield return request.SendWebRequest(); //Regresa, ejecuta y espera....
         if (request.downloadHandler.text != "failed"){// 200
             var datos = request.downloadHandler.text;

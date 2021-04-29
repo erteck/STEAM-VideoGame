@@ -24,7 +24,7 @@ public class MejoresPuntuaciones : MonoBehaviour
     // Manda una peticion al servidor web y despliega el TOP 10
     private IEnumerator ObtenerPuntuaciones(){
         //Encapsular los datos que suben a la red
-        UnityWebRequest request = UnityWebRequest.Get("http://localhost:8080/partida/mejoresPuntuaciones");
+        UnityWebRequest request = UnityWebRequest.Get("http://18.116.89.34:8080/partida/mejoresPuntuaciones");
         yield return request.SendWebRequest(); //Regresa, ejecuta y espera....
         //el servidor responde con un string formateado con los datos dle top 10
         if (request.downloadHandler.text != "error"){// 200
