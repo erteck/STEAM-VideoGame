@@ -40,7 +40,6 @@ public class Transiciones : MonoBehaviour
         {
             paneles[panelActual-1].SetActive(false);
             Time.timeScale = 1;
-            panelActual = 0;
             return;
         }
         panelActual += 1;
@@ -48,7 +47,16 @@ public class Transiciones : MonoBehaviour
     }
 
     public void Volver(){
-
+        if(panelActual == 0)
+        {
+            SceneManager.LoadScene("Mapa");    
+        }
+        else
+        {
+            paneles[panelActual].SetActive(false);
+            panelActual -= 1;
+            paneles[panelActual].SetActive(true);
+        }
     }
 
     // Update is called once per frame
