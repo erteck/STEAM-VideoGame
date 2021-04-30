@@ -28,6 +28,7 @@ public class EditarPerfil : MonoBehaviour
     {
         // Función que permite enviar los datos producto de la edición del perfil
         // Los datos editables son la contraseña y el correo electrónico
+        print("A" + nuevaPassword.text + "A");
         if (nuevaPassword.text != "")
         {
             if (nuevaPassword.text == confirmaNuevaPassword.text)
