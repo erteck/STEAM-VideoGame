@@ -19,6 +19,7 @@ TagManager:
   - Destructor
   - Transportador
   - Checkpoint
+  - Barranco
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/*
+Permite que el DroidFollower detecte si el jugador está en el rango de visión y 
+persigue al jugador si lo está. Sino, regresa a su lugar de origen.
+Además activa la animaicción de ataque cuando esté en rango
+Autor: Erick Hernández Silva
+*/
 public class DroidFollower : MonoBehaviour
 {
     private Animator anim;   
@@ -47,8 +53,11 @@ public class DroidFollower : MonoBehaviour
         else if(other.gameObject.tag == "Transportador")
         {
             //Lo regresa a su posicion inicial
-           gameObject.transform.position = posicionInicial;
+           RegresarPosicionInicial();
         }
+    }
+    public void RegresarPosicionInicial(){
+        gameObject.transform.position = posicionInicial;
     }
     void Start()
     {

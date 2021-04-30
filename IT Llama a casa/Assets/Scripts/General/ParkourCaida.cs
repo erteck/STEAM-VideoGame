@@ -11,6 +11,7 @@ public class ParkourCaida : MonoBehaviour
     //VARIABLES
     public float x;  //Posición del checkpoint del jugador
     public float y;
+    public DroidFollower droid;
 
     //MÉTODOS
     private void OnTriggerEnter2D(Collider2D other)
@@ -22,6 +23,7 @@ public class ParkourCaida : MonoBehaviour
             other.transform.position = new Vector2(x, y);
             EstadoPJ.instance.vidas--;
             HUD.instance.ActualizarVidas();
+            droid.RegresarPosicionInicial();
         }
     }
 }
