@@ -70,7 +70,6 @@ public class MenuIniciarSesion : MonoBehaviour
     public void IniciarSesion()
     {
         // Método que le da la funcionalidad al menú para iniciar la co-rutina de Iniciar Sesión.
-    
         StartCoroutine(enviarDatosInicioSesion());
     }
 }

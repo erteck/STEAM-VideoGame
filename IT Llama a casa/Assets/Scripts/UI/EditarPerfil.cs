@@ -51,16 +51,17 @@ public class EditarPerfil : MonoBehaviour
         forma.AddField("datosJSON", JsonUtility.ToJson(datos));
         UnityWebRequest request = UnityWebRequest.Post("http://18.116.89.34:8080/jugador/editarPerfil",forma);
         yield return request.SendWebRequest(); //Regresa, ejecuta y espera....
-        if (request.downloadHandler.text == "success"){// 200
+        if (request.downloadHandler.text == "success") // 200
+        {
             DatosUsuario.correo = nuevoCorreo.text;
             textoResultado.text = "Información actualizada satisfactoriamente ";
             yield return new WaitForSeconds(10);
             textoResultado.text = "";
             nuevaPassword.text = "";
             confirmaNuevaPassword.text = "";
-
         }
-        else{
+        else
+        {
             print(request.downloadHandler.text);
             textoResultado.text = "Hubo un error verifica la información";
             yield return new WaitForSeconds(10);

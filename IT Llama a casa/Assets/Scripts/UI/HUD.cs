@@ -66,13 +66,15 @@ public class HUD : MonoBehaviour
 
     public void ActualizarPiezas()
     {
-        if(CargarJugador.piezaIBT == true){
+        //Función que actualiza el texto que indica cuantas piezas lleva recolectadas el personaje
+        if(CargarJugador.piezaIBT == true)
+        {
             EstadoPJ.instance.piezas += 1;
         }
-        if(CargarJugador.piezaITC == true){
+        if(CargarJugador.piezaITC == true)
+        {
             EstadoPJ.instance.piezas +=1 ;
         }
-        //Función que actualiza el texto que indica cuantas piezas lleva recolectadas el personaje
         Numpiezas.text = EstadoPJ.instance.piezas.ToString();
     }
 

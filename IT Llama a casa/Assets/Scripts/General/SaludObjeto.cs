@@ -16,7 +16,8 @@ public class SaludObjeto : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             //Solamente si tenemos menos de 3 vidas se podrá usar el objeto curativo
-            if(EstadoPJ.instance.vidas < 3){
+            if(EstadoPJ.instance.vidas < 3)
+            {
                 //Si el game object que recolecta la moneda es el jugador entonces:
                 GetComponent<SpriteRenderer>().enabled = false;   //Se deja de renderizar la pieza
 

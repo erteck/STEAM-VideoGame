@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /*
-Script que le otorga sus comportamientos a la escena de créditos
-Autores: David Rodríguez e Israel Sánchez
+* Script que le otorga sus comportamientos a la escena de créditos
+* Autores: David Rodríguez e Israel Sánchez
 */
 
 public class Creditos : MonoBehaviour

@@ -8,7 +8,7 @@ using UnityEngine.Networking; //Para red. UnityWebRequest
 using Newtonsoft.Json; //jSON CONVERT
 /*
 Permite darle funcionalidades a los componentes del menú
-Autores: Edna Jacqueline Zavala Ortega y Erick Hernández Silva
+Autores: Jacqueline Zavala Ortega y Erick Hernández Silva
 */
 
 public class MenuPrincipal : MonoBehaviour
@@ -21,7 +21,8 @@ public class MenuPrincipal : MonoBehaviour
         // Función que permite crear una nueva partida.
         UnityWebRequest request = UnityWebRequest.Get("http://18.116.89.34:8080/partida/agregarPartida?username=" + DatosUsuario.username + "&correo="+DatosUsuario.correo);
         yield return request.SendWebRequest(); //Regresa, ejecuta y espera....
-        if (request.downloadHandler.text != "failed"){// 200
+        if (request.downloadHandler.text != "failed") // 200
+        {
             var datos = request.downloadHandler.text;
             Dictionary<string, string> datosJugador = 
                 JsonConvert.DeserializeObject<Dictionary<string, string>>(datos);
@@ -39,9 +40,12 @@ public class MenuPrincipal : MonoBehaviour
     {
         // Método que le da funcionalidad al botón de jugar y utiliza crearPartidaNueva
         //Si no hay una partida en curso, entonces inicia una nueva
-        if(DatosUsuario.idPartida == 0){
+        if(DatosUsuario.idPartida == 0)
+        {
             StartCoroutine(crearNuevaPartida());
-        }else{//si ya hay una partida en curso, la continúa
+        }
+        else
+        {//si ya hay una partida en curso, la continúa
              //Función que le otorgará la posibilidad de iniciar el juego al componente que se le asigne
             SceneManager.LoadScene("Mapa");
         }

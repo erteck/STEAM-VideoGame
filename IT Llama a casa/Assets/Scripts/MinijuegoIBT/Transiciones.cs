@@ -92,19 +92,23 @@ public class Transiciones : MonoBehaviour
 
     public void AyudaCopiar()
     {
-        sonidoClick.Play();
+        // Función que despliega el panel de ayuda especialmente para la acción de copiar la matriz
         panelAyudaCopiar.SetActive(true);
         Time.timeScale = 0;
     }
 
     public void ContinuarJuego()
     {
+        // Función que oculta los paneles de ayuda dependiendo del que se encuentre activ
         sonidoClick.Play();
+        // Si se encuentra activo el panel de ayuda general, se oculta
         if (panelAyuda.activeSelf)
         {
             panelAyuda.SetActive(false);
         }
         else
+        // de lo contrario, oculta el otro panel de ayuda específico
+        // esto dado que ambos no pueden estar activos al mismo tiempo.
         {
             panelAyudaCopiar.SetActive(false);
         }

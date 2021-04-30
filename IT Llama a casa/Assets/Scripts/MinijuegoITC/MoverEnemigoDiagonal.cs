@@ -38,7 +38,8 @@ public class MoverEnemigoDiagonal : MonoBehaviour
             maxVelocidadX = 5;
 
             
-        }else if(transform.position.x >= xInicial)
+        }
+        else if(transform.position.x >= xInicial)
         {
             //Desplaza al personaje en el eje -x -y
             maxVelocidadY = -5;

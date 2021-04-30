@@ -45,7 +45,8 @@ public class InteractuarPersonaje2 : MonoBehaviour
             //Cuando se presiona la tecla de interactuar el juego se detiene y comienza el diálogo del personaje
             Time.timeScale = 0;
             //Si ya se recolectó la pieza, se cambia el texto estándar
-            if(CargarJugador.piezaITC){
+            if(CargarJugador.piezaITC)
+            {
                 textoDialogo.text = "¡Muchas gracias por tu ayuda! Te deseo un buen viaje a casa.";
             }
             dialogo.SetActive(true);

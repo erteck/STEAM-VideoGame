@@ -4,24 +4,27 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /*
-*Script que le da sus funcionalidades a la escena del inicio
+* Script que le da sus funcionalidades a la escena del inicio.
+* La funcionalidad principal es iniciar sesión o registrarse.
 * Autor: Erick Bustos
 */
 
 public class MenuInicial : MonoBehaviour
 {
-    // Start is called before the first frame update
     public void IniciaSesion()
     {
+        // Función que carga la escena de iniciar sesión.
         SceneManager.LoadScene("MenuIniciarSesion");
     }
 
     public void Registro()
     {
+        // Función que abre en el navegador del usuario el formulario de registro.
         Application.OpenURL("http://18.116.89.34:8080/jugador/formularioRegistro#");
     }
     public void Salir()
     {
+        // Función que permite salir del juego (finalizar la aplicación).
         Application.Quit();
     }
 }

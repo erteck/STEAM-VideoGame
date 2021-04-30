@@ -260,10 +260,12 @@ public class Nave2 : MonoBehaviour
         forma.AddField("datosJSON", JsonUtility.ToJson(datosJugada));
         UnityWebRequest request = UnityWebRequest.Post("http://18.116.89.34:8080/jugadas/agregarJugada",forma);
         yield return request.SendWebRequest(); //Regresa, ejecuta y espera....
-        if (request.downloadHandler.text == "success"){// 200
+        if (request.downloadHandler.text == "success") // 200
+        {
             yield return new WaitForSeconds(1);
         }
-        else{
+        else
+        {
             print(request.downloadHandler.text);
             yield return new WaitForSeconds(3);
             StartCoroutine(SubirJugada(fechaInicio,fechaFinal,puntaje));

@@ -49,7 +49,8 @@ public class PuntoGuardado : MonoBehaviour
                 //Se guardan las vidas del jugador en las preferencias
                 PlayerPrefs.SetInt("vidas",EstadoPJ.instance.vidas);
                 //Si el jugador tiene la pieza de IBT, se guarda en las preferencias
-                if(CargarJugador.piezaIBT){
+                if(CargarJugador.piezaIBT)
+                {
                     PlayerPrefs.SetInt("piezaIBT",1);
                 }
                 PlayerPrefs.Save();
@@ -89,7 +90,8 @@ public class PuntoGuardado : MonoBehaviour
             yield return request.SendWebRequest(); //Regresa, ejecuta y espera....
             if (request.downloadHandler.text == "success"){// 200
             }
-            else{
+            else
+            {
                 print(request.downloadHandler.text);
                 yield return new WaitForSeconds(3);
                 guardarPuntoControl();
@@ -104,7 +106,8 @@ public class PuntoGuardado : MonoBehaviour
             if (request.downloadHandler.text == "success"){// Si hubo éxito
                 DatosUsuario.idPartida = 0;
             }
-            else{ //Si no hubo éxito en el update
+            else //Si no hubo éxito en el update
+            { 
                 if(estatus == "Perdido")
                 {
                     StartCoroutine(guardarPartida("Perdido", true));
@@ -156,7 +159,8 @@ public class PuntoGuardado : MonoBehaviour
         forma.AddField("datosJSON", JsonUtility.ToJson(datosJugada));
         UnityWebRequest request = UnityWebRequest.Post("http://18.116.89.34:8080/jugador/editarPerfil",forma);
         yield return request.SendWebRequest(); //Regresa, ejecuta y espera....
-        if (request.downloadHandler.text != "success"){// Si no tuvo exito
+        if (request.downloadHandler.text != "success") // Si no tuvo exito
+        {
             yield return new WaitForSeconds(5);
             guardarMinijuego(minijuego,puntaje,fechaInicio,fechaFinal);
 
@@ -164,7 +168,8 @@ public class PuntoGuardado : MonoBehaviour
 
     }
     //Guarda la jugada con los parámetros especificados
-    public void subirJugada(string minijuego, int puntaje, string fechaInicio, string fechaFinal){
+    public void subirJugada(string minijuego, int puntaje, string fechaInicio, string fechaFinal)
+    {
         StartCoroutine(guardarMinijuego(minijuego, puntaje,fechaInicio,fechaFinal));
     }
 }

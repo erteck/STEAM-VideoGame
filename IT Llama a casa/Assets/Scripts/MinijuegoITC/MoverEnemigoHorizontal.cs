@@ -30,7 +30,8 @@ public class MoverEnemigoHorizontal : MonoBehaviour
             spriterenderer.flipX=false;
 
             
-        }else if(transform.position.x >= 1.59)
+        }
+        else if(transform.position.x >= 1.59)
         {
             //Desplaza al personaje en el eje -x
             maxVelocidadX = -5;
